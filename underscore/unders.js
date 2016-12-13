@@ -9,7 +9,7 @@
 		});
 }());
 
-//Each en objeto
+//Each en objeto literal
 (function(){
 	var paul = {name: "Paul", age:70, instrument:"bass"};
 								//name o value, indexo key	
