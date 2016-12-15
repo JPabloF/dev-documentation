@@ -139,3 +139,198 @@
 	console.log("inpares: " + inpares);
 
 }());
+
+
+//EVERY
+(function(){
+	var numeros = [1, 2, 3, 4 , 5 , 6];
+
+	//Itera para saber si todos los elementos cumplen la condicion
+	var truth = _.every(numeros, function(number){
+
+		return number > 0 ; //<-- True: Porque todos son mayores que 0
+		return number > 1 ; //<-- False: 1 no es mayor que 1
+
+	})
+
+	console.log("Son mayores que 1: " + truth);
+
+}());
+
+
+//SOME
+(function(){
+	var numeros = [1, 2, 3, 4 , 5 , 6];
+
+	//Itera para saber si alguno coincide
+	var truth = _.some(numeros, function(number){
+
+		return number > 5 ; //<-- True: Porque  6 es mayor
+		return number > 8 ; //<-- False: ninguno es mayor
+
+	})
+
+	console.log("Alguno es mayor que 5: " + truth);
+
+}());
+
+//CONTAINS
+(function(){
+	var numeros = [1, 2, 3, 4 , 5 , 6];
+
+	//Itera para saber si contiene el elemento
+	var truth = _.contains(numeros, 3)
+
+	console.log("Contiene 3: " + truth); //<-- True
+
+}());
+
+
+//INVOKE
+(function(){
+	var numeros = [1, 2, 3];
+
+	function multiply(optional){
+		return this*2 * optional;
+	}
+
+	var result = _.invoke(numeros, multiply, 5); //<-- Primero por 2 = 2, luego por 5 = 10, 20, 30
+	console.log(result);
+
+}());
+
+
+//PLUCK
+(function(){
+
+	var people = [
+		{name: "Tom",  age: 21},
+		{name: "Jack", age: 25},
+		{name: "Mike", age: 27},
+		{name: "John", age: 28}
+	];
+
+	var names = _.pluck(people, 'name');//<-- Indicamos que propiedas extraer
+	console.log(names); //<-- Nos pasa un ARRAY nuevo con los nombres
+
+}());
+
+
+//MAX
+(function(){
+
+	var numeros = [1, 2, 3];
+
+	var max = _.max(numeros);
+	console.log("el mayor es " + max);
+
+
+	var people = [
+		{name: "Tom",  age: 21},
+		{name: "Jack", age: 25},
+		{name: "John", age: 28}
+	];
+
+	var older = _.max(people, function(person){
+		return person.age;
+	});
+	console.log(older);
+
+}());
+
+
+//MIN
+(function(){
+
+	var numeros = [1, 2, 3];
+
+	var minus = _.min(numeros);
+	console.log("el menor es " + minus);
+
+
+	var people = [
+		{name: "Tom",  age: 21},
+		{name: "Jack", age: 25},
+		{name: "John", age: 28}
+	];
+
+	var younger = _.min(people, function(person){
+		return person.age;
+	});
+	console.log(younger);
+
+}());
+
+
+//sortBY
+(function(){
+
+
+	var cars = ["toyota", "subaru", "ford"];
+
+	//Devuelve un array con orden ascendente
+	var sorted = _.sortBy(cars);//<-- Si paso una funcion como parametro, puedo obtener el length
+	console.log(sorted);
+
+
+	//Devuelve un array de objetos con orden ascendente
+	var carStats = [
+		{name: "Toyota",  speed: 150},
+		{name: "Subaru", speed: 180},
+		{name: "Ford", speed: 140}
+	];
+
+	var speedSorted = _.sortBy(carStats, 'speed');
+	console.log(speedSorted);
+
+}());
+
+
+//groupBy
+(function(){
+
+
+	var cars = ["toyota", "subaru", "Mitsubichi"];
+
+	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
+	var grouped = _.groupBy(cars, "length");//<-- Si paso una funcion como parametro, puedo obtener el length
+	console.log(grouped);//<--  Object {6: Array[2], 10: Array[1]}
+						 //<-- 	grouped[6] ["toyota", "subaru"], grouped[10] ["Mitsubishi"], 
+
+
+	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
+	var carStats = [
+		{name: "Toyota",  speed: 140},
+		{name: "Subaru", speed: 180},
+		{name: "Ford", speed: 140}
+	];
+
+	var speedSorted = _.groupBy(carStats, 'speed');
+	console.log(speedSorted); //<-- Devuelve Object {140: Array[2], 180: Array[1]}
+
+}());
+
+
+//indexBy
+(function(){
+
+	var cars = ["toyota", "subaru", "Mitsubichi"];
+
+	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
+	var grouped = _.groupBy(cars, "length");//<-- Si paso una funcion como parametro, puedo obtener el length
+	console.log(grouped);//<--  Object {6: Array[2], 10: Array[1]}
+						 //<-- 	grouped[6] ["toyota", "subaru"], grouped[10] ["Mitsubishi"], 
+
+
+	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
+	var carStats = [
+		{name: "Toyota",  speed: 140},
+		{name: "Subaru", speed: 180},
+		{name: "Ford", speed: 140}
+	];
+
+	var speedSorted = _.groupBy(carStats, 'speed');
+	console.log(speedSorted); //<-- Devuelve Object {140: Array[2], 180: Array[1]}
+
+
+}());
