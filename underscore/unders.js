@@ -1,4 +1,26 @@
-// Documentación Underscore
+/* Documentación Underscore
+
+
+_.each:  	Lista cada index y value de un array
+_.each:  	Lista cada key y value en un objeto
+_.map :  	Itera por valor, index e items en conjunto.
+_.reduce: 	Reduce el arreglo a un valor, sumando o restando
+_.find : 	Busca la primera coincidencia de elemento
+_.filter: 	Busca todas las coincidencias de elementos
+_.where: 	Devuelve todos los objetos con el parametro indicado
+_.reject: 	Saca del arreglo los elementos encontrados
+_.every: 	Itera todos los elementos devolviendo true o false 
+_.some: 	Itera para saber si algun elemento cumple
+_.contains: Itera para buscar un elemento contenido
+_.invoke: 	Itera los elementos en funcion de algo
+_.pluck: 	Busca una propiedad y devuelve sus elementos en un array
+_.max: 		Ordena de mayor a menor
+_.min: 		Ordena de menor a mayor
+_.sortBy: 	Ordena los elementos en orden ascendente
+_.groupBy:  Agrupa los elementos del objeto bajo el nombre del parametro indicado
+_.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
+
+*/
 
 //Each en arreglo
 (function(){
@@ -14,7 +36,7 @@
 //Each en objeto literal
 (function(){
 	var paul = {name: "Paul", age:70, instrument:"bass"};
-								//name o value, indexo key	
+								//name o value, index o key	
 		_.each(paul, function(value, key){
 			console.log( key + ":" + value);
 		});
@@ -44,25 +66,6 @@
 	console.log("valor numerosMultiplicados :" + numerosMultiplicados)
 
 }());
-
-
-//Reduce
-(function(){
-	var numeros = [1, 2, 3];
-
-									//valor funcionamiento, items, index, array original
-	var sum = _.reduce(numeros, function(total, item, index, numeros){
-		return total + item
-	});
-	console.log(sum); //<-- 6   ...1 + 2 + 3						
-
-	var resta = _.reduce(numeros, function(total, item, index, numeros){
-		return total - item
-	});
-	console.log(resta);	//<-- -4    ...1 - 2 - 3
-
-}());
-
 
 
 //Reduce
@@ -114,7 +117,7 @@
 	var people = [
 		{name: "Tom",  age: 21},
 		{name: "Jack", age: 25},
-		{name: "Mike", age: 27},
+		{name: "Mike", age: 21},
 		{name: "John", age: 28}
 	];
 
