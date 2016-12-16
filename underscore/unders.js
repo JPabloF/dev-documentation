@@ -1,4 +1,5 @@
 /* Documentación Underscore
+Libreria de funciones
 
 
 _.each:  	Lista cada index y value de un array
@@ -19,6 +20,25 @@ _.min: 		Ordena de menor a mayor
 _.sortBy: 	Ordena los elementos en orden ascendente
 _.groupBy:  Agrupa los elementos del objeto bajo el nombre del parametro indicado
 _.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
+_.countBy:  Agrupa los elementos por tipo en diferentes criterios asignados
+_.shuffle: 	Randomiza valores
+_.sample:  	Retorna un ejemplo de la lista
+_.toArray:  Recorta a un arreglo los argumentos
+_.size:     Cuenta los elementos del array
+_.partition:     Divide el array segun un criterio
+_.first: 	Busca el primer elemento
+_.initial: 	Retorna cada valor excepto el ultimo
+_.last: 	Muestra el valor final
+_.rest: 	El resto de valores desde cierto punto
+_.compact: 	Remueve los valores falsos
+_.flatten: 	Pone toda la anidación de un array al mismo nivel
+_.whitout: 	Quita el valor indicado
+_.union: 	Junta 2 arrays
+_.intersection: 	Separa los valores repetidos
+_.difference: Separa los valores qué son diferentes del primer c el segundo array
+_.uniq:      Separa el valor unico conservando el primer unico encontrado
+
+
 
 */
 
@@ -26,9 +46,9 @@ _.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
 (function(){
 
 	var beatles = ["John", "Paul", "Ringo", "George"];
-								//name o value, indexo key	
+								//value, index
 		_.each(beatles, function(name, index){
-			console.log("mi name es: " + name);
+			console.log("mi value es: " + name);
 			console.log("mi index es: " + index);
 		});
 }());
@@ -38,28 +58,31 @@ _.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
 	var paul = {name: "Paul", age:70, instrument:"bass"};
 								//name o value, index o key	
 		_.each(paul, function(value, key){
-			console.log( key + ":" + value);
+			console.log( key + ":" + value); //<-- Lista los keys y valores de un objeto
 		});
 }());
 
+
+
 //MAP en array
 (function(){
-	var numeros = [1, 2, 3];						  //valor individual, index, Referencia del arreglo original
+	var numeros = [1, 2, 3];						  //value, index, array
 	var numerosMultiplicados = _.map(numeros, function(value, index, items){
 
 		console.log(items[index]); //<-- [<1>, 2, 3] [0] ----> 1 	* 2 = 	2
 								   //	 [1, <2>, 3] [1] ----> 2 	* 2 = 	4
 								   //	 [1, 2, <3>] [2] ----> 3 	* 2 = 	6
 
-		items[index] = items[index]*2 //<--- 2, 4, 6
 
-
+		items[index] = items[index]*2 //        * 2 = 	2
+									  //		* 2 = 	4
+									  //         * 2 = 	6
 
 		return value *  3  ;    //<-- Devolverá el valor multiplicado por 3 [3,6,9]
 
-		console.log( value);  //<-- 1...   2.... 3...
-		console.log( index);  //<-- 0, 1, 2
-		console.log( items); //<-- [1, 2, 3]
+		console.log( value );  //<-- 1...   2.... 3...
+		console.log( index );  //<-- 0, 1, 2
+		console.log( items ); //<-- [1, 2, 3]
 	});
 
 	console.log("multiplicado por 2 : " + numeros);
@@ -335,5 +358,217 @@ _.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
 	var speedSorted = _.groupBy(carStats, 'speed');
 	console.log(speedSorted); //<-- Devuelve Object {140: Array[2], 180: Array[1]}
 
+
+}());
+
+
+
+//countBy
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	var counted = _.countBy(numbers, function(number){
+		return number % 2 == 0 ? "even" : "odd";
+	})
+
+	console.log (counted);
+
+
+}());
+
+
+//shuffle
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	var shuffled = _.shuffle(numbers);
+
+	console.log (shuffled);
+
+}());
+
+
+//Sample
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	var sampled = _.sample(numbers);
+	//var sampled = _.sample(numbers, 3);  Se puede pedir la cantidad de ejemplos
+
+	console.log (sampled);
+
+}());
+
+
+//toArray
+(function(){
+
+	var arr = _.toArray(arguments).slice(1);
+
+	console.log(arr);
+
+}("Tom", "Nick", "Jack"));
+
+
+
+//SIZE
+(function(){
+
+	var count = _.size([1,2,3,4]);
+
+	console.log(count);
+
+}());
+
+
+
+//Partition
+(function(){
+
+	var people = ["Tom", "Nick", "Alexander"];
+
+	var grouped = _.partition(people, function(person){
+
+		return person.length > 3;
+	})
+
+	console.log(grouped);
+
+}());
+
+
+//First
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	console.log(_.first(numbers));
+
+}());
+
+
+
+//First
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	console.log(_.initial(numbers));
+	//console.log(_.initial(numbers, 2));	Puedo especificar cuantos antes del final
+
+}());
+
+
+
+//LAST
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	console.log(_.last(numbers));
+	//console.log(_.last(numbers, 2));	Puedo especificar cuantos al final
+
+}());
+
+
+
+//REST
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	console.log(_.rest(numbers));
+	//console.log(_.rest(numbers, 2));	Puedo especificar cuantos despues
+
+}());
+
+
+
+//COMPACT
+(function(){
+
+	var things = [1, 0, '', true, "tom"];
+
+	console.log(_.compact(things));
+
+}());
+
+
+//FLATTEN
+(function(){
+
+	var numbers = [1,2,[3],[[4]],5];
+
+	console.log(_.flatten(numbers));
+	console.log(_.flatten(numbers,true)); // Aqui solo flatea hasta el primero y el resto no
+
+}());
+
+
+//WHITOUT
+(function(){
+
+	var numbers = [1,2,3,4,5];
+
+	console.log(_.without(numbers, 3));
+	console.log(_.without(numbers, 3,4,5));
+
+}());
+
+
+//UNION
+(function(){
+
+	var arrayOne = [1,2,3,4,5];
+	var arrayTwo = [6,7,8,9,10];
+
+	console.log(_.union(arrayOne, arrayTwo));
+
+}());
+
+
+//INTERSECTION
+(function(){
+
+	var arrayOne = [1,2,3];
+	var arrayTwo = [3,4,5];
+
+	console.log(_.intersection(arrayOne, arrayTwo));
+
+}());
+
+//DIFFERENCE
+(function(){
+
+	var arrayOne = [1,2,3];
+	var arrayTwo = [3,4,5];
+
+	console.log(_.difference(arrayOne, arrayTwo)); //1 y 2 no están presentes en el segundo, eso imprime
+
+}());
+
+
+//UNIQ
+(function(){
+
+	var arrayOne = [1,2,3,3,4,5];
+
+	console.log(_.uniq(arrayOne));
+
+
+	var people = [
+		{name: "Tom",  age: 21},
+		{name: "Jack", age: 25},
+		{name: "Harry", age: 21}
+	];
+
+	console.log(_.uniq(people, false, function(person){
+		return person.age; //Devolvera solo el que tiene diferente edad
+
+
+	}));
 
 }());
