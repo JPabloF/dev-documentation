@@ -572,3 +572,60 @@ _.uniq:      Separa el valor unico conservando el primer unico encontrado
 	}));
 
 }());
+
+
+/*****************
+ TEMPLATES
+******************
+
+
+<%  %> - Para ejecutar codigo
+
+<%= %> - Para imprimir valores en el HTML
+
+<%- %> - to print some values HTML escaped 
+
+*/
+
+
+var tpl = _.template("<h1>Some text: <%= foo %></h1>");
+
+
+
+console.log( tpl( {foo: "Template1 in console"} ) ); //Impresion a la consola
+
+
+$('#tmpl1').append( tpl( {foo: "Template1 in DOM"} ) ); //Impresion al DOM
+
+
+
+
+(function(){
+var dataPeople = [
+	{name: "Tom",  age: 21, active: true},
+	{name: "Jack", age: 25, active: true},
+	{name: "Mike", age: 21, active: true},
+	{name: "Mig",  age: 21, active: true},
+	{name: "Jack", age: 25, active: true},
+	{name: "Kate", age: 21, active: false},	
+	{name: "John", age: 28, active: true}
+];
+
+
+
+filteredData = _.where(dataPeople, {active: true}), //<-- Devuelve todos los objetos que sean "active:true"
+
+tmplList = _.template( $('#tmpl2').html() ); //<-- Usando "html() extraigo la estructura del elemento #tmpl2 y la almaceno"
+
+
+//Apendeo la info con variables
+	$('.containerPeople').append( tmplList({ list: _.where(filteredData) }) );
+
+
+//Misma estructura decompilada:
+	//$('.containerPeople').append( tmplList({ list: _.where(dataPeople, {active: true}) }) ); 
+
+
+
+
+}());

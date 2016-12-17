@@ -4,10 +4,38 @@
 	<title></title>
 </head>
 <body>
-<h1> Hello UnderscoreJS</h1>
+	<h1> Hello UnderscoreJS</h1>
+
+	<div id="tmpl0"></div>
+	<div id="tmpl1"></div>
+
+	
+	<div class="containerPeople"></div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script type="text/javascript" src="unders.js"></script>
+	<!-- TEMPLATE STYLE-->
+	<script type="text/template" id="tmpl0">
+
+	
+	</script>
+
+
+	<script type="text/template" id="tmpl2">
+
+		<ul class="element">
+			<% _.each(list, function(element){ %>
+			<li>
+				<span><%= element.name %></span>
+				<span><%= element.age %></span>
+			</li>
+			<%  }) %>
+		</ul>
+
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script type="text/javascript" src="unders.js"></script>
+
 </body>
 </html>
