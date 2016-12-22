@@ -1,8 +1,9 @@
 /* ECMA 6
 
-
+**************
 Variables.
-------------
+
+**************
 
 Si declaro una variable utilizando "var", es tratada como si estuviese inicializada al tope de la funcion o en el scope global
 
@@ -222,3 +223,40 @@ const ncz = "Hi!";
 console.log(ncz);  // "Hi!"
 console.log("ncz" in window); // false - Porque no existe en "window."
 
+
+
+/**************
+STRINGS AND REGULAR EXPRESSIONS.
+
+**************
+
+Methods for Identifying Substrings*/
+
+
+let msg = "Hello world!";
+
+
+console.log(msg.startsWith("Hello")); //true
+console.log(msg.endsWith("!"));		  //true
+console.log(msg.includes("o")); 	  // true
+
+
+/*-------------
+Metodo repeat
+---------------
+
+Sirve para repetir un string determinado numero de veces.*/
+
+console.log("x".repeat(3));		// "xxx"
+console.log("hello".repeat(2)); // "hellohello"
+console.log("abc".repeat(4));   // "abcabcabcabc"
+
+
+
+let indent = " ".repeat(4), //indent almacena 4 espacios en blanco
+indentLevel = 0;			//sigue el registro de niveles de indentado
+
+// whenever you increase the indent
+let newIndent = indent.repeat(++indentLevel);
+
+//REGULAR EXPRESIONS
