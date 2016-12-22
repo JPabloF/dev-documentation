@@ -85,3 +85,71 @@ var str ="abcabc"
 console.dir(str.match(/b/)); //<-- 1 array, de index 1, porque captura la primera "b" de la serie
 
 console.dir(str.match(/b/g)); //<--2 arrays. Porque hay 2 "b" y por tanto 2 matches. Uno con "b" index 0 y otro con index 1.
+
+
+
+
+
+
+//Matching a wild card character
+
+.  punto //will match any character except a new line, so it can include letters, numbers, symbols, and so on
+
+var str ="Hello world"
+str.match(/o.l/); // ["orl"]  Porque el punto hace de "comodin" entre la "o" y la "l"
+
+
+\d digit
+
+var str ="123andfour"
+str.match(/1\d3/g) // ["123"] Porque \d matchea cualquier digito entre el "1" y el "3"
+
+
+\w digit
+
+var str ="sk8ter"
+str.match(/k\wt/g);// ["k8t"] Cualquier underscore, letra, numero, upper o lowercase
+
+
+//Negaciones
+
+
+\D digit
+var str ="123andfour"
+str.match(/o\Dr/g) //["our"] Cualquier elemento que NO sea numero, en este caso "u".
+
+
+\W digit
+var str ="sk*ter"
+str.match(/k\Wt/g);//["k*t"] Cualquier cosa que no sea ni letra ni numero, en este caso, *
+
+
+//Defining ranges in Regex
+
+var str ="bicycle"
+
+str.match(/[abc]/g); // ["b", "c", "c"] El rango de elementos, cualquiera sea "a" "b" o "c"
+
+
+//Rango
+var str ="Tim sam Bob maC Guy"
+str.match(/[A-Z][a-z][a-z]/g); // ["Tim", "Bob", "Guy"] Primera letra capital, seguida por 2 letras bajas.
+
+
+// guion
+
+var str ="Hello world"
+str.match(/Hello[- ]world/); // ["Hello world"] Porque busco un rango de elementos, tanto guion como espacio
+
+str.match(/Hello[\- ]world/); // ["Hello world"]
+
+
+//Negated ranges
+
+var str ="sk8ter"
+
+str.match(/[^a-z]/gi); //["8"] Cualquier elemento que NO sea del alfabeto
+
+
+/*************
+  Multipliers
