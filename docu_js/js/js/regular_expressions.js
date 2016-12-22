@@ -14,7 +14,10 @@ var rgx1 = new RegExp("hello"); //<-- Constructor
 var rgx2 = /hello/;				//<-- Literal
 
 
-/*PATTERN FLAGS
+/*
+--------------------
+PATTERN FLAGS
+--------------------
 
 Existen 3 metodos.
 
@@ -36,10 +39,8 @@ rgx.test("hello world");   //true. Porque contiene hello
 
 
 
-
-
-
 //METODO EXEC    .rgx.exec
+//--------------------------
 // Este metodo retorna información especifica del match, como el index del inicio del pattern
 
 
@@ -51,7 +52,7 @@ rgx.exec("hello");		// null        Devuelve null porque no lo encuentra.
 
 
 //METODO the String.replace 
-
+//---------------------------
 //Este método, recibe 2 parametros, y reemplaza el parametro buscado con el parametro entregado.
 
 
@@ -64,3 +65,23 @@ str.replace("foo", "qux") //<-- "qux foo". Porque solo reemplaza el primer valor
 str = "foo foo"
 
 str.replace(/foo/g, "qux") //<--  "qux qux". En este caso, entregamos el pattern con un abandera global para afectar todos los elementos
+
+
+//METODO the String.search
+//-------------------------
+// Busca el index0 que primero hace match con el string
+
+str = "hello world"; //"hello world"
+str.search(/world/); //6 - Porque existen 6 carácteres hasta que comienza el pattern.
+
+
+
+//METODO the String.match
+//-------------------------
+//Retorna un array de todos los march cuando utiliza la flag "g"
+
+var str ="abcabc"
+
+console.dir(str.match(/b/)); //<-- 1 array, de index 1, porque captura la primera "b" de la serie
+
+console.dir(str.match(/b/g)); //<--2 arrays. Porque hay 2 "b" y por tanto 2 matches. Uno con "b" index 0 y otro con index 1.
