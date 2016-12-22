@@ -94,10 +94,10 @@ EJ:*/
 
 
 const color = "red"; 
-const color = "blue"; //<-- Si cambio su valor, arroja un error.
+const color = "blue"; //<-- Si cambio su valor como variable, arroja un error.
 
 
-
+//EJ en objeto
 const person = {
 	name: "Nicholas"
 };
@@ -188,7 +188,7 @@ Global Block Bindings
 *********************
 
 
-Tanto Let como cons respecto a var difieren en el global scope.
+Tanto LET como CONST difieren de VAR en el global scope.
 
 Cuando var es usado en el global scope, crea una nueva variable global, que es una propiedad en el global object (window.)
 
@@ -259,4 +259,5 @@ indentLevel = 0;			//sigue el registro de niveles de indentado
 // whenever you increase the indent
 let newIndent = indent.repeat(++indentLevel);
 
-//REGULAR EXPRESIONS
+
+
