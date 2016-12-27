@@ -4,39 +4,58 @@ Libreria de funciones
 
 _.each:  	Lista cada index y value de un array
 _.each:  	Lista cada key y value en un objeto
+
 _.map :  	Itera por valor, index e items en conjunto.
-_.reduce: 	Reduce el arreglo a un valor, sumando o restando
-_.find : 	Busca la primera coincidencia de elemento
+
+
+
+
+
 _.filter: 	Busca todas las coincidencias de elementos
 _.where: 	Devuelve todos los objetos con el parametro indicado
+
+
+_.find : 	Busca la primera coincidencia de elemento
+
 _.reject: 	Saca del arreglo los elementos encontrados
 _.every: 	Itera todos los elementos devolviendo true o false 
 _.some: 	Itera para saber si algun elemento cumple
 _.contains: Itera para buscar un elemento contenido
 _.invoke: 	Itera los elementos en funcion de algo
 _.pluck: 	Busca una propiedad y devuelve sus elementos en un array
+
+_.reduce: 	Reduce el arreglo a un valor, sumando o restando
 _.max: 		Ordena de mayor a menor
 _.min: 		Ordena de menor a mayor
+
+
 _.sortBy: 	Ordena los elementos en orden ascendente
 _.groupBy:  Agrupa los elementos del objeto bajo el nombre del parametro indicado
 _.indexBy:  Agrupa los elementos del array bajo el nombre del parametro indicado
+
 _.countBy:  Agrupa los elementos por tipo en diferentes criterios asignados
+
 _.shuffle: 	Randomiza valores
 _.sample:  	Retorna un ejemplo de la lista
 _.toArray:  Recorta a un arreglo los argumentos
+
 _.size:     Cuenta los elementos del array
 _.partition:     Divide el array segun un criterio
+
 _.first: 	Busca el primer elemento
 _.initial: 	Retorna cada valor excepto el ultimo
 _.last: 	Muestra el valor final
 _.rest: 	El resto de valores desde cierto punto
+
 _.compact: 	Remueve los valores falsos
 _.flatten: 	Pone toda la anidación de un array al mismo nivel
+
 _.whitout: 	Quita el valor indicado
 _.union: 	Junta 2 arrays
 _.intersection: 	Separa los valores repetidos
-_.difference: Separa los valores qué son diferentes del primer c el segundo array
-_.uniq:      Separa el valor unico conservando el primer unico encontrado
+
+_.difference: Separa los valores que son diferentes del primer c el segundo array
+_.uniq:       Separa el valor unico conservando el primer unico encontrado
 
 
 
@@ -315,7 +334,7 @@ _.uniq:      Separa el valor unico conservando el primer unico encontrado
 //groupBy
 (function(){
 
-
+	//En ARRAY
 	var cars = ["toyota", "subaru", "Mitsubichi"];
 
 	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
@@ -323,7 +342,7 @@ _.uniq:      Separa el valor unico conservando el primer unico encontrado
 	console.log(grouped);//<--  Object {6: Array[2], 10: Array[1]}
 						 //<-- 	grouped[6] ["toyota", "subaru"], grouped[10] ["Mitsubishi"], 
 
-
+    //En OBJECT
 	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
 	var carStats = [
 		{name: "Toyota",  speed: 140},
