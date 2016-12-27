@@ -274,6 +274,20 @@ str.match(/\(?\d{3}\)?-?\d{3}-?\d{4}/g); // ["123-123-1234", "(123)-123-1234", "
 
 
 
- **************
+ *****************
  SPECIAL CHARACTERS
+
+
+
+
+MATCHING el inicio y el final de una palabra*/
+
+var str= "word word word"
+
+str.match(/^word|word$/g);  //word word . /^world$/ tambien funciona como unico elemento del string
+
+
+
+
+
 
