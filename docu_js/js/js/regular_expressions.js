@@ -45,6 +45,7 @@ rgx.test("hello world");   //true. Porque contiene hello
 
 //METODO EXEC    .rgx.exec
 //--------------------------
+
 // Este metodo retorna información especifica del match, como el index del inicio del pattern
 
 
@@ -57,6 +58,7 @@ rgx.exec("hello");		// null        Devuelve null porque no lo encuentra.
 
 //METODO the String.replace 
 //---------------------------
+
 //Este método, recibe 2 parametros, y reemplaza el parametro buscado con el parametro entregado.
 
 
@@ -71,6 +73,8 @@ str = "foo foo"
 str.replace(/foo/g, "qux") //<--  "qux qux". En este caso, entregamos el pattern con un abandera global para afectar todos los elementos
 
 
+
+
 //METODO the String.search
 //-------------------------
 // Busca el index0 que primero hace match con el string
@@ -80,22 +84,26 @@ str.search(/world/); //6 - Porque existen 6 carácteres hasta que comienza el pa
 
 
 
+
+
 //METODO the String.match
 //-------------------------
 //Retorna un array de todos los march cuando utiliza la flag "g"
 
 var str ="abcabc"
 
-console.dir(str.match(/b/)); //<-- 1 array, de index 1, porque captura la primera "b" de la serie
+str.match(/b/); //<-- 1 array, de index 1, porque captura la primera "b" de la serie
 
-console.dir(str.match(/b/g)); //<--2 arrays. Porque hay 2 "b" y por tanto 2 matches. Uno con "b" index 0 y otro con index 1.
-
-
+str.match(/b/g); //<--2 arrays. Porque hay 2 "b" y por tanto 2 matches. Uno con "b" index 0 y otro con index 1.
 
 
+var str ="abcabc"
+var matched = str.match(/b/) // matched = ["b"]
 
 
-//Matching a wild card character
+
+/*Matching a wild card character
+--------------------------------*/
 
 .  punto //will match any character except a new line, so it can include letters, numbers, symbols, and so on
 
@@ -115,7 +123,9 @@ var str ="sk8ter"
 str.match(/k\wt/g);// ["k8t"] Cualquier underscore, letra, numero, upper o lowercase
 
 
-//Negaciones
+
+/*Negaciones
+--------------*/
 
 
 \D digit
@@ -159,9 +169,10 @@ str.match(/[^a-z]/gi); //["8"] Cualquier elemento que NO sea del alfabeto. La le
 str.match(/[^a-z]/g);//  ["K", "8"]  Si removemos la "i", la K mayuscula se escapa del patron, y tb es removida.
 
 
-/*************
-  Multipliers
 
+
+/* Multipliers
+-----------------
 
 Existen 3 multipliers in Regex:
 
@@ -200,8 +211,7 @@ str.match(/update!*/g);	//["update", "update!", "update", "update!!!!"]
 
 
 
-/*-------------------
-Custon quantifiers
+/* Custon quantifiers
 ----------------------
 
 //	{3}... Definir un numero determinado de repeticiones*/
@@ -248,11 +258,7 @@ str.match(/\(?\d{3}\)?-?\d{3}-?\d{4}/g); // ["123-123-1234", "(123)-123-1234", "
 
 
 
-/*Desgloce:
-
-/\(?\d{3}\)?-?\d{3}-?\d{4}/g
-
-
+/*Desgloce:  /\(?\d{3}\)?-?\d{3}-?\d{4}/g
 		
 /	
 
@@ -273,14 +279,15 @@ str.match(/\(?\d{3}\)?-?\d{3}-?\d{4}/g); // ["123-123-1234", "(123)-123-1234", "
 
 
 
+/***********************
+ 
+ 	SPECIAL CHARACTERS
 
- *****************
- SPECIAL CHARACTERS
-
-
+************************ 
 
 
 MATCHING el inicio y el final de una palabra*/
+
 
 var str= "word word word"
 
@@ -288,6 +295,71 @@ str.match(/^word|word$/g);  //word word . /^world$/ tambien funciona como unico 
 
 
 
+// Word boundaries (bordes)
+
+var str= "can candy"
+
+str.match(/\bcan\b/g);  //can.  =    \b denota una word boundarie al inicio o al fin. Poniendo doble tomamos toda la palabra
 
 
+
+// Non-Word boundaries (bordes)
+var str= "candy"
+
+str.match(/can\B/g); //can  = En este caso tomo la palabra porque NO es una word boundary al extremo final
+
+
+
+
+//Matching whitespace
+var str= "foo-bar foo.bar foobar"
+
+str.match(/foo\b/g); //["foo", "foo"]	=  Encuentra el foo con guion y con punto porque los considera "espacio" o corte	
+
+
+var str= "foo "
+
+str.match(/foo\s/g);// ["foo "]  = Porque foo posee un espacio extra al final de la palabra
+
+
+
+//Defining nongreedy quantifiers
+
+var str= "1234"
+
+str.match(/\d{1,4}?/);// ["1"]  = El signo "?" busca la menor cantidad de coincidencias posibles del patter
+
+
+
+//Ejemplo de extracción de clase
+
+//<div class="container" id="main">
+
+
+/class=".*"/	// Matchearia "container" id="main". Considerando todo lo encontrado entre una primera y ultima comilla
+
+/class=".*?"/  // Matchearia "class="container" Porque el signo "?" pide el minimo de coincidencias
+
+
+
+
+/* Matching groups
+-------------------
+
+Sirven para extraer data desde un input. Sirve para extraer contenido relevante.
+ La sintaxis consiste en encerrar dentro de parentesis, y esta parte de la expresion extraera sus componentes
+
+
+Grouping characters together to create a clause*/
+
+ var pattern = / (\S+) (\S*) ?\b(\S+) /
+
+pattern.exec("Juan Pablo Farias");// ["Juan Pablo Farias", "Juan", "Pablo", "Farias"]
+
+//Explicación
+
+(\S+) // Indica una palabra SIN espacio obligatoria. El signo + multiplica el pattern indefinidamente
+(\S*) // Indica que queremos un espacio con una segunda palabra. El asterisco indica que puede ser length zero.
+?\b   // Indica que queremos otro espacio, pero  opcional
+(\S+) // Indica que nuevamente queremos una nueva palabra
 
