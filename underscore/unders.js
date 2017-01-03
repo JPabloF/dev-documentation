@@ -5,7 +5,7 @@ Libreria de funciones
 _.each:  	Lista cada index y value de un array
 _.each:  	Lista cada key y value en un objeto
 
-_.map :  	Itera por valor, index e items en conjunto.
+_.map :  	Cuando queremos transformar el array. ( Tambiém itera por valor, index e items en conjunto).
 
 
 
@@ -94,9 +94,12 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 
 
 
-//MAP en array
+
+
 
 /* 	El map recorre un array y devuelve uno nuevo hacia una var, el each no devuelve nada*/
+
+//MAP en array. Devuelve nuevos arreglos con return
 (function(){
 	var numeros = [1, 2, 3];						  //value, index, array
 	var numerosMultiplicados = _.map(numeros, function(value, index, items){
@@ -105,20 +108,52 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 								   //	 [1, <2>, 3] [1] ----> 2 	* 2 = 	4
 								   //	 [1, 2, <3>] [2] ----> 3 	* 2 = 	6
 
-
 		items[index] = items[index]*2 //        * 2 = 	2
 									  //		* 2 = 	4
-									  //         * 2 = 	6
+									  //        * 2 = 	6
 
-		return value *  3  ;    //<-- Devolverá el valor multiplicado por 3 [3,6,9]
+		return value *  3  ;    //<-- RETURN. Así devolverá el valor multiplicado por 3 [3,6,9]
 
-		console.log( value );  //<-- 1...   2.... 3...
-		console.log( index );  //<-- 0, 1, 2
-		console.log( items ); //<-- [1, 2, 3]
+		// console.log( value );  //<-- 1...   2.... 3...
+		// console.log( index );  //<-- 0, 1, 2
+		// console.log( items ); //<-- [1, 2, 3]
 	});
 
 	console.log("multiplicado por 2 : " + numeros);
 	console.log("valor numerosMultiplicados :" + numerosMultiplicados)
+
+
+	//Ex  de uso 2
+	//----------------------------------
+
+	//1.- Llamada a json como "data"...
+
+	//2.- Funcion refresh del json como "data"
+
+	function gotSomeDataJSON(data){
+		console.log(data);
+
+								//dato e index
+		function outputFunction(dato, i){
+			$('.divDestino').append('<div>' + dato.somePropToPrint + '</div>');
+		}
+	}
+
+
+	function transformData(dato){
+		//Podria retornar un objeto con ciertas modificaciones
+		return{
+			date : new Date (dato*1000), //Puedo modificar algun valor
+			duration : dato.duration //Puedo almacenar el dato pedido tal como es
+		}
+	}
+
+					 //La info recibida, el json data. El response podria ser el callback?
+									 //esto puede ser una funcion
+	var nuevosDatos = _.map(data.response, transformData);
+
+		  //utilizo el nuevo arreglo mapeado y la funcion de appendeo al DOM
+	_.each(nuevosDatos, outputFunction);
 
 }());
 

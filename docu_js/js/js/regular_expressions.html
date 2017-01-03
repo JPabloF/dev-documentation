@@ -1,0 +1,1134 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<title>REGEX</title>
+<meta name="generator" content="BCL easyConverter SDK 5.0.08">
+
+<style>
+#page_2 #p2dimg1,#page_2 #p2dimg1 #p2img1{width:442px;height:81px}#page_8 #p8dimg1,#page_8 #p8dimg1 #p8img1{width:432px;height:113px}#page_10 #p10dimg1,#page_10 #p10dimg1 #p10img1{width:241px;height:67px}#page_111 #id_1,#page_112 #id_1{width:454px;padding:0;overflow:hidden}#page_1 #p1dimg1,#page_107 #p107dimg1,#page_109 #p109dimg1,#page_111 #p111dimg1,#page_112 #p112dimg1,#page_2 #p2dimg1,#page_77 #p77dimg1{position:absolute;left:0;z-index:-1}#page_112 #p112dimg1,#page_112 #p112dimg1 #p112img1{width:528px;height:605px}.p58,.p59,.p60,.p61,.p62,.p63,.p64,.p65{white-space:nowrap}<style type="text/css">body{margin-top:0;margin-left:0}#page_1{position:relative;overflow:hidden;margin:0;padding:0;border:none;width:816px;height:1056px}#page_1 #p1dimg1{top:0;width:816px;height:1056px}#page_1 #p1dimg1 #p1img1{width:816px;height:1056px}#page_2{position:relative;overflow:hidden;margin:217px 0 206px 144px;padding:0;border:none;width:672px}#page_101 #id_1,#page_103 #id_1,#page_106 #id_1,#page_107 #id_1,#page_108 #id_1,#page_109 #id_1,#page_12 #id_1,#page_13 #id_1,#page_17 #id_1,#page_19 #id_1,#page_2 #id_1,#page_23 #id_1,#page_25 #id_1,#page_27 #id_1,#page_29 #id_1,#page_31 #id_1,#page_33 #id_1,#page_35 #id_1,#page_37 #id_1,#page_41 #id_1,#page_43 #id_1,#page_45 #id_1,#page_47 #id_1,#page_49 #id_1,#page_51 #id_1,#page_53 #id_1,#page_55 #id_1,#page_57 #id_1,#page_59 #id_1,#page_61 #id_1,#page_65 #id_1,#page_67 #id_1,#page_69 #id_1,#page_71 #id_1,#page_73 #id_1,#page_79 #id_1,#page_81 #id_1,#page_83 #id_1,#page_87 #id_1,#page_89 #id_1,#page_91 #id_1,#page_93 #id_1,#page_95 #id_1,#page_97 #id_1,#page_99 #id_1{margin:0;padding:0;border:none;width:672px;overflow:hidden}#page_2 #id_2{margin:221px 0 0;padding:0;border:none;width:672px;overflow:hidden}#page_2 #p2dimg1{top:518px}#page_3{position:relative;overflow:hidden;margin:151px 0 292px 144px;padding:0;border:none;width:672px}#page_4{position:relative;overflow:hidden;margin:217px 0 204px 234px;padding:0;border:none;width:582px}#page_4 #id_1{margin:0 0 0 115px;padding:0;border:none;width:467px;overflow:hidden}#page_4 #id_2{margin:79px 0 0;padding:0;border:none;width:582px;overflow:hidden}#page_4 #id_2 #id_2_1{float:left;margin:0;padding:0;border:none;width:199px;overflow:hidden}#page_4 #id_2 #id_2_2{float:left;margin:0;padding:0;border:none;width:383px;overflow:hidden}#page_5{position:relative;overflow:hidden;margin:217px 0 268px;padding:0;border:none;width:674px}#page_6{position:relative;overflow:hidden;margin:152px 0 468px 144px;padding:0;border:none;width:520px}#page_6 #p6dimg1{position:absolute;top:48px;left:48px;z-index:-1;width:432px;height:265px}#page_6 #p6dimg1 #p6img1{width:432px;height:265px}#page_7{position:relative;overflow:hidden;margin:217px 0 354px;padding:0;border:none;width:816px;height:485px}#page_7 #p7dimg1{position:absolute;top:423px;left:192px;z-index:-1;width:432px;height:62px}#page_7 #p7dimg1 #p7img1{width:432px;height:62px}#page_8{position:relative;overflow:hidden;margin:152px 0 408px 144px;padding:0;border:none;width:532px;height:496px}#page_8 #p8dimg1{position:absolute;top:383px;left:48px;z-index:-1}#page_9{position:relative;overflow:hidden;margin:152px 0 513px 144px;padding:0;border:none;width:526px}#page_10{position:relative;overflow:hidden;margin:217px 0 186px;padding:0;border:none;width:816px}#page_10 #id_1,#page_100 #id_1,#page_102 #id_1,#page_16 #id_1,#page_18 #id_1,#page_20 #id_1,#page_24 #id_1,#page_26 #id_1,#page_28 #id_1,#page_30 #id_1,#page_32 #id_1,#page_34 #id_1,#page_36 #id_1,#page_38 #id_1,#page_42 #id_1,#page_44 #id_1,#page_46 #id_1,#page_48 #id_1,#page_50 #id_1,#page_54 #id_1,#page_56 #id_1,#page_58 #id_1,#page_60 #id_1,#page_62 #id_1,#page_66 #id_1,#page_68 #id_1,#page_70 #id_1,#page_72 #id_1,#page_74 #id_1,#page_80 #id_1,#page_84 #id_1,#page_86 #id_1,#page_88 #id_1,#page_90 #id_1,#page_94 #id_1,#page_96 #id_1,#page_98 #id_1{margin:0;padding:0;border:none;width:816px;overflow:hidden}#page_10 #id_2{margin:4px 0 0 144px;padding:0;border:none;width:523px;overflow:hidden}#page_10 #p10dimg1{position:absolute;top:345px;left:144px;z-index:-1}#page_105,#page_11,#page_15,#page_21,#page_39,#page_63{position:relative;overflow:hidden;margin:1056px 0 0;padding:0;border:none;width:0;height:0}#page_12{position:relative;overflow:hidden;margin:291px 0 154px 144px;padding:0;border:none;width:672px}#page_12 #id_2{margin:25px 0 0 255px;padding:0;border:none;width:417px;overflow:hidden}#page_12 #p12dimg1{position:absolute;top:600px;left:1px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_104 #p104dimg1 #p104img1,#page_106 #p106dimg1 #p106img1,#page_107 #p107dimg1 #p107img1,#page_108 #p108dimg1 #p108img1,#page_109 #p109dimg1 #p109img1,#page_12 #p12dimg1 #p12img1,#page_14 #p14dimg1 #p14img1,#page_16 #p16dimg1 #p16img1,#page_98 #p98dimg1 #p98img1{width:528px;height:11px}#page_101,#page_103,#page_13,#page_17,#page_19,#page_23,#page_25,#page_27,#page_29,#page_31,#page_33,#page_35,#page_37,#page_41,#page_43,#page_45,#page_47,#page_49,#page_51,#page_53,#page_55,#page_57,#page_59,#page_61,#page_65,#page_67,#page_69,#page_71,#page_73,#page_75,#page_79,#page_81,#page_83,#page_85,#page_87,#page_89,#page_91,#page_93,#page_95,#page_97,#page_99{position:relative;overflow:hidden;margin:126px 0 154px 144px;padding:0;border:none;width:672px}#page_13 #id_2{margin:37px 0 0 253px;padding:0;border:none;width:419px;overflow:hidden}#page_101 #p101dimg1,#page_103 #p103dimg1,#page_13 #p13dimg1,#page_17 #p17dimg1,#page_19 #p19dimg1,#page_23 #p23dimg1,#page_25 #p25dimg1,#page_27 #p27dimg1,#page_29 #p29dimg1,#page_31 #p31dimg1,#page_33 #p33dimg1,#page_35 #p35dimg1,#page_37 #p37dimg1,#page_41 #p41dimg1,#page_43 #p43dimg1,#page_45 #p45dimg1,#page_47 #p47dimg1,#page_49 #p49dimg1,#page_51 #p51dimg1,#page_53 #p53dimg1,#page_55 #p55dimg1,#page_57 #p57dimg1,#page_59 #p59dimg1,#page_61 #p61dimg1,#page_65 #p65dimg1,#page_67 #p67dimg1,#page_69 #p69dimg1,#page_71 #p71dimg1,#page_73 #p73dimg1,#page_75 #p75dimg1,#page_79 #p79dimg1,#page_81 #p81dimg1,#page_83 #p83dimg1,#page_85 #p85dimg1,#page_87 #p87dimg1,#page_89 #p89dimg1,#page_91 #p91dimg1,#page_93 #p93dimg1,#page_95 #p95dimg1,#page_97 #p97dimg1,#page_99 #p99dimg1{position:absolute;top:16px;left:0;z-index:-1;width:528px;height:760px}#page_100 #p100dimg1 #p100img1,#page_101 #p101dimg1 #p101img1,#page_102 #p102dimg1 #p102img1,#page_103 #p103dimg1 #p103img1,#page_13 #p13dimg1 #p13img1,#page_17 #p17dimg1 #p17img1,#page_18 #p18dimg1 #p18img1,#page_19 #p19dimg1 #p19img1,#page_20 #p20dimg1 #p20img1,#page_23 #p23dimg1 #p23img1,#page_24 #p24dimg1 #p24img1,#page_25 #p25dimg1 #p25img1,#page_26 #p26dimg1 #p26img1,#page_27 #p27dimg1 #p27img1,#page_28 #p28dimg1 #p28img1,#page_29 #p29dimg1 #p29img1,#page_30 #p30dimg1 #p30img1,#page_31 #p31dimg1 #p31img1,#page_32 #p32dimg1 #p32img1,#page_33 #p33dimg1 #p33img1,#page_34 #p34dimg1 #p34img1,#page_35 #p35dimg1 #p35img1,#page_36 #p36dimg1 #p36img1,#page_37 #p37dimg1 #p37img1,#page_38 #p38dimg1 #p38img1,#page_41 #p41dimg1 #p41img1,#page_42 #p42dimg1 #p42img1,#page_43 #p43dimg1 #p43img1,#page_44 #p44dimg1 #p44img1,#page_45 #p45dimg1 #p45img1,#page_46 #p46dimg1 #p46img1,#page_47 #p47dimg1 #p47img1,#page_48 #p48dimg1 #p48img1,#page_49 #p49dimg1 #p49img1,#page_50 #p50dimg1 #p50img1,#page_51 #p51dimg1 #p51img1,#page_53 #p53dimg1 #p53img1,#page_54 #p54dimg1 #p54img1,#page_55 #p55dimg1 #p55img1,#page_56 #p56dimg1 #p56img1,#page_57 #p57dimg1 #p57img1,#page_58 #p58dimg1 #p58img1,#page_59 #p59dimg1 #p59img1,#page_60 #p60dimg1 #p60img1,#page_61 #p61dimg1 #p61img1,#page_62 #p62dimg1 #p62img1,#page_65 #p65dimg1 #p65img1,#page_66 #p66dimg1 #p66img1,#page_67 #p67dimg1 #p67img1,#page_68 #p68dimg1 #p68img1,#page_69 #p69dimg1 #p69img1,#page_70 #p70dimg1 #p70img1,#page_71 #p71dimg1 #p71img1,#page_72 #p72dimg1 #p72img1,#page_73 #p73dimg1 #p73img1,#page_74 #p74dimg1 #p74img1,#page_75 #p75dimg1 #p75img1,#page_76 #p76dimg1 #p76img1,#page_78 #p78dimg1 #p78img1,#page_79 #p79dimg1 #p79img1,#page_80 #p80dimg1 #p80img1,#page_81 #p81dimg1 #p81img1,#page_83 #p83dimg1 #p83img1,#page_84 #p84dimg1 #p84img1,#page_85 #p85dimg1 #p85img1,#page_86 #p86dimg1 #p86img1,#page_87 #p87dimg1 #p87img1,#page_88 #p88dimg1 #p88img1,#page_89 #p89dimg1 #p89img1,#page_90 #p90dimg1 #p90img1,#page_91 #p91dimg1 #p91img1,#page_92 #p92dimg1 #p92img1,#page_93 #p93dimg1 #p93img1,#page_94 #p94dimg1 #p94img1,#page_95 #p95dimg1 #p95img1,#page_96 #p96dimg1 #p96img1,#page_97 #p97dimg1 #p97img1,#page_99 #p99dimg1 #p99img1{width:528px;height:760px}#page_104,#page_14{position:relative;overflow:hidden;margin:123px 0 154px 144px;padding:0;border:none;width:672px}#page_104 #id_1,#page_14 #id_1{margin:0;padding:0;border:none;width:529px;overflow:hidden}#page_14 #id_2{margin:266px 0 0 252px;padding:0;border:none;width:420px;overflow:hidden}#page_104 #p104dimg1,#page_14 #p14dimg1{position:absolute;top:768px;left:1px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_16{position:relative;overflow:hidden;margin:292px 0 154px;padding:0;border:none;width:816px}#page_16 #id_2{margin:44px 0 0 398px;padding:0;border:none;width:418px;overflow:hidden}#page_16 #p16dimg1{position:absolute;top:599px;left:145px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_17 #id_2{margin:122px 0 0 251px;padding:0;border:none;width:421px;overflow:hidden}#page_100,#page_102,#page_18,#page_20,#page_24,#page_26,#page_28,#page_30,#page_32,#page_34,#page_36,#page_38,#page_42,#page_44,#page_46,#page_48,#page_50,#page_54,#page_56,#page_58,#page_60,#page_62,#page_66,#page_68,#page_70,#page_72,#page_74,#page_76,#page_78,#page_80,#page_84,#page_86,#page_88,#page_90,#page_92,#page_94,#page_96{position:relative;overflow:hidden;margin:126px 0 154px;padding:0;border:none;width:816px}#page_18 #id_2{margin:92px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_100 #p100dimg1,#page_102 #p102dimg1,#page_18 #p18dimg1,#page_20 #p20dimg1,#page_24 #p24dimg1,#page_26 #p26dimg1,#page_28 #p28dimg1,#page_30 #p30dimg1,#page_32 #p32dimg1,#page_34 #p34dimg1,#page_36 #p36dimg1,#page_38 #p38dimg1,#page_42 #p42dimg1,#page_44 #p44dimg1,#page_46 #p46dimg1,#page_48 #p48dimg1,#page_50 #p50dimg1,#page_54 #p54dimg1,#page_56 #p56dimg1,#page_58 #p58dimg1,#page_60 #p60dimg1,#page_62 #p62dimg1,#page_66 #p66dimg1,#page_68 #p68dimg1,#page_70 #p70dimg1,#page_72 #p72dimg1,#page_74 #p74dimg1,#page_76 #p76dimg1,#page_78 #p78dimg1,#page_80 #p80dimg1,#page_84 #p84dimg1,#page_86 #p86dimg1,#page_88 #p88dimg1,#page_90 #p90dimg1,#page_92 #p92dimg1,#page_94 #p94dimg1,#page_96 #p96dimg1{position:absolute;top:16px;left:145px;z-index:-1;width:528px;height:760px}#page_19 #id_2{margin:250px 0 0 248px;padding:0;border:none;width:424px;overflow:hidden}#page_20 #id_2{margin:431px 0 0 396px;padding:0;border:none;width:420px;overflow:hidden}#page_22{position:relative;overflow:hidden;margin:201px 0 154px 144px;padding:0;border:none;width:672px}#page_22 #id_1{margin:89px 0 0;padding:0;border:none;width:672px;overflow:hidden}#page_22 #id_2{margin:90px 0 0 254px;padding:0;border:none;width:418px;overflow:hidden}#page_22 #p22dimg1{position:absolute;top:0;left:1px;z-index:-1;width:528px;height:701px}#page_22 #p22dimg1 #p22img1,#page_40 #p40dimg1 #p40img1,#page_52 #p52dimg1 #p52img1,#page_64 #p64dimg1 #p64img1{width:528px;height:701px}#page_23 #id_2{margin:318px 0 0 253px;padding:0;border:none;width:419px;overflow:hidden}#page_24 #id_2{margin:63px 0 0 398px;padding:0;border:none;width:418px;overflow:hidden}#page_25 #id_2{margin:113px 0 0 253px;padding:0;border:none;width:419px;overflow:hidden}#page_26 #id_2{margin:81px 0 0 398px;padding:0;border:none;width:418px;overflow:hidden}#page_27 #id_2{margin:44px 0 0 253px;padding:0;border:none;width:419px;overflow:hidden}#page_28 #id_2{margin:258px 0 0 398px;padding:0;border:none;width:418px;overflow:hidden}#page_29 #id_2{margin:303px 0 0 253px;padding:0;border:none;width:419px;overflow:hidden}#page_30 #id_2{margin:39px 0 0 398px;padding:0;border:none;width:418px;overflow:hidden}#page_31 #id_2{margin:37px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_32 #id_2{margin:49px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_33 #id_2{margin:90px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_34 #id_2,#page_68 #id_2,#page_94 #id_2{margin:62px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_35 #id_2{margin:40px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_36 #id_2{margin:175px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_37 #id_2{margin:339px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_38 #id_2{margin:208px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_40,#page_52,#page_64{position:relative;overflow:hidden;margin:201px 0 154px;padding:0;border:none;width:816px}#page_40 #id_1,#page_52 #id_1,#page_64 #id_1{margin:89px 0 0;padding:0;border:none;width:816px;overflow:hidden}#page_40 #id_2,#page_98 #id_2{margin:24px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_40 #p40dimg1,#page_52 #p52dimg1,#page_64 #p64dimg1{position:absolute;top:0;left:145px;z-index:-1;width:528px;height:701px}#page_41 #id_2{margin:165px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_42 #id_2{margin:366px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_43 #id_2{margin:43px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_44 #id_2,#page_70 #id_2{margin:7px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_45 #id_2{margin:335px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_46 #id_2{margin:221px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_47 #id_2{margin:42px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_48 #id_2{margin:148px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_49 #id_2{margin:154px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_50 #id_2,#page_88 #id_2{margin:190px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_51 #id_2{margin:39px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_52 #id_2{margin:199px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_53 #id_2{margin:94px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_54 #id_2{margin:215px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_55 #id_2{margin:38px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_56 #id_2{margin:238px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_57 #id_2{margin:91px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_58 #id_2{margin:125px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_59 #id_2{margin:143px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_60 #id_2{margin:94px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_61 #id_2{margin:88px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_62 #id_2{margin:121px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_64 #id_2{margin:115px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_65 #id_2{margin:71px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_66 #id_2{margin:123px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_67 #id_2{margin:52px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_69 #id_2{margin:31px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_71 #id_2,#page_99 #id_2{margin:81px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_72 #id_2{margin:31px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_73 #id_2{margin:66px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_74 #id_2{margin:90px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_77{position:relative;overflow:hidden;margin:126px 0 154px 142px;padding:0;border:none;width:674px}#page_77 #id_1{margin:0 0 0 2px;padding:0;border:none;width:672px;overflow:hidden}#page_77 #id_2{margin:93px 0 0 252px;padding:0;border:none;width:422px;overflow:hidden}#page_77 #p77dimg1{top:16px;width:532px;height:760px}#page_77 #p77dimg1 #p77img1{width:532px;height:760px}#page_79 #id_2{margin:83px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_80 #id_2{margin:39px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_81 #id_2{margin:293px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_82{position:relative;overflow:hidden;margin:202px 0 154px;padding:0;border:none;width:816px}#page_82 #id_1{margin:88px 0 0;padding:0;border:none;width:816px;overflow:hidden}#page_82 #id_2{margin:84px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_82 #p82dimg1{position:absolute;top:0;left:145px;z-index:-1;width:528px;height:700px}#page_82 #p82dimg1 #p82img1{width:528px;height:700px}#page_83 #id_2{margin:131px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_84 #id_2{margin:57px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_86 #id_2{margin:69px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_87 #id_2{margin:60px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_89 #id_2{margin:138px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_90 #id_2{margin:262px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_91 #id_2{margin:89px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_93 #id_2{margin:108px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_95 #id_2{margin:191px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_96 #id_2{margin:11px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_97 #id_2{margin:468px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_98{position:relative;overflow:hidden;margin:285px 0 154px;padding:0;border:none;width:816px}#page_98 #p98dimg1{position:absolute;top:606px;left:145px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_100 #id_2{margin:151px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_101 #id_2{margin:208px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_102 #id_2{margin:103px 0 0 395px;padding:0;border:none;width:421px;overflow:hidden}#page_103 #id_2{margin:17px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_104 #id_2{margin:564px 0 0 251px;padding:0;border:none;width:421px;overflow:hidden}#page_106{position:relative;overflow:hidden;margin:247px 0 154px 144px;padding:0;border:none;width:672px}#page_106 #id_1 #id_1_1{float:left;margin:73px 0 0;padding:0;border:none;width:271px;overflow:hidden}#page_106 #id_1 #id_1_2,#page_107 #id_1 #id_1_2,#page_108 #id_1 #id_1_2{float:left;margin:0;padding:0;border:none;width:401px;overflow:hidden}#page_106 #id_2{margin:97px 0 0 251px;padding:0;border:none;width:421px;overflow:hidden}#page_106 #p106dimg1{position:absolute;top:644px;left:1px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_107,#page_109{position:relative;overflow:hidden;margin:151px 0 154px 144px;padding:0;border:none;width:672px}#page_107 #id_1 #id_1_1,#page_108 #id_1 #id_1_1{float:left;margin:0;padding:0;border:none;width:271px;overflow:hidden}#page_107 #id_2{margin:14px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_107 #p107dimg1,#page_109 #p109dimg1{top:740px;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_108{position:relative;overflow:hidden;margin:150px 0 154px 144px;padding:0;border:none;width:672px}#page_108 #id_2{margin:61px 0 0 251px;padding:0;border:none;width:421px;overflow:hidden}#page_108 #p108dimg1{position:absolute;top:741px;left:1px;z-index:-1;width:528px;height:11px;font-size:1px;line-height:nHeight}#page_109 #id_2{margin:495px 0 0 250px;padding:0;border:none;width:422px;overflow:hidden}#page_110{position:relative;overflow:hidden;margin:162px 0 203px 144px;padding:0;border:none;width:672px}#page_110 #p110dimg1{position:absolute;top:0;left:115px;z-index:-1;width:298px;height:61px}#page_110 #p110dimg1 #p110img1{width:298px;height:61px}#page_111,#page_112{position:relative;overflow:hidden;margin:171px 0 192px 144px;padding:0;border:none;width:672px}#page_111 #id_1{margin:61px 0 0 218px;border:none}#page_111 #id_2{margin:69px 0 0 60px;padding:0;border:none;width:612px;overflow:hidden}#page_111 #p111dimg1{top:0;width:528px;height:594px}#page_111 #p111dimg1 #p111img1{width:528px;height:594px}#page_112 #id_1{margin:62px 0 0 218px;border:none}#page_112 #id_2{margin:86px 0 0 60px;padding:0;border:none;width:612px;overflow:hidden}.p0,.p1,.p2,.p3,.p4,.p5,.p6{text-align:left;margin-bottom:0}.td19,.td20,.td21,.td28,.td29,.td30,.td37,.td38,.td39,.td46,.td48,.td55,.td56,.td57,.td64,.td65,.td66,.td73,.td74,.td75{border-top:#000 1px solid}.td19,.td22,.td26,.td28,.td31,.td34,.td37,.td40,.td43,.td46,.td52,.td55,.td58,.td61,.td64,.td67,.td70,.td73,.td76,.td79{border-left:#000 1px solid}.td0,.td1,.td10,.td11,.td14,.td15,.td19,.td20,.td21,.td25,.td26,.td27,.td28,.td29,.td30,.td34,.td35,.td36,.td37,.td38,.td39,.td43,.td44,.td45,.td46,.td48,.td52,.td53,.td54,.td55,.td56,.td57,.td6,.td61,.td62,.td63,.td64,.td65,.td66,.td7,.td70,.td71,.td72,.td73,.td74,.td75,.td79,.td80,.td81,.td84,.td85,.td86,.td87,.td88,.td89{border-bottom:#000 1px solid}.td19,.td20,.td21,.td22,.td23,.td24,.td25,.td26,.td27,.td28,.td29,.td30,.td31,.td32,.td33,.td34,.td35,.td36,.td37,.td38,.td39,.td40,.td41,.td42,.td43,.td44,.td45,.td46,.td47,.td48,.td49,.td50,.td52,.td53,.td54,.td55,.td56,.td57,.td58,.td59,.td60,.td61,.td62,.td63,.td64,.td65,.td66,.td67,.td68,.td69,.td70,.td71,.td72,.td73,.td74,.td75,.td76,.td77,.td78,.td79,.td80,.td81,.td83,.td85,.td94{border-right:#000 1px solid}#page_112 #p112dimg1{top:0}.dclr{clear:both;float:none;height:1px;margin:0;padding:0;overflow:hidden}.p14,.p15,.p17,.p18{padding-left:10px}.ft0{font:37px Arial;line-height:42px}.ft1{font:21px Arial;line-height:28px}.ft2{font:700 19px Arial;line-height:22px}.ft3{font:16px Calibri;line-height:19px}.ft4{font:21px Arial;line-height:24px}.ft5{font:14px 'Book Antiqua';line-height:18px}.ft6{font:13px 'Book Antiqua';line-height:17px}.ft7{font:13px 'Courier New';line-height:16px}.ft8{font:700 12px Arial;line-height:15px}.ft9{font:12px Arial;line-height:15px}.ft10{font:700 15px 'Book Antiqua';line-height:19px}.ft11{font:14px 'Book Antiqua';margin-left:3px;line-height:18px}.ft14,.ft15,.ft20{margin-left:16px}.ft12{font:italic 14px 'Book Antiqua';line-height:19px}.ft13{font:700 16px 'Book Antiqua';line-height:21px}.ft14{font:italic 14px 'Book Antiqua';line-height:19px}.ft15{font:14px 'Book Antiqua';line-height:18px}.ft16{font:700 16px 'Book Antiqua';line-height:18px}.ft17{font:700 27px Arial;line-height:34px}.ft18{font:4px Arial;line-height:5px}.ft19{font:700 24px Arial;line-height:29px}.ft20{font:13px 'Book Antiqua';line-height:17px}.ft21{font:12px 'Courier New';line-height:15px}.ft22{font:12px 'Book Antiqua';line-height:16px}.ft23{font:40px Arial;line-height:45px}.ft24{font:700 16px Arial;line-height:19px}.ft25{font:700 15px Arial;line-height:18px}.ft26{font:15px Arial;line-height:17px}.ft27{font:12px Arial;line-height:14px}.ft28{font:700 11px Arial;line-height:14px}.ft29{font:italic 12px 'Book Antiqua';line-height:17px}.ft30{font:700 15px Arial;line-height:17px}.ft31{font:1px Arial;line-height:1px}.ft32{font:14px 'Book Antiqua';line-height:17px}.ft33{font:700 27px Arial;line-height:32px}.ft34{font:italic 13px 'Book Antiqua';line-height:18px}.ft35,.ft79{font:700 12px 'Courier New'}.ft35{line-height:16px}.ft36{font:700 14px 'Book Antiqua';line-height:19px}.ft37,.ft41{font:12px 'Courier New'}.ft37{line-height:16px}.ft38{font:13px 'Book Antiqua';line-height:18px}.ft39{font:700 13px 'Book Antiqua';line-height:18px}.ft40{font:700 21px Arial;line-height:24px}.ft41{margin-left:7px;line-height:15px}.ft42{font:12px 'Courier New';line-height:14px}.ft43{font:13px 'Book Antiqua';line-height:16px}.ft44{font:9px 'Courier New';line-height:16px}.ft45,.ft50{font:700 14px 'Book Antiqua'}.ft45{line-height:17px}.ft46{font:12px 'Courier New';margin-left:8px;line-height:15px}.ft47,.ft51{margin-left:16px}.ft47{font:13px 'Courier New';line-height:16px}.ft48{font:italic 14px 'Book Antiqua';line-height:17px}.ft49{font:700 24px Arial;line-height:31px}.ft50{line-height:18px}.ft51{font:700 14px 'Book Antiqua';line-height:19px}.ft61,.ft69,.ft70{margin-left:17px}.ft52{font:700 12px 'Book Antiqua';line-height:17px}.ft53{font:13px 'Times New Roman';line-height:21px}.ft54{font:12px 'Courier New';line-height:21px}.ft55{font:13px 'Book Antiqua';line-height:23px}.ft56{font:13px 'Times New Roman';line-height:20px}.ft57{font:12px 'Courier New';line-height:20px}.ft58{font:13px 'Book Antiqua';line-height:22px}.ft59{font:14px 'Times New Roman';line-height:16px}.ft60{font:700 12px 'Book Antiqua';line-height:16px}.ft61{font:13px 'Courier New';line-height:19px}.ft62{font:14px 'Times New Roman';line-height:19px}.ft63{font:13px 'Courier New';line-height:19px}.ft64,.ft67{font:14px 'Book Antiqua'}.ft64{line-height:21px}.ft65{font:14px 'Times New Roman';line-height:20px}.ft66{font:13px 'Courier New';line-height:20px}.ft67{line-height:22px}.ft68{font:14px 'Book Antiqua';line-height:26px}.ft69{font:12px 'Courier New';line-height:20px}.ft70{font:13px 'Courier New';line-height:20px}.ft71{font:14px 'Times New Roman';line-height:21px}.ft72{font:13px 'Courier New';line-height:21px}.ft73{font:14px 'Book Antiqua';line-height:23px}.ft74{font:12px 'Courier New';margin-left:16px;line-height:15px}.ft115,.ft117{margin-left:15px}.ft75{font:12px 'Book Antiqua';line-height:15px}.ft76{font:13px 'Courier New';line-height:24px}.ft77{font:700 21px Arial;line-height:28px}.ft78{font:14px 'Book Antiqua';line-height:24px}.ft79{line-height:22px}.ft80{font:700 12px 'Courier New';line-height:21px}.ft81{font:1px 'Book Antiqua';line-height:1px}.ft82{font:13px 'Courier New';line-height:15px}.ft83,.ft84{font:1px 'Book Antiqua'}.ft83{line-height:9px}.ft84{line-height:10px}.ft85,.ft87{font:1px 'Book Antiqua'}.ft85{line-height:14px}.ft86{font:13px 'Book Antiqua';line-height:14px}.ft87{line-height:11px}.ft88,.ft90{font:1px 'Book Antiqua'}.ft88{line-height:15px}.ft89{font:13px 'Book Antiqua';line-height:15px}.ft90{line-height:2px}.ft91{font:1px 'Book Antiqua';line-height:16px}.ft92{font:13px 'Courier New';line-height:14px}.ft106,.ft93{font:1px 'Book Antiqua'}.ft93{line-height:7px}.ft94{font:1px 'Courier New';line-height:15px}.ft95,.ft96{font:1px 'Courier New'}.ft95{line-height:4px}.ft96{line-height:10px}.ft97,.ft98{font:1px 'Courier New'}.ft97{line-height:6px}.ft98{line-height:11px}.ft100,.ft99{font:1px 'Courier New'}.ft99{line-height:2px}.ft100{line-height:1px}.ft101,.ft102{font:1px 'Courier New'}.ft101{line-height:5px}.ft102{line-height:9px}.ft103,.ft104{font:1px 'Courier New'}.ft103{line-height:7px}.ft104{line-height:8px}.ft105{font:1px 'Courier New';line-height:12px}.ft106{line-height:13px}.ft107{font:1px 'Book Antiqua';line-height:6px}.ft108,.ft109{font:700 13px 'Book Antiqua'}.ft108{line-height:17px}.ft109{line-height:15px}.ft110{font:700 13px 'Book Antiqua';line-height:16px}.ft111{font:700 12px 'Book Antiqua';line-height:15px}.ft112{font:italic 13px 'Times New Roman';line-height:15px}.ft113{font:700 25px Arial;line-height:30px}.ft114{font:italic 13px 'Book Antiqua';line-height:17px}.ft115{font:12px 'Book Antiqua';line-height:16px}.ft116{font:italic 700 16px Arial;line-height:18px}.ft117,.ft118{font:11px 'Book Antiqua';line-height:15px}.ft119{font:700 19px Arial;line-height:24px}.t0,.t1,.t2{font:15px Arial}.p0{margin-top:0}.p1{padding-right:179px;margin-top:120px}.p2{margin-top:119px}.p3{margin-top:12px}.p4{margin-top:28px}.p5{padding-right:173px;margin-top:38px}.p6{padding-right:165px;margin-top:7px}.p7{text-align:justify;padding-right:151px;margin-top:11px;margin-bottom:0}.p10,.p11,.p12,.p13,.p15,.p16,.p17,.p18,.p19,.p20,.p8,.p9{text-align:left;margin-bottom:0}.p8{margin-top:39px}.p9{margin-top:38px}.p10{padding-right:454px;margin-top:37px}.p11{padding-right:511px;margin-top:0}.p21,.p23{padding-right:2px}.p12{margin-top:9px}.p13{margin-top:14px}.p14{text-align:left;margin-top:4px;margin-bottom:0}.p15{margin-top:7px}.p16{margin-top:24px}.p17{margin-top:8px}.p18{margin-top:3px}.p19{margin-top:25px}.p20{margin-top:26px}.p21{text-align:right;margin-top:0;margin-bottom:0}.p22,.p23,.p24,.p25,.p26,.p27{text-align:left;padding-left:144px;margin-bottom:0}.p22{margin-top:53px}.p23{margin-top:1px}.p24{padding-right:26px;margin-top:5px}.p25{padding-right:29px;margin-top:6px}.p26{padding-right:27px;margin-top:5px}.p27{padding-right:4px;margin-top:8px}.p28,.p29,.p30{padding-left:50px;text-align:left}.p28{padding-right:65px;margin-top:15px;margin-bottom:0}.p29{padding-right:49px;margin-top:11px;margin-bottom:0}.p30{padding-right:54px;margin-top:13px;margin-bottom:0}.p33,.p34,.p35{padding-left:144px;margin-bottom:0}.p31{text-align:left;padding-right:40px;margin-top:52px;margin-bottom:0}.p32{text-align:right;padding-right:144px;margin-top:0;margin-bottom:0}.p33{text-align:justify;padding-right:152px;margin-top:55px}.p34,.p35,.p36,.p37{text-align:left}.p34{padding-right:140px;margin-top:7px}.p35{margin-top:11px}.p36,.p37,.p38{padding-left:168px}.p36{margin-top:10px;margin-bottom:0}.p37{margin-top:3px;margin-bottom:0}.p38,.p39{margin-top:4px;text-align:left;margin-bottom:0}.p39{padding-left:192px;padding-right:201px;text-indent:-24px}.p177,.p179,.p187,.p189,.p197,.p202{text-indent:-13px}.p40{text-align:left;padding-left:194px;padding-right:211px;margin-top:24px;margin-bottom:0}.p41{text-align:left;padding-right:26px;margin-top:0;margin-bottom:0}.p42{text-align:left;padding-right:28px;margin-top:7px;margin-bottom:0}.p43{text-align:left;margin-top:61px;margin-bottom:0}.p44{text-align:left;padding-right:19px;margin-top:1px;margin-bottom:0}.p45{text-align:left;padding-left:50px;padding-right:58px;margin-top:13px;margin-bottom:0}.p48,.p49,.p50,.p51,.p53{padding-left:144px}.p46{text-align:left;padding-right:1px;margin-top:66px;margin-bottom:0}.p47{text-align:justify;padding-right:25px;margin-top:8px;margin-bottom:0}.p48,.p49,.p50,.p51,.p52,.p53{text-align:left}.p48{padding-right:183px;margin-top:77px;margin-bottom:0}.p49{margin-top:1px;margin-bottom:0}.p50{padding-right:154px;margin-top:9px;margin-bottom:0}.p51{padding-right:160px;margin-top:5px;margin-bottom:0}.p52{padding-left:377px;margin-top:12px;margin-bottom:0}.p53{margin-top:65px;margin-bottom:0}.p54,.p55{margin-top:8px;margin-bottom:0;text-align:left;padding-left:144px}.p54{padding-right:167px}.p56{text-align:left;padding-left:144px;margin-top:10px;margin-bottom:0}.p57,.p58,.p59,.p60,.p61,.p62,.p63,.p64,.p65{margin-top:0;margin-bottom:0}.p57{text-align:left;padding-left:217px}.p58{text-align:left}.p59{text-align:right}.p60,.p61,.p62,.p63,.p64,.p66{text-align:left}.p60{padding-left:10px}.p61{padding-left:24px}.p62{padding-left:34px}.p63{padding-left:14px}.p64{padding-left:32px}.p65{text-align:right;padding-right:1px}.p66{padding-left:144px;padding-right:164px;margin-top:26px;margin-bottom:0}.p67,.p68{padding-right:145px;margin-bottom:0;text-align:left;padding-left:144px}.p67{margin-top:7px}.p68{margin-top:6px}.p69{text-align:left;padding-left:144px;margin-top:22px;margin-bottom:0}.p70{text-align:left;padding-left:144px;padding-right:177px;margin-top:5px;margin-bottom:0}.p71{text-align:left;padding-left:144px;padding-right:166px;margin-top:7px;margin-bottom:0}.p72{text-align:left;padding-left:144px;padding-right:145px;margin-top:8px;margin-bottom:0}.p73,.p74{padding-right:142px;text-align:justify;margin-bottom:0}.p73{margin-top:9px}.p74{margin-top:8px}.p75{text-align:justify;padding-right:166px;margin-top:10px;margin-bottom:0}.p76,.p77,.p78,.p79,.p80{text-align:left}.p76{margin-top:18px;margin-bottom:0}.p77{padding-right:160px;margin-top:5px;margin-bottom:0}.p78{padding-right:204px;margin-top:9px;margin-bottom:0}.p79{margin-top:20px;margin-bottom:0}.p80,.p81{margin-top:5px}.p80{padding-right:161px;margin-bottom:0}.p81,.p82{text-align:justify;margin-bottom:0}.p81{padding-right:154px}.p82{padding-right:158px;margin-top:6px}.p83,.p85{text-align:left}.p83{margin-top:1px;margin-bottom:0}.p84{text-align:right;padding-right:143px;margin-top:0;margin-bottom:0}.p85{padding-left:144px;margin-top:9px;margin-bottom:0}.p86,.p87,.p88{padding-left:168px;text-align:left;margin-bottom:0}.p86{margin-top:12px}.p87{margin-top:2px}.p88{margin-top:1px}.p89,.p90{padding-left:144px}.p89{text-align:left;margin-top:12px;margin-bottom:0}.p90{text-align:justify;padding-right:181px;margin-top:8px;margin-bottom:0}.p91,.p92{text-align:left;margin-bottom:0}.p91{padding-left:280px;margin-top:27px}.p92{padding-left:279px;margin-top:55px}.p93,.p94,.p95,.p96,.p97{text-align:left;padding-left:144px}.p93{margin-top:39px;margin-bottom:0}.p94{padding-right:144px;margin-top:5px;margin-bottom:0}.p95{padding-right:156px;margin-top:8px;margin-bottom:0}.p96{margin-top:20px;margin-bottom:0}.p97{padding-right:162px;margin-top:5px;margin-bottom:0}.p98,.p99{margin-top:4px;margin-bottom:0;text-align:left}.p99{padding-right:151px}.p100{text-align:left;margin-top:19px;margin-bottom:0}.p101{text-align:left;padding-right:140px;margin-top:3px;margin-bottom:0}.p102{text-align:left;padding-right:143px;margin-top:5px;margin-bottom:0}.p103{text-align:left;padding-right:140px;margin-top:9px;margin-bottom:0}.p104,.p105{margin-top:4px;padding-left:144px;margin-bottom:0;text-align:left}.p105{padding-right:147px}.p106{text-align:left;padding-left:144px;padding-right:160px;margin-top:6px;margin-bottom:0}.p107{text-align:left;padding-left:144px;padding-right:186px;margin-top:9px;margin-bottom:0}.p108{text-align:left;padding-left:144px;margin-top:29px;margin-bottom:0}.p109{text-align:left;padding-left:144px;padding-right:197px;margin-top:5px;margin-bottom:0}.p110{text-align:left;padding-left:50px;margin-top:0;margin-bottom:0}.p115,.p117,.p118{padding-left:24px;margin-bottom:0}.p111{text-align:left;padding-right:146px;margin-top:27px;margin-bottom:0}.p112{text-align:justify;padding-right:154px;margin-top:4px;margin-bottom:0}.p113,.p114,.p115,.p116,.p117,.p118,.p119,.p121{text-align:left}.p113{padding-right:140px;margin-top:8px;margin-bottom:0}.p114{padding-right:155px;margin-top:2px;margin-bottom:0}.p115{margin-top:12px}.p116{padding-right:157px;margin-top:9px;margin-bottom:0}.p117{margin-top:8px}.p118{margin-top:1px}.p119{padding-right:144px;margin-top:8px;margin-bottom:0}.p120{text-align:justify;padding-right:152px;margin-top:12px;margin-bottom:0}.p121{padding-left:144px;padding-right:150px;margin-top:4px;margin-bottom:0}.p122,.p123{text-align:left;padding-left:168px;margin-bottom:0}.p122{padding-right:439px;margin-top:9px}.p123{margin-top:5px}.p124,.p125,.p126{text-align:left;padding-left:144px}.p124{padding-right:142px;margin-top:11px;margin-bottom:0}.p125{margin-top:112px;margin-bottom:0}.p126{padding-right:170px;margin-top:4px;margin-bottom:0}.p127,.p128{padding-left:168px;text-align:left;margin-bottom:0}.p127{margin-top:9px}.p128{padding-right:468px;margin-top:1px}.p129{text-align:left;padding-right:147px;margin-top:9px;margin-bottom:0}.p130{text-align:justify;padding-right:145px;margin-top:147px;margin-bottom:0}.p131,.p132{text-align:left;margin-bottom:0}.p131{padding-right:163px;margin-top:8px}.p132{margin-top:22px}.p133{text-align:justify;padding-right:153px;margin-top:5px;margin-bottom:0}.p134,.p135,.p136,.p137{text-align:left;margin-bottom:0}.p134{padding-right:151px;margin-top:8px}.p135{padding-right:162px;margin-top:5px}.p136{padding-left:144px;padding-right:175px;margin-top:4px}.p137{padding-left:168px;padding-right:425px;margin-top:6px}.p138,.p139,.p140{text-align:left;padding-left:144px}.p138{padding-right:139px;margin-top:11px;margin-bottom:0}.p139{padding-right:165px;margin-top:10px;margin-bottom:0}.p140{margin-top:13px;margin-bottom:0}.p141,.p142{margin-top:6px;text-align:left;padding-left:144px;margin-bottom:0}.p141{padding-right:149px}.p142{padding-right:147px}.p143{text-align:left;padding-left:144px;padding-right:152px;margin-top:8px;margin-bottom:0}.p144{text-align:justify;padding-right:150px;margin-top:9px;margin-bottom:0}.p145,.p146{text-align:left}.p145{padding-left:24px;padding-right:382px;margin-top:10px;margin-bottom:0}.p146{padding-right:169px;margin-top:4px;margin-bottom:0}.p147,.p148{padding-right:504px;text-align:left;padding-left:24px;margin-bottom:0}.p147{margin-top:12px}.p148{margin-top:3px}.p149{text-align:left;padding-left:24px;padding-right:461px;margin-top:2px;margin-bottom:0}.p150{text-align:left;padding-right:155px;margin-top:11px;margin-bottom:0}.p151{text-align:left;padding-right:177px;margin-top:4px;margin-bottom:0}.p152{text-align:left;padding-left:24px;padding-right:504px;margin-top:9px;margin-bottom:0}.p153{text-align:left;padding-left:24px;padding-right:482px;margin-top:2px;margin-bottom:0}.p154,.p155{padding-left:24px;margin-top:3px;text-align:left}.p154{padding-right:461px;margin-bottom:0}.p155{margin-bottom:0}.p156,.p157,.p158,.p159,.p160{padding-left:144px;margin-bottom:0}.p156{text-align:left;padding-right:144px;margin-top:9px}.p157{text-align:left;margin-top:218px}.p158{text-align:left;padding-right:166px;margin-top:4px}.p159{text-align:left;margin-top:16px}.p160{text-align:justify;padding-right:162px;margin-top:6px}.p164,.p165{padding-left:24px;text-align:left}.p161{text-align:left;padding-right:167px;margin-top:9px;margin-bottom:0}.p162{text-align:left;margin-top:141px;margin-bottom:0}.p163{text-align:left;padding-right:175px;margin-top:6px;margin-bottom:0}.p164{padding-right:490px;margin-top:11px;margin-bottom:0}.p165{margin-top:2px;margin-bottom:0}.p168,.p169,.p170,.p171{padding-left:144px;margin-bottom:0}.p166{text-align:left;margin-top:16px;margin-bottom:0}.p167{text-align:left;padding-right:155px;margin-top:6px;margin-bottom:0}.p168{text-align:justify;padding-right:146px;margin-top:9px}.p169,.p170,.p171,.p172,.p173,.p174{text-align:left}.p169{margin-top:18px}.p170{padding-right:149px;margin-top:5px}.p171{padding-right:186px;margin-top:8px}.p172{padding-left:168px;padding-right:533px;margin-top:11px;margin-bottom:0}.p173{padding-left:182px;margin-top:3px;margin-bottom:0}.p174{padding-left:197px;padding-right:425px;margin-top:1px;margin-bottom:0}.p175,.p176,.p177{padding-left:211px;margin-bottom:0;text-align:left}.p175{margin-top:0}.p176{margin-top:1px}.p177{padding-right:202px;margin-top:2px}.p178{text-align:left;padding-left:197px;margin-top:0;margin-bottom:0}.p179,.p180{margin-top:2px;margin-bottom:0;text-align:left}.p179{padding-left:226px;padding-right:468px}.p180,.p233{padding-left:211px}.p181{text-align:left;padding-left:233px;margin-top:1px;margin-bottom:0}.p182{text-align:left;padding-left:197px;margin-top:2px;margin-bottom:0}.p183{text-align:left;padding-left:182px;margin-top:1px;margin-bottom:0}.p184,.p185{padding-left:229px;margin-bottom:0;text-align:left}.p184{margin-top:20px}.p185{padding-right:190px;margin-top:0}.p186{text-align:left;padding-left:144px;padding-right:152px;margin-top:16px;margin-bottom:0}.p187,.p188,.p189,.p190{margin-top:2px;margin-bottom:0;text-align:left}.p187{padding-left:53px;padding-right:468px}.p188{padding-left:67px}.p189{padding-left:96px;padding-right:173px}.p190{padding-left:110px;padding-right:302px}.p191{text-align:left;padding-left:168px;padding-right:360px;margin-top:3px;margin-bottom:0}.p192{text-align:left;padding-left:110px;margin-top:5px;margin-bottom:0}.p193,.p194{padding-left:96px}.p193{text-align:left;margin-top:1px;margin-bottom:0}.p194,.p195,.p196{margin-top:2px;margin-bottom:0;text-align:left}.p194{padding-right:310px}.p195{padding-left:110px}.p196{padding-left:161px;padding-right:367px}.p197{text-align:left;padding-left:125px;padding-right:346px;margin-top:1px;margin-bottom:0}.p198{text-align:left;padding-left:182px;padding-right:324px;margin-top:3px;margin-bottom:0}.p199{text-align:left;padding-left:233px;margin-top:4px;margin-bottom:0}.p200,.p201,.p202{margin-top:1px;margin-bottom:0}.p200{text-align:left;padding-left:125px}.p201,.p202,.p203,.p204{text-align:left;padding-left:82px}.p202{padding-right:475px}.p203,.p204,.p205{margin-top:2px}.p204,.p207{text-indent:14px}.p203{margin-bottom:0}.p204{padding-right:223px;margin-bottom:0}.p205,.p206{padding-left:53px;margin-bottom:0;text-align:left}.p206{margin-top:1px}.p207{text-align:left;padding-left:197px;padding-right:468px;margin-top:11px;margin-bottom:0}.p214,.p220,.p222{text-indent:-13px}.p208{text-align:left;padding-left:182px;margin-top:2px;margin-bottom:0}.p209,.p210,.p211,.p212{padding-left:144px;text-align:left;margin-bottom:0}.p209{padding-right:159px;margin-top:9px}.p210{margin-top:6px}.p211{margin-top:208px}.p212{padding-right:149px;margin-top:4px}.p213{text-align:left;padding-left:168px;padding-right:396px;margin-top:13px;margin-bottom:0}.p214,.p215,.p216{text-align:left;padding-left:182px}.p214{padding-right:391px;margin-top:22px;margin-bottom:0}.p215{margin-top:33px;margin-bottom:0}.p216{padding-right:439px;margin-top:1px;margin-bottom:0}.p217,.p218,.p219{padding-left:38px;margin-bottom:0;text-align:left}.p217{padding-right:482px;margin-top:11px}.p218{margin-top:2px}.p219{margin-top:1px}.p220{text-align:left;padding-left:67px;padding-right:526px;margin-top:17px;margin-bottom:0}.p221{text-align:left;padding-left:53px;margin-top:36px;margin-bottom:0}.p222{text-align:left;padding-left:67px;padding-right:274px;margin-top:18px;margin-bottom:0}.p223{text-align:left;padding-left:53px;margin-top:5px;margin-bottom:0}.p224{text-align:left;padding-left:67px;margin-top:1px;margin-bottom:0}.p225{text-align:left;padding-right:170px;margin-top:9px;margin-bottom:0}.p226{text-align:left;padding-right:147px;margin-top:3px;margin-bottom:0}.p227{text-align:left;padding-left:144px;padding-right:192px;margin-top:4px;margin-bottom:0}.p228,.p229{padding-left:182px;text-indent:-13px;margin-bottom:0;text-align:left}.p228{padding-right:382px;margin-top:11px}.p229{padding-right:353px;margin-top:18px}.p230{text-align:left;padding-left:144px;padding-right:162px;margin-top:4px;margin-bottom:0}.p231{text-align:left;padding-left:182px;padding-right:439px;margin-top:10px;margin-bottom:0;text-indent:-13px}.p232{text-align:left;padding-left:197px;margin-top:3px;margin-bottom:0}.p233{text-align:left;padding-right:425px;margin-top:1px;margin-bottom:0}.p234,.p235{padding-left:211px;margin-top:19px;text-align:left;margin-bottom:0}.p234{padding-right:432px}.p236{text-align:left;padding-left:197px;margin-top:1px;margin-bottom:0}.p237,.p238{text-align:left;margin-top:2px}.p237{padding-left:182px;padding-right:526px;margin-bottom:0;text-indent:14px}.p242,.p245{text-indent:-13px}.p238{padding-left:197px;padding-right:317px;margin-bottom:0}.p242,.p243,.p244{padding-left:38px;margin-bottom:0;text-align:left}.p239{text-align:left;padding-right:158px;margin-top:8px;margin-bottom:0}.p240{text-align:left;padding-right:165px;margin-top:6px;margin-bottom:0}.p241{text-align:left;padding-right:188px;margin-top:4px;margin-bottom:0}.p242{padding-right:403px;margin-top:10px}.p243{margin-top:3px}.p244{margin-top:18px}.p245{text-align:left;padding-left:67px;padding-right:295px;margin-top:1px;margin-bottom:0}.p246,.p247{padding-left:53px;margin-bottom:0;text-align:left}.p246{margin-top:3px}.p247{padding-right:396px;margin-top:1px;text-indent:-15px}.p251,.p254{text-indent:-13px}.p248{text-align:left;padding-left:38px;margin-top:17px;margin-bottom:0}.p249{text-align:left;padding-right:148px;margin-top:6px;margin-bottom:0}.p250{text-align:left;padding-left:144px;padding-right:165px;margin-top:9px;margin-bottom:0}.p251{text-align:left;padding-left:182px;padding-right:353px;margin-top:11px;margin-bottom:0}.p252{text-align:left;padding-left:144px;padding-right:162px;margin-top:9px;margin-bottom:0}.p253{text-align:left;padding-left:168px;margin-top:11px;margin-bottom:0}.p254,.p255{padding-left:197px;text-align:left;margin-bottom:0}.p254{padding-right:295px;margin-top:1px}.p337,.p348,.p357,.p360{text-indent:-21px}.p255{padding-right:230px;margin-top:2px}.p256,.p259,.p260,.p261,.p263,.p264,.p265,.p266,.p267{padding-left:144px}.p256{text-align:left;padding-right:151px;margin-top:9px;margin-bottom:0}.p257{text-align:left;padding-right:154px;margin-top:4px;margin-bottom:0}.p258{text-align:left;padding-right:161px;margin-top:260px;margin-bottom:0}.p259{text-align:left;padding-right:167px;margin-top:9px;margin-bottom:0}.p260{text-align:left;padding-right:148px;margin-top:265px;margin-bottom:0}.p261{text-align:left;margin-top:21px;margin-bottom:0}.p262{text-align:left;padding-left:144px;padding-right:151px;margin-top:5px;margin-bottom:0}.p263{text-align:left;padding-right:140px;margin-top:6px;margin-bottom:0}.p264{text-align:left;padding-right:174px;margin-top:27px;margin-bottom:0}.p265{text-align:justify;padding-right:160px;margin-top:8px;margin-bottom:0}.p266,.p267,.p268{text-align:left;margin-bottom:0}.p266{padding-right:183px;margin-top:1px}.p267{padding-right:195px;margin-top:10px}.p268{padding-left:168px;margin-top:8px}.p269,.p270,.p271,.p276,.p282,.p283,.p284,.p285,.p286{padding-left:144px}.p269{text-align:justify;padding-right:173px;margin-top:5px;margin-bottom:0}.p270,.p271,.p272,.p273,.p274,.p275,.p276,.p277{text-align:left;margin-bottom:0}.p270{margin-top:15px}.p271{padding-right:181px;margin-top:4px}.p272{padding-right:160px;margin-top:9px}.p273{padding-right:142px;margin-top:8px}.p274{margin-top:258px}.p275{padding-right:163px;margin-top:4px}.p276{margin-top:254px}.p277{padding-right:144px;margin-top:4px}.p278,.p279{text-align:justify}.p278{padding-right:171px;margin-top:5px;margin-bottom:0}.p279{padding-right:160px;margin-top:6px;margin-bottom:0}.p280,.p281,.p282{text-align:left;margin-bottom:0}.p280{margin-top:241px}.p281{padding-right:144px;margin-top:1px}.p282{margin-top:243px}.p283{text-align:justify;padding-right:156px;margin-top:2px;margin-bottom:0}.p284,.p285,.p286,.p287,.p288{text-align:left}.p284{padding-right:140px;margin-top:9px;margin-bottom:0}.p285{padding-right:143px;margin-top:4px;margin-bottom:0}.p286{padding-right:142px;margin-top:8px;margin-bottom:0}.p290,.p291,.p292{padding-left:24px}.p287{margin-top:2px;margin-bottom:0}.p288{padding-right:147px;margin-top:5px;margin-bottom:0}.p289,.p290{margin-top:10px;text-align:left;margin-bottom:0}.p291{text-align:left;margin-top:4px;margin-bottom:0}.p292{text-align:left;margin-top:5px;margin-bottom:0}.p295,.p296,.p297{padding-left:144px}.p293{text-align:left;padding-right:145px;margin-top:10px;margin-bottom:0}.p294{text-align:left;padding-right:141px;margin-top:2px;margin-bottom:0}.p295{text-align:justify;padding-right:153px;margin-top:9px;margin-bottom:0}.p296,.p297,.p298{text-align:left;margin-bottom:0}.p296{margin-top:17px}.p297{padding-right:145px;margin-top:4px}.p298{padding-left:168px;margin-top:13px}.p299,.p300{text-align:justify}.p299,.p305{padding-left:144px}.p299{padding-right:170px;margin-top:243px;margin-bottom:0}.p300{padding-right:144px;margin-top:2px;margin-bottom:0}.p301,.p302{padding-right:150px;margin-bottom:0;text-align:left}.p301{margin-top:1px}.p302{margin-top:250px}.p303{text-align:left;padding-right:151px;margin-top:5px;margin-bottom:0}.p304{text-align:left;padding-right:156px;margin-top:9px;margin-bottom:0}.p305{text-align:left;padding-right:141px;margin-top:2px;margin-bottom:0}.p307,.p308{padding-right:148px;text-align:left;margin-bottom:0;padding-left:144px}.p306{text-align:left;padding-left:144px;margin-top:257px;margin-bottom:0}.p307{margin-top:4px}.p308{margin-top:11px}.p309{text-align:left;padding-right:167px;margin-top:5px;margin-bottom:0}.p310{text-align:left;padding-right:146px;margin-top:4px;margin-bottom:0}.p311{text-align:justify;padding-right:172px;margin-top:248px;margin-bottom:0}.p312,.p313,.p314{text-align:left;margin-bottom:0}.p312{padding-right:169px;margin-top:0}.p313{padding-left:144px;padding-right:153px;margin-top:254px}.p314{padding-left:144px;padding-right:147px;margin-top:8px}.p315{text-align:justify;padding-left:144px;padding-right:151px;margin-top:5px;margin-bottom:0}.p316,.p317{text-align:left;margin-bottom:0}.p316{padding-right:162px;margin-top:8px}.p317{padding-left:24px;margin-top:13px}.p318{text-align:justify;padding-left:94px;padding-right:193px;margin-top:21px;margin-bottom:0}.p319,.p320,.p321{text-align:left;margin-bottom:0}.p324,.p325,.p326,.p330,.p331{padding-left:144px}.p319{margin-top:11px}.p320{padding-right:139px;margin-top:0}.p321{margin-top:261px}.p322{text-align:justify;padding-right:169px;margin-top:5px;margin-bottom:0}.p323,.p324,.p325,.p326,.p327,.p328,.p329,.p330,.p332,.p333,.p334,.p335,.p336,.p337,.p338,.p339{text-align:left;margin-bottom:0}.p323{padding-right:172px;margin-top:7px}.p324{padding-right:156px;margin-top:27px}.p325{padding-right:164px;margin-top:4px}.p326{padding-right:157px;margin-top:5px}.p327{padding-right:145px;margin-top:1px}.p328{padding-right:149px;margin-top:258px}.p329{padding-right:145px;margin-top:12px}.p330{padding-right:149px;margin-top:0}.p331{text-align:left;padding-right:145px;margin-top:5px;margin-bottom:0}.p332{padding-right:144px;margin-top:0}.p333{padding-left:88px;padding-right:189px;margin-top:267px}.p334{margin-top:36px}.p335{padding-right:146px;margin-top:0}.p336{padding-left:144px;padding-right:184px;margin-top:229px}.p337{padding-left:190px;padding-right:410px;margin-top:11px}.p338{padding-left:144px;padding-right:139px;margin-top:9px}.p339,.p340{margin-top:5px}.p339{padding-right:175px}.p340{text-align:justify;padding-right:139px;margin-bottom:0}.p341,.p342,.p343{text-align:left;margin-bottom:0}.p341{padding-right:151px;margin-top:1px}.p342{padding-right:207px;margin-top:19px}.p343{padding-right:169px;margin-top:9px}.p344{text-align:justify;padding-left:84px;padding-right:181px;margin-top:28px;margin-bottom:0}.p345,.p346{padding-left:144px;margin-bottom:0;text-align:left}.p345{padding-right:150px;margin-top:9px}.p346{padding-right:156px;margin-top:141px}.p347{text-align:left;padding-left:168px;padding-right:461px;margin-top:10px;margin-bottom:0}.p348,.p349{padding-left:190px;text-align:left;margin-bottom:0}.p348{padding-right:490px;margin-top:19px}.p349{padding-right:475px;margin-top:2px}.p350{text-align:left;padding-left:144px;padding-right:164px;margin-top:9px;margin-bottom:0}.p351{text-align:justify;padding-left:168px;padding-right:497px;margin-top:18px;margin-bottom:0}.p352,.p353{padding-left:144px;text-align:left;margin-bottom:0}.p352{padding-right:157px;margin-top:12px}.p353{padding-right:161px;margin-top:9px}.p354{text-align:left;margin-top:5px;margin-bottom:0}.p355{text-align:left;padding-right:139px;margin-top:6px;margin-bottom:0}.p356{text-align:left;padding-right:161px;margin-top:9px;margin-bottom:0}.p357{text-align:left;padding-left:46px;padding-right:382px;margin-top:12px;margin-bottom:0}.p358{text-align:left;padding-left:24px;margin-top:18px;margin-bottom:0}.p359{text-align:justify;padding-right:166px;margin-top:9px;margin-bottom:0}.p360,.p361,.p362{text-align:left}.p360{padding-left:46px;padding-right:324px;margin-top:17px;margin-bottom:0}.p391,.p392{text-indent:29px}.p361{padding-left:67px;padding-right:454px;margin-top:4px;margin-bottom:0}.p362{padding-left:46px;margin-top:3px;margin-bottom:0}.p363,.p364{padding-left:144px;margin-bottom:0;text-align:left}.p363{padding-right:197px;margin-top:9px}.p364{padding-right:151px;margin-top:88px}.p365{text-align:left;padding-left:238px;padding-right:193px;margin-top:24px;margin-bottom:0}.p366,.p367{text-align:justify}.p366,.p367,.p368{padding-left:144px;margin-bottom:0}.p366{padding-right:152px;margin-top:15px}.p367{padding-right:154px;margin-top:4px}.p368,.p369{padding-right:143px}.p368,.p369,.p370{margin-top:9px}.p368{text-align:left}.p371,.p375{padding-left:24px}.p369{text-align:justify;margin-bottom:0}.p370,.p371,.p372{text-align:left;margin-bottom:0}.p370{padding-right:149px}.p371{margin-top:7px}.p372{padding-right:145px;margin-top:4px}.p373{text-align:justify;padding-right:172px;margin-top:5px;margin-bottom:0}.p374,.p375{text-align:left;margin-top:9px}.p374{padding-right:162px;margin-bottom:0}.p375{margin-bottom:0}.p376,.p377{padding-left:144px;text-align:left;margin-bottom:0}.p376{margin-top:114px}.p377{padding-right:169px;margin-top:6px}.p378{text-align:left;padding-left:168px;margin-top:17px;margin-bottom:0}.p379,.p380,.p381,.p382,.p383{text-align:left;padding-left:144px}.p379{padding-right:182px;margin-top:9px;margin-bottom:0}.p380{margin-top:126px;margin-bottom:0}.p381{padding-right:179px;margin-top:5px;margin-bottom:0}.p382{padding-right:155px;margin-top:27px;margin-bottom:0}.p383{padding-right:141px;margin-top:5px;margin-bottom:0}.p385,.p386{padding-left:103px;margin-bottom:0;text-align:left}.p384{text-align:left;padding-right:158px;margin-top:9px;margin-bottom:0}.p385{padding-right:203px;margin-top:20px}.p386{padding-right:250px;margin-top:0}.p387{text-align:left;margin-top:27px;margin-bottom:0}.p388,.p389{margin-top:5px;margin-bottom:0;text-align:left}.p388{padding-right:152px}.p389{padding-right:184px}.p390{text-align:left;padding-left:24px;padding-right:540px;margin-top:12px;margin-bottom:0}.p391{text-align:left;padding-left:53px;padding-right:360px;margin-top:2px;margin-bottom:0}.p392,.p393,.p394{padding-left:82px;text-align:left;margin-bottom:0}.p392{padding-right:281px;margin-top:1px}.p393{margin-top:19px}.p394{padding-right:454px;margin-top:1px;text-indent:28px}.p399,.p401,.p410,.p413,.p431{text-indent:-28px}.p395{text-align:left;padding-left:144px;padding-right:145px;margin-top:9px;margin-bottom:0}.p396{text-align:left;padding-left:168px;margin-top:7px;margin-bottom:0}.p397,.p398{text-align:left;padding-left:197px}.p397{padding-right:518px;margin-top:2px;margin-bottom:0}.p398{margin-top:19px;margin-bottom:0}.p399,.p400{padding-left:226px;margin-bottom:0;text-align:left}.p399{padding-right:410px;margin-top:17px}.p400{margin-top:19px}.p401{text-align:left;padding-left:254px;padding-right:317px;margin-top:18px;margin-bottom:0}.p402{text-align:left;padding-left:283px;margin-top:3px;margin-bottom:0}.p403,.p404{margin-top:1px}.p403{text-align:left;padding-left:254px;margin-bottom:0}.p404,.p405{padding-left:226px;margin-bottom:0;text-align:left}.p405{margin-top:18px}.p406{text-align:left;padding-left:144px;padding-right:171px;margin-top:5px;margin-bottom:0}.p408,.p409{padding-left:53px;margin-bottom:0;text-align:left}.p407{text-align:left;padding-right:161px;margin-top:4px;margin-bottom:0}.p408{padding-right:259px;margin-top:1px}.p409{margin-top:19px}.p410{text-align:left;padding-left:82px;padding-right:331px;margin-top:18px;margin-bottom:0}.p411,.p412{padding-left:53px;margin-bottom:0;text-align:left}.p411{margin-top:4px}.p412{padding-right:374px;margin-top:17px}.p413{text-align:left;padding-left:82px;padding-right:403px;margin-top:20px;margin-bottom:0}.p414{text-align:left;padding-left:53px;margin-top:18px;margin-bottom:0}.p417,.p418,.p419{text-align:left;padding-left:144px;margin-bottom:0}.p415{text-align:left;padding-right:147px;margin-top:7px;margin-bottom:0}.p416{text-align:left;padding-right:168px;margin-top:12px;margin-bottom:0}.p417{padding-right:153px;margin-top:9px}.p418{margin-top:326px}.p419{margin-top:5px}.p420,.p421{text-align:left;padding-left:216px}.p420{padding-right:237px;margin-top:4px;margin-bottom:0}.p421,.p422{margin-top:5px}.p421{padding-right:224px;margin-bottom:0}.p422,.p423{padding-left:72px;margin-bottom:0;text-align:left}.p423{margin-top:4px}.p424{text-align:left;padding-left:24px;margin-top:11px;margin-bottom:0}.p425,.p426{margin-top:4px}.p425{text-align:left;padding-left:72px;padding-right:240px;margin-bottom:0}.p428,.p429{padding-left:91px;margin-bottom:0;text-align:left}.p426{text-align:left;padding-right:148px;margin-bottom:0}.p427{text-align:left;padding-right:165px;margin-top:5px;margin-bottom:0}.p428{padding-right:188px;margin-top:17px}.p429{padding-right:195px;margin-top:1px}.p430{text-align:left;padding-left:53px;padding-right:252px;margin-top:2px;margin-bottom:0}.p431,.p432{padding-left:226px;margin-bottom:0;text-align:left}.p431{padding-right:317px;margin-top:11px}.p438,.p440{text-indent:-48px}.p432{margin-top:2px}.p433{text-align:left;padding-left:197px;padding-right:482px;margin-top:17px;margin-bottom:0}.p434{text-align:left;padding-left:168px;margin-top:18px;margin-bottom:0}.p435,.p436{padding-left:226px;margin-bottom:0;text-align:left}.p435{padding-right:175px;margin-top:21px}.p436{padding-right:207px;margin-top:0}.p437{text-align:left;padding-left:144px;margin-top:26px;margin-bottom:0}.p438,.p439,.p440,.p441{padding-left:216px;margin-bottom:0;text-align:left}.p438{padding-right:163px;margin-top:5px}.p439{padding-right:266px;margin-top:2px}.p440{padding-right:155px;margin-top:8px}.p441{padding-right:284px;margin-top:2px}.p442{text-align:left;padding-left:168px;margin-top:6px;margin-bottom:0}.p443,.p444{padding-left:216px;margin-bottom:0;text-align:left}.p443{padding-right:261px;margin-top:4px}.p444{margin-top:1px}.p445{text-align:left;padding-right:147px;margin-top:2px;margin-bottom:0}.p446,.p447{text-align:left;margin-top:1px;margin-bottom:0}.p446{padding-right:166px}.p447{padding-left:53px;padding-right:238px}.p448,.p449{text-align:left;margin-top:18px}.p448{padding-left:82px;padding-right:281px;margin-bottom:0;text-indent:-28px}.p449{padding-left:53px;padding-right:324px;margin-bottom:0}.p452,.p453{text-align:left;padding-left:216px;margin-bottom:0}.p450{text-align:left;padding-right:180px;margin-top:9px;margin-bottom:0}.p451{text-align:left;margin-top:6px;margin-bottom:0}.p452{margin-top:5px}.p453{margin-top:4px}.p454,.p455,.p456{padding-left:144px;text-align:left}.p454{margin-top:19px;margin-bottom:0}.p455{padding-right:143px;margin-top:2px;margin-bottom:0}.p456{padding-right:155px;margin-top:9px;margin-bottom:0}.p457,.p458,.p459{padding-left:197px;margin-bottom:0}.p457{text-align:left;padding-right:230px;margin-top:1px}.p458{text-align:justify;padding-right:382px;margin-top:19px}.p459,.p460,.p461,.p462{text-align:left}.p459{margin-top:4px}.p460{padding-left:226px;padding-right:230px;margin-top:18px;margin-bottom:0;text-indent:-28px}.p461,.p462,.p463{padding-left:82px;margin-bottom:0;text-indent:-28px}.p461{padding-right:223px;margin-top:11px}.p462{padding-right:281px;margin-top:17px}.p463,.p464{text-align:left;margin-top:18px}.p463{padding-right:158px}.p464{padding-left:53px;padding-right:439px;margin-bottom:0}.p465,.p466{padding-right:141px;margin-bottom:0;text-align:left}.p465{margin-top:9px}.p466{margin-top:7px}.p467{text-align:left;padding-right:345px;margin-top:1px;margin-bottom:0}.p468{text-align:left;padding-left:144px;margin-top:7px;margin-bottom:0}.p469{text-align:left;padding-left:197px;padding-right:238px;margin-top:1px;margin-bottom:0}.p470,.p471{margin-top:18px;text-align:left;margin-bottom:0}.p470{padding-left:226px;padding-right:346px;text-indent:-28px}.p472,.p476{text-indent:-48px}.p471{padding-left:197px;padding-right:454px}.p472,.p473{padding-left:72px}.p472{text-align:left;padding-right:294px;margin-top:9px;margin-bottom:0}.p473{text-align:justify;padding-right:356px;margin-top:1px;margin-bottom:0}.p474,.p475{margin-top:4px;padding-left:72px;text-align:left;margin-bottom:0}.p474{padding-right:306px}.p475{padding-right:266px}.p476{text-align:left;padding-left:72px;padding-right:269px;margin-top:7px;margin-bottom:0}.p477,.p576{padding-left:96px}.p477{text-align:left;padding-right:241px;margin-top:1px;margin-bottom:0;text-indent:-23px}.p478{text-align:left;padding-left:48px;padding-right:196px;margin-top:4px;margin-bottom:0;text-indent:-24px}.p479{text-align:left;margin-top:21px;margin-bottom:0}.p480{text-align:left;padding-right:170px;margin-top:5px;margin-bottom:0}.p481{text-align:left;padding-right:188px;margin-top:8px;margin-bottom:0}.p482{text-align:left;padding-left:250px;margin-top:21px;margin-bottom:0}.p483,.p484,.p485{padding-left:197px;text-align:left}.p483{padding-right:209px;margin-top:2px;margin-bottom:0}.p484{margin-top:17px;margin-bottom:0}.p485{margin-top:18px;margin-bottom:0}.p486,.p487{padding-left:144px;margin-bottom:0}.p486{text-align:left;padding-right:166px;margin-top:5px}.p487{text-align:justify;padding-right:152px;margin-top:6px}.p488,.p489{padding-left:197px}.p488{text-align:left;padding-right:180px;margin-top:1px;margin-bottom:0;text-indent:-28px}.p489,.p490{margin-top:3px;text-align:left;margin-bottom:0}.p489{padding-right:475px;text-indent:29px}.p490{padding-left:226px}.p491,.p492{margin-top:9px}.p491{text-align:left;padding-left:395px;margin-bottom:0}.p495,.p496,.p497,.p518{padding-left:144px}.p492{text-align:justify;padding-right:152px;margin-bottom:0}.p493,.p494,.p495,.p496,.p497{text-align:left;margin-bottom:0}.p493{padding-right:160px;margin-top:312px}.p494{margin-top:121px}.p495{padding-right:142px;margin-top:9px}.p496{padding-right:147px;margin-top:10px}.p497{padding-right:171px;margin-top:9px}.p498,.p499{text-align:left;padding-left:226px;margin-top:2px}.p498{padding-right:151px;margin-bottom:0;text-indent:-28px}.p499,.p503{text-indent:29px}.p499{padding-right:446px;margin-bottom:0}.p503,.p504{padding-right:151px;text-align:left;margin-bottom:0}.p500{text-align:left;padding-left:254px;margin-top:3px;margin-bottom:0}.p501{text-align:left;padding-left:395px;margin-top:18px;margin-bottom:0}.p502{text-align:left;padding-left:82px;margin-top:11px;margin-bottom:0}.p503{padding-left:24px;margin-top:18px}.p504{padding-left:82px;margin-top:0;text-indent:-28px}.p505{text-align:left;padding-left:53px;margin-top:17px;margin-bottom:0}.p508,.p509,.p510,.p511{padding-left:72px}.p506{text-align:justify;padding-right:159px;margin-top:9px;margin-bottom:0}.p507,.p508,.p509,.p510,.p511{text-align:left;margin-bottom:0}.p507{margin-top:15px}.p508{padding-right:261px;margin-top:4px}.p509{padding-right:244px;margin-top:2px}.p510{padding-right:261px;margin-top:5px}.p511{padding-right:179px;margin-top:3px}.p512,.p513,.p514{padding-left:216px;text-align:left}.p512{padding-right:226px;margin-top:9px;margin-bottom:0;text-indent:-48px}.p515,.p517{margin-bottom:0;text-indent:-24px}.p513{margin-top:3px;margin-bottom:0}.p514{padding-right:170px;margin-top:5px;margin-bottom:0}.p515{text-align:left;padding-left:192px;padding-right:172px;margin-top:7px}.p516{text-align:justify;padding-left:216px;padding-right:301px;margin-top:3px;margin-bottom:0}.p517,.p518{text-align:left}.p517{padding-left:192px;padding-right:156px;margin-top:4px}.p518{padding-right:153px;margin-top:5px;margin-bottom:0}.p519,.p520{padding-left:144px;margin-top:9px;margin-bottom:0;text-align:left}.p519{padding-right:181px}.p520{padding-right:157px}.p521{text-align:left;padding-left:109px;padding-right:229px;margin-top:29px;margin-bottom:0}.p522{text-align:left;padding-right:198px;margin-top:23px;margin-bottom:0}.p523{text-align:left;padding-left:53px;padding-right:151px;margin-top:11px;margin-bottom:0;text-indent:-28px}.p526,.p527,.p528{padding-left:144px;margin-bottom:0}.p524{text-align:left;padding-right:148px;margin-top:5px;margin-bottom:0}.p525{text-align:left;padding-right:151px;margin-top:11px;margin-bottom:0}.p526{text-align:left;padding-right:147px;margin-top:27px}.p527{text-align:left;padding-right:154px;margin-top:6px}.p528{text-align:justify;padding-right:177px;margin-top:5px}.p529{text-align:left;padding-left:249px;padding-right:206px;margin-top:22px;margin-bottom:0}.p535,.p536{padding-left:144px}.p530{text-align:justify;padding-right:155px;margin-top:9px;margin-bottom:0}.p531,.p532,.p533,.p534,.p535,.p536,.p537,.p538{text-align:left;margin-bottom:0}.p531{margin-top:129px}.p532{padding-right:149px;margin-top:3px}.p533{padding-right:144px;margin-top:10px}.p534{padding-right:159px;margin-top:132px}.p535{padding-right:154px;margin-top:2px}.p536{padding-right:158px;margin-top:1px}.p537{padding-left:243px;padding-right:197px;margin-top:24px}.p538{padding-left:144px;padding-right:160px;margin-top:19px}.p539,.p540{text-align:left;padding-right:201px}.p539{padding-left:242px;margin-top:29px;margin-bottom:0}.p540{padding-left:144px;margin-top:23px;margin-bottom:0}.p541,.p542{padding-left:182px;margin-bottom:0;text-align:left}.p541{margin-top:18px}.p542{margin-top:17px}.p543{text-align:left;padding-left:197px;padding-right:389px;margin-top:18px;margin-bottom:0;text-indent:-13px}.p544{text-align:left;padding-left:144px;padding-right:156px;margin-top:9px;margin-bottom:0}.p545,.p546{text-align:left;padding-left:111px;margin-bottom:0}.p545{margin-top:22px}.p546{padding-right:214px;margin-top:0}.p547,.p548{text-align:left;padding-right:155px}.p547{margin-top:16px;margin-bottom:0}.p548{margin-top:7px;margin-bottom:0}.p549,.p551{padding-right:157px;text-align:left;margin-bottom:0}.p549{margin-top:6px}.p550{text-align:left;margin-top:266px;margin-bottom:0}.p551{margin-top:5px}.p552{text-align:left;padding-left:24px;padding-right:158px;margin-top:12px;margin-bottom:0}.p553,.p554{margin-top:9px}.p553{text-align:left;padding-left:250px;margin-bottom:0}.p554{text-align:justify;padding-left:144px;padding-right:139px;margin-bottom:0}.p555,.p556{text-align:left;padding-left:192px;margin-top:5px;text-indent:-24px;margin-bottom:0}.p555{padding-right:155px}.p556{padding-right:193px}.p557,.p558{padding-left:216px;text-align:left}.p557{margin-top:2px;margin-bottom:0}.p558{padding-right:473px;margin-top:4px;margin-bottom:0}.p559,.p560,.p561,.p562{padding-left:192px;text-indent:-24px;margin-bottom:0}.p559{text-align:left;padding-right:177px;margin-top:11px}.p560{text-align:left;padding-right:162px;margin-top:4px}.p561{text-align:left;padding-right:164px;margin-top:5px}.p562{text-align:justify;padding-right:139px;margin-top:2px}.p563{text-align:left;padding-left:144px;padding-right:207px;margin-top:10px;margin-bottom:0}.p564,.p565{padding-left:240px;text-align:left}.p564{margin-top:27px;margin-bottom:0}.p565{margin-top:0;margin-bottom:0}.p570,.p571,.p572,.p573,.p574,.p575{padding-left:144px;margin-bottom:0}.p566{text-align:left;padding-right:159px;margin-top:4px;margin-bottom:0}.p567{text-align:left;padding-right:141px;margin-top:6px;margin-bottom:0}.p568{text-align:left;padding-right:159px;margin-top:101px;margin-bottom:0}.p569{text-align:left;margin-top:100px;margin-bottom:0}.p570{text-align:left;padding-right:162px;margin-top:6px}.p571{text-align:left;padding-right:165px;margin-top:11px}.p572{text-align:left;margin-top:0}.p573{text-align:justify;padding-right:144px;margin-top:10px}.p574,.p575,.p576{text-align:left}.p574{padding-right:161px;margin-top:8px}.p575{padding-right:153px;margin-top:1px}.p576{padding-right:195px;margin-top:19px;margin-bottom:0}.p577,.p578{padding-left:96px;margin-top:0;margin-bottom:0;text-align:left}.p577{padding-right:213px}.p579{text-align:left;margin-top:23px;margin-bottom:0}.p580{text-align:left;padding-right:166px;margin-top:6px;margin-bottom:0}.p581,.p582{text-align:left;margin-top:9px;margin-bottom:0}.p581{padding-right:188px}.p582{padding-right:153px}.p583,.p584{margin-top:8px}.p583{text-align:justify;padding-right:163px;margin-bottom:0}.p584,.p585{text-align:left;padding-right:192px;margin-bottom:0}.p585{padding-left:86px;margin-top:138px}.p586,.p587,.p588{text-align:left;padding-left:144px}.p586{padding-right:188px;margin-top:3px;margin-bottom:0}.p587{padding-right:147px;margin-top:2px;margin-bottom:0}.p588{margin-top:137px;margin-bottom:0}.p589,.p594{padding-left:24px;text-align:left;margin-bottom:0}.p589{padding-right:166px;margin-top:12px}.p590{text-align:left;padding-right:175px;margin-top:9px;margin-bottom:0}.p591{text-align:left;margin-top:8px;margin-bottom:0}.p592{text-align:left;margin-top:17px;margin-bottom:0}.p593{text-align:left;padding-right:152px;margin-top:6px;margin-bottom:0}.p594{margin-top:17px}.p595{text-align:left;padding-left:53px;padding-right:418px;margin-top:18px;margin-bottom:0;text-indent:-13px}.p596{text-align:justify;padding-left:24px;padding-right:202px;margin-top:4px;margin-bottom:0;text-indent:29px}.p597,.p598,.p599{text-align:left}.p597{padding-left:38px;margin-top:16px;margin-bottom:0}.p598{padding-left:67px;padding-right:346px;margin-top:17px;margin-bottom:0;text-indent:-13px}.p599{padding-left:24px;padding-right:569px;margin-top:18px;margin-bottom:0;text-indent:14px}.p600,.p601,.p602{text-align:left;padding-left:230px;margin-bottom:0}.p600{margin-top:25px}.p601{padding-right:181px;margin-top:0}.p602{padding-right:198px;margin-top:2px}.p603{text-align:justify;padding-left:144px;padding-right:141px;margin-top:4px;margin-bottom:0}.p604{text-align:left;padding-left:230px;margin-top:30px;margin-bottom:0}.p605{text-align:justify;padding-left:144px;padding-right:173px;margin-top:27px;margin-bottom:0}.p606,.p607{text-align:left}.p606{padding-left:168px;padding-right:533px;margin-top:9px;margin-bottom:0}.p607,.p608{margin-top:10px}.p607{padding-left:144px;padding-right:159px;margin-bottom:0}.p608,.p609,.p610{padding-left:182px;margin-bottom:0;text-align:left}.p608{padding-right:554px;text-indent:-13px}.p609{margin-top:0}.p610{margin-top:13px}.p611{text-align:left;padding-left:395px;margin-top:19px;margin-bottom:0}.p612{text-align:left;padding-right:163px;margin-top:9px;margin-bottom:0}.p613,.p614{margin-top:1px;margin-bottom:0;text-align:left;text-indent:-13px}.p613{padding-left:38px;padding-right:180px}.p614{padding-left:53px;padding-right:497px}.p615,.p616{padding-left:106px}.p615{text-align:left;margin-top:21px;margin-bottom:0}.p616,.p617{margin-top:1px;margin-bottom:0;text-align:left}.p616{padding-right:211px}.p617{padding-left:67px;padding-right:180px;text-indent:-13px}.p618{text-align:left;padding-left:144px;padding-right:151px;margin-top:4px;margin-bottom:0}.p619,.p620,.p621,.p622{padding-left:168px;margin-top:1px;text-indent:29px;margin-bottom:0;text-align:left}.p619{padding-right:187px}.p620{padding-right:166px}.p621{padding-right:158px}.p622{padding-right:173px}.p623,.p629{text-indent:-13px}.p623{text-align:left;padding-left:226px;padding-right:454px;margin-top:2px;margin-bottom:0}.p624{text-align:left;padding-left:211px;margin-top:5px;margin-bottom:0}.p625,.p626,.p627{padding-left:243px;text-align:left;margin-bottom:0}.p625{margin-top:20px}.p626{margin-top:0}.p627{padding-right:211px;margin-top:1px}.p628{text-align:left;padding-left:182px;margin-top:12px;margin-bottom:0}.p629{text-align:left;padding-left:211px;padding-right:259px;margin-top:0;margin-bottom:0}.p630,.p631{text-align:left;padding-left:96px}.p658,.p659,.p663,.p665{text-indent:-8px}.p630{padding-right:353px;margin-top:1px;margin-bottom:0}.p631,.p633{padding-right:274px}.p631{margin-top:3px;margin-bottom:0}.p632,.p633{padding-left:96px;margin-top:2px;margin-bottom:0;text-align:left}.p639,.p640{padding-left:144px}.p634{text-align:left;padding-right:177px;margin-top:9px;margin-bottom:0}.p635{text-align:left;padding-right:249px;margin-top:6px;margin-bottom:0}.p636{text-align:left;padding-right:250px;margin-top:7px;margin-bottom:0}.p637,.p638{margin-top:8px;text-align:left;margin-bottom:0}.p637{padding-right:526px}.p638{padding-right:154px}.p639{text-align:left;margin-top:337px;margin-bottom:0}.p640{text-align:left;padding-right:159px;margin-top:342px;margin-bottom:0}.p641{text-align:justify;padding-right:166px;margin-top:7px;margin-bottom:0}.p642,.p643{text-align:left;margin-bottom:0}.p642{padding-right:160px;margin-top:6px}.p643{padding-left:359px;margin-top:0}.p644{text-align:right;padding-right:144px;margin-top:9px;margin-bottom:0}.p645,.p646{text-align:left;margin-top:0;white-space:nowrap}.p645{padding-left:7px;margin-bottom:0}.p646{padding-left:6px;margin-bottom:0}.p647,.p648{padding-left:144px;margin-bottom:0;text-align:left}.p647{margin-top:2px}.p648{padding-right:178px;margin-top:5px}.p649{text-align:left;padding-left:8px;margin-top:0;margin-bottom:0;white-space:nowrap}.p650,.p652{padding-left:144px;margin-bottom:0}.p650,.p651,.p652,.p653{margin-top:5px}.p650{text-align:justify;padding-right:165px}.p651{text-align:left;padding-right:145px;margin-bottom:0}.p652{text-align:justify;padding-right:158px}.p653{text-align:left;padding-right:156px;margin-bottom:0}.p654,.p655{margin-top:0;margin-bottom:0;white-space:nowrap}.p654{text-align:right;padding-right:135px}.p655,.p656{text-align:left}.p655{padding-left:159px}.p656{padding-right:12px;margin-top:14px;margin-bottom:0}.p657,.p658,.p659,.p660{margin-top:0;padding-left:9px;margin-bottom:0;text-align:left}.p658{padding-right:174px}.p659{padding-right:168px}.p660{padding-right:60px}.p661{text-align:left;padding-left:9px;margin-top:4px;margin-bottom:0}.p663,.p664,.p665,.p667,.p668,.p669,.p671,.p672,.p673{padding-left:10px}.p662{text-align:left;padding-right:170px;margin-top:0;margin-bottom:0}.p663{text-align:left;padding-right:310px;margin-top:4px;margin-bottom:0}.p664,.p665,.p666,.p667,.p668{margin-top:0;text-align:left;margin-bottom:0}.p664{padding-right:212px}.p665{padding-right:280px}.p666{padding-right:270px;text-indent:9px}.p668,.p671,.p673,.p674,.p675,.p687,.p688,.p689,.p696{text-indent:-8px}.p667{padding-right:315px}.p668{padding-right:289px}.p669{text-align:left;padding-right:184px;margin-top:1px;margin-bottom:0}.p670{text-align:left;margin-top:7px;margin-bottom:0}.p671{text-align:left;padding-right:286px;margin-top:4px;margin-bottom:0}.p672,.p673,.p674,.p675{text-align:left;margin-top:0}.p672{padding-right:205px;margin-bottom:0}.p673{padding-right:256px;margin-bottom:0}.p674,.p675,.p676{padding-left:9px}.p674{padding-right:171px;margin-bottom:0}.p675{padding-right:115px;margin-bottom:0}.p676,.p677{text-align:left;padding-right:63px;margin-bottom:0}.p676{margin-top:2px}.p677,.p678{margin-top:0;padding-left:9px}.p678{text-align:justify;padding-right:104px;margin-bottom:0}.p679,.p680{text-align:left;margin-bottom:0}.p679{padding-left:9px;margin-top:1px}.p680{padding-right:232px;margin-top:0}.p681{text-align:justify;padding-right:169px;margin-top:2px;margin-bottom:0}.p682,.p683{text-align:left;padding-left:9px}.p682{margin-top:3px;margin-bottom:0}.p683{padding-right:20px;margin-top:0;margin-bottom:0}.p684,.p685,.p686,.p687,.p688{text-align:left;padding-left:10px;margin-top:0;margin-bottom:0}.p685{padding-right:263px}.p686{padding-right:189px}.p687{padding-right:293px}.p688{padding-right:346px}.p689,.p690{margin-top:1px;padding-left:10px}.p689{text-align:justify;padding-right:227px;margin-bottom:0}.p690,.p691,.p692{text-align:left}.p690{margin-bottom:0}.p691,.p692,.p693{margin-top:0;margin-bottom:0}.p691{padding-right:287px}.p692{padding-left:10px;padding-right:321px}.p693{text-align:justify;padding-left:10px;padding-right:167px}.p694,.p695,.p696,.p697,.p698{text-align:left}.p694{padding-right:283px;margin-top:3px;margin-bottom:0}.p695{padding-left:10px;margin-top:2px;margin-bottom:0}.p696{padding-left:10px;padding-right:304px;margin-top:0;margin-bottom:0}.p697{padding-left:10px;padding-right:286px;margin-top:1px;margin-bottom:0}.p698,.p699,.p700,.p701{margin-top:0;margin-bottom:0}.p698{padding-right:157px;text-indent:9px}.p700,.p702{text-align:left;text-indent:-8px;padding-left:9px}.p699{text-align:left;padding-left:9px;padding-right:166px}.p700{padding-right:142px}.p701{text-align:left;padding-left:9px;padding-right:65px}.p702{padding-right:145px;margin-top:2px;margin-bottom:0}.p703,.p704{text-align:left;margin-top:0;margin-bottom:0}.p703{padding-right:205px;text-indent:9px}.p704{padding-left:9px;padding-right:217px;text-indent:-8px}.p705{text-align:justify;padding-left:9px;padding-right:105px;margin-top:0;margin-bottom:0}.p706,.p707{text-align:left;margin-top:0}.p706{padding-left:9px;padding-right:102px;margin-bottom:0}.p708,.p711,.p712,.p713,.p714{padding-left:10px;margin-bottom:0}.p707{padding-right:104px;margin-bottom:0;text-indent:9px}.p711,.p712,.p713,.p715{text-align:left;text-indent:-8px}.p708{text-align:left;padding-right:199px;margin-top:0}.p709{text-align:left;padding-right:276px;margin-top:0;margin-bottom:0}.p710{text-align:left;padding-right:268px;margin-top:0;margin-bottom:0}.p711{padding-right:278px;margin-top:0}.p712{padding-right:296px;margin-top:9px}.p713{padding-right:203px;margin-top:2px}.p714{text-align:left;padding-right:277px;margin-top:4px}.p715,.p718{padding-left:9px}.p715{padding-right:547px;margin-top:6px;margin-bottom:0}.p716,.p717{margin-top:0;text-align:left;margin-bottom:0}.p716{padding-right:546px}.p717{padding-right:563px;text-indent:9px}.p718{text-align:left;padding-right:612px;margin-top:4px;margin-bottom:0;text-indent:-8px}.p719{text-align:left;padding-left:169px;margin-top:65px;margin-bottom:0}.p720{text-align:left;padding-left:70px;margin-top:4px;margin-bottom:0}.p721{text-align:left;padding-right:165px;margin-top:3px;margin-bottom:0}.p722{text-align:left;padding-right:139px;margin-top:2px;margin-bottom:0}.p723{text-align:justify;padding-right:187px;margin-top:1px;margin-bottom:0}.p724,.p725{text-align:left;margin-bottom:0}.p724{padding-right:156px;margin-top:0}.p725,.p726{margin-top:4px}.p725{padding-right:155px}.p726{text-align:justify;padding-right:145px;margin-bottom:0}.p727,.p728{margin-top:9px;margin-bottom:0;text-align:left}.p727{padding-right:182px}.p728{padding-left:48px;padding-right:166px;text-indent:-24px}.p729{text-align:left;margin-top:118px;margin-bottom:0}.p730{text-align:left;padding-right:170px;margin-top:8px;margin-bottom:0}.p731,.p732{margin-top:9px;text-align:left;margin-bottom:0;text-indent:-24px;padding-left:48px}.p731{padding-right:156px}.p732{padding-right:186px}.p733{text-align:left;padding-left:48px;padding-right:161px;margin-top:7px;margin-bottom:0;text-indent:-24px}.p734{text-align:left;padding-right:204px;margin-top:0;margin-bottom:0}.p735{text-align:left;padding-left:48px;padding-right:189px;margin-top:6px;margin-bottom:0;text-indent:-24px}.p736{text-align:left;padding-left:48px;padding-right:163px;margin-top:5px;margin-bottom:0;text-indent:-24px}.p737,.p738,.p739{margin-top:9px}.p737{text-align:justify;padding-left:48px;padding-right:162px;margin-bottom:0;text-indent:-24px}.p738,.p739,.p740,.p741{text-align:left;margin-bottom:0}.p738{padding-right:148px}.p739{padding-left:48px;padding-right:181px;text-indent:-24px}.p740{padding-left:48px;padding-right:154px;margin-top:6px;text-indent:-24px}.p741{padding-left:48px;margin-top:0}.td0,.td1,.td10,.td100,.td11,.td12,.td13,.td14,.td15,.td16,.td17,.td18,.td19,.td2,.td20,.td21,.td22,.td23,.td24,.td25,.td26,.td27,.td28,.td29,.td3,.td30,.td31,.td32,.td33,.td34,.td35,.td36,.td37,.td38,.td39,.td4,.td40,.td41,.td42,.td43,.td44,.td45,.td46,.td47,.td48,.td49,.td5,.td51,.td52,.td53,.td54,.td55,.td56,.td57,.td58,.td59,.td6,.td60,.td61,.td62,.td63,.td64,.td65,.td66,.td67,.td68,.td69,.td7,.td70,.td71,.td72,.td73,.td74,.td75,.td76,.td77,.td78,.td79,.td8,.td80,.td81,.td82,.td83,.td84,.td85,.td86,.td87,.td88,.td89,.td9,.td90,.td91,.td92,.td93,.td94,.td95,.td96,.td97,.td98,.td99{padding:0;margin:0;vertical-align:bottom}.td0{width:415px}.td1{width:113px}.td2{width:415px}.td3{width:113px}.td4{width:394px}.td5{width:124px}.td6{width:422px}.td7{width:106px}.td8{width:422px}.td9{width:106px}.td10{width:402px}.td11{width:126px}.td12{width:402px}.td13{width:126px}.td14{width:412px}.td15{width:117px}.td16{width:412px}.td17{width:117px}.td18{width:0}.td19{width:56px}.td20{width:324px}.td21{width:135px}.td22{width:56px}.td23{width:324px}.td24{width:135px}.td25{width:324px}.td26{width:56px}.td27{width:135px}.td28{width:127px}.td29{width:219px}.td30{width:167px}.td31{width:127px}.td32{width:219px}.td33{width:167px}.td34{width:127px}.td35{width:219px}.td36{width:167px}.td37{width:70px}.td38{width:342px}.td39{width:100px}.td40{width:70px}.td41{width:342px}.td42{width:100px}.td43{width:70px}.td44{width:342px}.td45{width:100px}.td46{width:57px}.td47{border-top:#000 1px solid;border-bottom:#000 1px solid;width:270px}.td48{width:187px}.td49{border-left:#000 1px solid;width:57px}.td50{padding:0;margin:0;width:270px;vertical-align:bottom}.td51{border-right:#000 1px solid;width:187px}.td52{width:57px}.td53{width:270px}.td54{width:187px}.td55{width:61px}.td56{width:224px}.td57{width:232px}.td58{width:61px}.td59{width:224px}.td60{width:232px}.td61{width:61px}.td62{width:224px}.td63{width:232px}.td64{width:64px}.td65{width:238px}.td66{width:213px}.td67{width:64px}.td68{width:238px}.td69{width:213px}.td70{width:64px}.td71{width:238px}.td72{width:213px}.td73{width:187px}.td74{width:128px}.td75{width:202px}.td76{width:187px}.td77{width:128px}.td78{width:202px}.td79{width:187px}.td80{width:128px}.td81{width:202px}.td82{width:36px}.td83{width:166px}.td84{width:36px}.td85{width:166px}.td86{width:4px}.td87{width:188px}.td88{width:129px}.td89{width:207px}.td90{width:4px}.td91{width:188px}.td92{width:129px}.td93{width:203px}.td94{width:3px}.td95{width:179px}.td96{width:120px}.td97{width:176px}.td98{width:173px}.td99{width:119px}.td100{width:172px}.tr0{height:25px}.tr1{height:22px}.tr2{height:19px}.tr3{height:17px}.tr4{height:18px}.tr5{height:14px}.tr6{height:15px}.tr7{height:20px}.tr8{height:16px}.tr9{height:28px}.tr10{height:23px}.tr11{height:7px}.tr12{height:8px}.tr13{height:9px}.tr14{height:24px}.tr15{height:10px}.tr16{height:21px}.tr17{height:11px}.tr18{height:2px}.tr19{height:5px}.tr20{height:4px}.tr21{height:6px}.tr22{height:12px}.tr23{height:13px}.t0{width:528px;margin-top:24px}.t1{width:518px;margin-left:10px;margin-top:3px}.t2{width:528px}.t3{width:529px;font:700 15px Arial}.t4,.t5{width:518px}.t4{margin-left:149px;margin-top:15px;font:13px 'Book Antiqua'}.t5{margin-left:5px;margin-top:11px;font:13px 'Book Antiqua'}.t6,.t7,.t8{margin-top:16px;font:13px 'Book Antiqua'}.t6{width:516px;margin-left:6px}.t7{width:515px;margin-left:150px}.t8{width:517px;margin-left:149px}.t9{width:520px;margin-left:4px;margin-top:17px;font:13px 'Book Antiqua'}.t10,.t11{margin-top:14px}.t10{width:518px;margin-left:149px;font:13px 'Book Antiqua'}.t11{width:520px;margin-left:4px;font:13px 'Courier New'}.t12,.t13,.t14,.t15,.t16{font:13px 'Book Antiqua'}.t12{width:528px;margin-left:1px}.t13{width:299px;margin-top:4px}.t14{width:296px;margin-top:5px}.t15{width:292px}.t16{width:291px;margin-top:4px}
+
+</style>
+
+
+
+
+</head>
+
+
+<body>
+<br><br>
+
+<div id="id_1">
+<p class="p69 ft33">JAVASCRIPT SOURCE CHEAT</p>
+<p class="p526 ft5">In this appendix, you can find a summary of the patterns used in regular expressions in JavaScript along with their descriptions, and a list of useful methods to test and create regular expressions.</p>
+<p class="p55 ft5">The following Regex topics will be covered in this appendix:</p>
+<p class="p36 ft5"><span class="ft5">•</span><span class="ft15">Character classes and literals</span></p>
+<p class="p123 ft5"><span class="ft5">•</span><span class="ft15">Character sets</span></p>
+<p class="p38 ft5"><span class="ft5">•</span><span class="ft15">Boundaries and quantifiers</span></p>
+<p class="p123 ft5"><span class="ft5">•</span><span class="ft15">Grouping, alternation, and back reference</span></p>
+<p class="p38 ft5"><span class="ft5">•</span><span class="ft15">Useful methods</span></p>
+<p class="p69 ft33">Character classes</p>
+<p class="p51 ft5">In the following table, you can find the patterns for character classes, which tell the Regex to match a single character:</p>
+<table cellpadding="0" cellspacing="0" class="t4">
+<tbody><tr>
+	<td class="tr1 td18"></td>
+	<td class="tr1 td19"><p class="p645 ft39">Pattern</p></td>
+	<td class="tr1 td20"><p class="p645 ft39">Description</p></td>
+	<td class="tr1 td21"><p class="p645 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td22"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr8 td23"><p class="p645 ft43">This matches any character, except newline or another</p></td>
+	<td rowspan="2" class="tr10 td24"><p class="p645 ft22"><span class="ft21">/f.o/ </span>matches "fao",</p></td>
+</tr>
+<tr>
+	<td class="tr11 td18"></td>
+	<td rowspan="2" class="tr6 td22"><p class="p645 ft82">.</p></td>
+	<td rowspan="2" class="tr6 td23"><p class="p645 ft75">unicode line terminator, such as (<span class="ft21">\n, \r, \u2028 </span>or</p></td>
+</tr>
+<tr>
+	<td class="tr12 td18"></td>
+	<td rowspan="2" class="tr3 td24"><p class="p645 ft6">"feo", and "foo"</p></td>
+</tr>
+<tr>
+	<td class="tr13 td18"></td>
+	<td class="tr13 td22"><p class="p58 ft83">&nbsp;</p></td>
+	<td rowspan="2" class="tr4 td25"><p class="p645 ft7">\u2029<span class="ft6">).</span></p></td>
+</tr>
+<tr>
+	<td class="tr13 td18"></td>
+	<td class="tr13 td26"><p class="p58 ft83">&nbsp;</p></td>
+	<td class="tr13 td27"><p class="p58 ft83">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td rowspan="2" class="tr14 td22"><p class="p645 ft7">\w</p></td>
+	<td class="tr3 td23"><p class="p645 ft6">This matches any alphanumeric character, including</p></td>
+	<td class="tr3 td24"><p class="p645 ft6"><span class="ft7">/\w/ </span>matches "f" in</p></td>
+</tr>
+<tr>
+	<td class="tr11 td18"></td>
+	<td rowspan="2" class="tr3 td25"><p class="p645 ft6">the underscore. It is equivalent to <nobr><span class="ft7">[a-zA-Z0-9_]</span>.</nobr></p></td>
+	<td rowspan="2" class="tr3 td27"><p class="p645 ft6">"foo"</p></td>
+</tr>
+<tr>
+	<td class="tr15 td18"></td>
+	<td class="tr15 td26"><p class="p58 ft84">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td rowspan="2" class="tr14 td22"><p class="p645 ft7">\W</p></td>
+	<td class="tr3 td23"><p class="p645 ft6">This matches any single nonword character. It is</p></td>
+	<td class="tr3 td24"><p class="p645 ft6"><span class="ft7">/\W/ </span>matches "%"in</p></td>
+</tr>
+<tr>
+	<td class="tr11 td18"></td>
+	<td rowspan="2" class="tr3 td25"><p class="p645 ft6">equivalent to <nobr><span class="ft7">[^a-zA-Z0-9_]</span>.</nobr></p></td>
+	<td rowspan="2" class="tr3 td27"><p class="p645 ft6">"100%"</p></td>
+</tr>
+<tr>
+	<td class="tr15 td18"></td>
+	<td class="tr15 td26"><p class="p58 ft84">&nbsp;</p></td>
+</tr>
+</tbody></table>
+</div>
+<div id="id_2">
+
+</div>
+</div>
+
+<div id="page_99">
+
+
+
+<div id="id_1">
+<table cellpadding="0" cellspacing="0" class="t5">
+<tbody><tr>
+	<td class="tr16 td18"></td>
+	<td class="tr16 td19"><p class="p645 ft39">Pattern</p></td>
+	<td class="tr16 td20"><p class="p645 ft39">Description</p></td>
+	<td class="tr16 td21"><p class="p645 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr16 td18"></td>
+	<td class="tr16 td22"><p class="p645 ft7">\d</p></td>
+	<td class="tr16 td23"><p class="p645 ft22">This matches any single digit. It is equivalent to <nobr><span class="ft21">[0-9]</span>.</nobr></p></td>
+	<td class="tr16 td24"><p class="p645 ft6"><span class="ft7">/\d/ </span>matches "1" in</p></td>
+</tr>
+<tr>
+	<td class="tr5 td18"></td>
+	<td class="tr5 td26"><p class="p58 ft85">&nbsp;</p></td>
+	<td class="tr5 td25"><p class="p58 ft85">&nbsp;</p></td>
+	<td class="tr5 td27"><p class="p645 ft86">"100"</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td rowspan="2" class="tr0 td22"><p class="p645 ft7">\D</p></td>
+	<td rowspan="2" class="tr0 td23"><p class="p645 ft6">This matches any non digit. It is equivalent to <nobr><span class="ft7">[^0-9]</span>.</nobr></p></td>
+	<td class="tr8 td24"><p class="p645 ft43"><span class="ft7">/\D/ </span>matches "R" in</p></td>
+</tr>
+<tr>
+	<td class="tr13 td18"></td>
+	<td rowspan="2" class="tr4 td27"><p class="p645 ft6"><nobr>"R2-D2"</nobr></p></td>
+</tr>
+<tr>
+	<td class="tr13 td18"></td>
+	<td class="tr13 td26"><p class="p58 ft83">&nbsp;</p></td>
+	<td class="tr13 td25"><p class="p58 ft83">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td rowspan="2" class="tr10 td22"><p class="p645 ft7">\s</p></td>
+	<td class="tr8 td23"><p class="p645 ft43">This matches any single space character. It is</p></td>
+	<td class="tr8 td24"><p class="p645 ft43"><span class="ft7">/\s/ </span>matches " " in</p></td>
+</tr>
+<tr>
+	<td class="tr11 td18"></td>
+	<td rowspan="2" class="tr4 td25"><p class="p645 ft6">equivalent to <span class="ft7">[ \t\r\n\v\f]</span>.</p></td>
+	<td rowspan="2" class="tr4 td27"><p class="p645 ft6">"foo bar"</p></td>
+</tr>
+<tr>
+	<td class="tr17 td18"></td>
+	<td class="tr17 td26"><p class="p58 ft87">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td rowspan="2" class="tr14 td22"><p class="p645 ft7">\S</p></td>
+	<td class="tr8 td23"><p class="p645 ft43">This matches any single nonspace character. It is</p></td>
+	<td class="tr8 td24"><p class="p645 ft43"><span class="ft7">/\S/ </span>matches "foo"</p></td>
+</tr>
+<tr>
+	<td class="tr12 td18"></td>
+	<td rowspan="2" class="tr4 td25"><p class="p645 ft6">equivalent to <span class="ft7">[^ \t\r\n\v\f]</span>.</p></td>
+	<td rowspan="2" class="tr4 td27"><p class="p645 ft6">in "foo bar"</p></td>
+</tr>
+<tr>
+	<td class="tr15 td18"></td>
+	<td class="tr15 td26"><p class="p58 ft84">&nbsp;</p></td>
+</tr>
+</tbody></table>
+<p class="p592 ft19">Literals</p>
+<p class="p566 ft5">In the following table, you can find the patterns for literal characters, which tell the Regex to match a special character:</p>
+<table cellpadding="0" cellspacing="0" class="t6">
+<tbody><tr>
+	<td class="tr16 td28"><p class="p645 ft39">Pattern</p></td>
+	<td class="tr16 td29"><p class="p646 ft39">Description</p></td>
+	<td class="tr16 td30"><p class="p646 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr3 td31"><p class="p645 ft7">Alphanumeric</p></td>
+	<td class="tr3 td32"><p class="p646 ft6">These match themselves literally.</p></td>
+	<td class="tr3 td33"><p class="p646 ft7">/javascript book/</p></td>
+</tr>
+<tr>
+	<td class="tr6 td31"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td32"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td33"><p class="p646 ft89">matches "javascript book"</p></td>
+</tr>
+<tr>
+	<td class="tr3 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td35"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td36"><p class="p646 ft6">in "javascript book"</p></td>
+</tr>
+<tr>
+	<td class="tr4 td31"><p class="p645 ft7">\0</p></td>
+	<td class="tr4 td32"><p class="p646 ft6">This matches a <span class="ft7">NUL </span>character.</p></td>
+	<td class="tr4 td33"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td34"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td35"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td36"><p class="p58 ft90">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td31"><p class="p645 ft7">\n</p></td>
+	<td class="tr3 td32"><p class="p646 ft6">This matches a newline character.</p></td>
+	<td class="tr3 td33"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td34"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td35"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td36"><p class="p58 ft90">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr7 td34"><p class="p645 ft7">\f</p></td>
+	<td class="tr7 td35"><p class="p646 ft6">This matches a form feed character.</p></td>
+	<td class="tr7 td36"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td31"><p class="p645 ft7">\r</p></td>
+	<td class="tr8 td32"><p class="p646 ft43">This matches a carriage return</p></td>
+	<td class="tr8 td33"><p class="p58 ft91">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr4 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td35"><p class="p646 ft6">character.</p></td>
+	<td class="tr4 td36"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td31"><p class="p645 ft7">\t</p></td>
+	<td class="tr3 td32"><p class="p646 ft6">This matches a tab character.</p></td>
+	<td class="tr3 td33"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td34"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td35"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td36"><p class="p58 ft90">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td31"><p class="p645 ft7">\v</p></td>
+	<td class="tr3 td32"><p class="p646 ft22">This matches a vertical tab character.</p></td>
+	<td class="tr3 td33"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td34"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td35"><p class="p58 ft90">&nbsp;</p></td>
+	<td class="tr18 td36"><p class="p58 ft90">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr7 td34"><p class="p645 ft7">[\b]</p></td>
+	<td class="tr7 td35"><p class="p646 ft6">This matches a backspace character.</p></td>
+	<td class="tr7 td36"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td31"><p class="p645 ft7">\xxx</p></td>
+	<td class="tr8 td32"><p class="p646 ft43">This matches the ASCII character,</p></td>
+	<td class="tr8 td33"><p class="p646 ft43"><span class="ft7">/112/ </span>matches the "J"</p></td>
+</tr>
+<tr>
+	<td class="tr4 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td35"><p class="p646 ft6">expressed by the <span class="ft7">xxx </span>octal number.</p></td>
+	<td class="tr4 td36"><p class="p646 ft6">character</p></td>
+</tr>
+<tr>
+	<td class="tr8 td31"><p class="p645 ft7">\xdd</p></td>
+	<td class="tr8 td32"><p class="p646 ft43">This matches the ASCII character,</p></td>
+	<td class="tr8 td33"><p class="p646 ft43"><span class="ft7">/x4A/ </span>matches the "J"</p></td>
+</tr>
+<tr>
+	<td class="tr4 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td35"><p class="p646 ft6">expressed by the <span class="ft7">dd </span>hex number.</p></td>
+	<td class="tr4 td36"><p class="p646 ft6">character</p></td>
+</tr>
+<tr>
+	<td class="tr8 td31"><p class="p645 ft7">\uxxxx</p></td>
+	<td class="tr8 td32"><p class="p646 ft43">This matches the ASCII character,</p></td>
+	<td class="tr8 td33"><p class="p646 ft43"><span class="ft7">/u0237/ </span>matches the "J"</p></td>
+</tr>
+<tr>
+	<td class="tr4 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td35"><p class="p646 ft6">expressed by the <span class="ft7">xxxx </span>UNICODE.</p></td>
+	<td class="tr4 td36"><p class="p646 ft6">character</p></td>
+</tr>
+<tr>
+	<td class="tr3 td31"><p class="p645 ft7">\</p></td>
+	<td class="tr3 td32"><p class="p646 ft6">This indicates whether the next</p></td>
+	<td class="tr3 td33"><p class="p646 ft6"><span class="ft7">/\^/ </span>matches "^" in "char</p></td>
+</tr>
+<tr>
+	<td class="tr6 td31"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td32"><p class="p646 ft89">character is special and is not to be</p></td>
+	<td class="tr6 td33"><p class="p646 ft89">^"</p></td>
+</tr>
+<tr>
+	<td class="tr3 td34"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td35"><p class="p646 ft6">interpreted literally.</p></td>
+	<td class="tr3 td36"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+
+<div id="page_100">
+
+
+
+<div id="id_1">
+
+<p class="p647 ft33">Character sets</p>
+<p class="p648 ft5">In the following table, you can find the patterns for character sets, which tell the Regex to match only one character out of several characters.</p>
+<table cellpadding="0" cellspacing="0" class="t7">
+<tbody><tr>
+	<td class="tr16 td37"><p class="p649 ft39">Pattern</p></td>
+	<td class="tr16 td38"><p class="p645 ft39">Description</p></td>
+	<td class="tr16 td39"><p class="p646 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr3 td40"><p class="p649 ft7">[xyz]</p></td>
+	<td class="tr3 td41"><p class="p645 ft6">This matches any one character enclosed in the character</p></td>
+	<td class="tr3 td42"><p class="p646 ft7">/[ao]/</p></td>
+</tr>
+<tr>
+	<td class="tr6 td40"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td41"><p class="p645 ft89">set. You can use a hyphen to denote the range. For</p></td>
+	<td class="tr6 td42"><p class="p646 ft89">matches "a" in</p></td>
+</tr>
+<tr>
+	<td class="tr6 td40"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td41"><p class="p645 ft75"><nobr>example, <span class="ft21">/[a-z]/</span></nobr><span class="ft21"> </span>matches any letter in the alphabet and</p></td>
+	<td class="tr6 td42"><p class="p646 ft89">"bar"</p></td>
+</tr>
+<tr>
+	<td class="tr4 td43"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td44"><p class="p645 ft6"><nobr>matches <span class="ft7">/[0-9]/</span></nobr><span class="ft7"> </span>to any single digit.</p></td>
+	<td class="tr4 td45"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td40"><p class="p649 ft7">[^xyz]</p></td>
+	<td class="tr8 td41"><p class="p645 ft43">This matches any one character, which is not enclosed in</p></td>
+	<td class="tr8 td42"><p class="p646 ft7">/[^ao]/</p></td>
+</tr>
+<tr>
+	<td class="tr6 td40"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td41"><p class="p645 ft89">the character set.</p></td>
+	<td class="tr6 td42"><p class="p646 ft89">matches "b" in</p></td>
+</tr>
+<tr>
+	<td class="tr4 td43"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td44"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td45"><p class="p646 ft6">"bar"</p></td>
+</tr>
+</tbody></table>
+<p class="p454 ft33">Boundaries</p>
+<p class="p650 ft5">In the following table, you can find the patterns for boundaries, which will tell the Regex what position to do the matching in.</p>
+<table cellpadding="0" cellspacing="0" class="t8">
+<tbody><tr>
+	<td class="tr16 td46"><p class="p649 ft39">Pattern</p></td>
+	<td class="tr16 td47"><p class="p646 ft39">Description</p></td>
+	<td class="tr16 td48"><p class="p646 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr3 td49"><p class="p649 ft7">^</p></td>
+	<td class="tr3 td50"><p class="p646 ft6">This matches the beginning of an input.</p></td>
+	<td class="tr3 td51"><p class="p646 ft6"><span class="ft7">/^ The/ </span>matches "The" in</p></td>
+</tr>
+<tr>
+	<td class="tr6 td49"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td50"><p class="p646 ft89">If the multiline flag is set to true, it also</p></td>
+	<td class="tr6 td51"><p class="p646 ft89">"The stars", but not "In The</p></td>
+</tr>
+<tr>
+	<td class="tr6 td49"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td50"><p class="p646 ft89">matches immediately after the (<span class="ft82">\n</span>) line break</p></td>
+	<td class="tr6 td51"><p class="p646 ft89">stars".</p></td>
+</tr>
+<tr>
+	<td class="tr4 td52"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td53"><p class="p646 ft6">character.</p></td>
+	<td class="tr4 td54"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td49"><p class="p649 ft7">$</p></td>
+	<td class="tr8 td50"><p class="p646 ft43">This matches the end of an input. If the</p></td>
+	<td class="tr8 td51"><p class="p646 ft43"><span class="ft7">/</span>and<span class="ft7">$/ </span>matches "and" in</p></td>
+</tr>
+<tr>
+	<td class="tr6 td49"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td50"><p class="p646 ft89">multiline flag is set to true, it also matches</p></td>
+	<td class="tr6 td51"><p class="p646 ft89">"land", but not "and the bar".</p></td>
+</tr>
+<tr>
+	<td class="tr8 td49"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td50"><p class="p646 ft43">immediately before the (<span class="ft7">\n</span>) line break</p></td>
+	<td class="tr8 td51"><p class="p58 ft91">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td52"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td53"><p class="p646 ft6">character.</p></td>
+	<td class="tr3 td54"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td49"><p class="p649 ft7">\b</p></td>
+	<td class="tr3 td50"><p class="p646 ft6">This matches any word boundary (test</p></td>
+	<td class="tr3 td51"><p class="p646 ft6"><span class="ft7">/va\b/ </span>matches "va" in "this</p></td>
+</tr>
+<tr>
+	<td class="tr6 td49"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td50"><p class="p646 ft89">characters must exist at the beginning or at</p></td>
+	<td class="tr6 td51"><p class="p646 ft89">is a java script book", but not</p></td>
+</tr>
+<tr>
+	<td class="tr3 td52"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td53"><p class="p646 ft6">the end of a word within the string).</p></td>
+	<td class="tr3 td54"><p class="p646 ft6">"this is a javascript book".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td49"><p class="p649 ft7">\B</p></td>
+	<td class="tr3 td50"><p class="p646 ft6">This matches any <nobr>non-word</nobr> boundary.</p></td>
+	<td class="tr3 td51"><p class="p646 ft6"><span class="ft7">/va\B/ </span>matches "va" in "this</p></td>
+</tr>
+<tr>
+	<td class="tr6 td49"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td50"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td51"><p class="p646 ft89">is a JavaScript book", but not</p></td>
+</tr>
+<tr>
+	<td class="tr4 td52"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td53"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td54"><p class="p646 ft6">"this is a JavaScript book".</p></td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+
+<div id="page_101">
+
+
+
+<div id="id_1">
+<p class="p287 ft33">Grouping, alternation, and back reference</p>
+<p class="p651 ft6">In the following table, you can find the patterns for grouping, alternation, and back reference. The grouping is used to group a set of characters in a Regex. The alternation is used to combine characters into a single regular expression, and the back reference is used to match the same text as previously matched by a capturing group:</p>
+<table cellpadding="0" cellspacing="0" class="t9">
+<tbody><tr>
+	<td class="tr16 td55"><p class="p645 ft39">Pattern</p></td>
+	<td class="tr16 td56"><p class="p646 ft39">Description</p></td>
+	<td class="tr16 td57"><p class="p645 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr3 td58"><p class="p645 ft7">(x)</p></td>
+	<td class="tr3 td59"><p class="p646 ft6">This groups characters together to</p></td>
+	<td class="tr3 td60"><p class="p645 ft6"><span class="ft7">/(foo)/ </span>matches and remembers</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">create a clause, that is, it matches <span class="ft82">x</span></p></td>
+	<td class="tr6 td60"><p class="p645 ft89">"foo" in "foo bar".</p></td>
+</tr>
+<tr>
+	<td class="tr8 td58"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td59"><p class="p646 ft43">and remembers the match. These are</p></td>
+	<td class="tr8 td60"><p class="p58 ft91">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td61"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td62"><p class="p646 ft6">called capturing parentheses.</p></td>
+	<td class="tr3 td63"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td58"><p class="p645 ft7">()</p></td>
+	<td class="tr3 td59"><p class="p646 ft6">Parenthesis also serves to capture the</p></td>
+	<td class="tr3 td60"><p class="p645 ft7">/(\d\d)\/(\d\d)\/(\d\d\d\d)/</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">desired subpattern within a pattern.</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">matches "12", "12", and "2000" in</p></td>
+</tr>
+<tr>
+	<td class="tr3 td61"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td62"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td63"><p class="p645 ft6">"12/12/2000".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td58"><p class="p645 ft7">(?:x)</p></td>
+	<td class="tr3 td59"><p class="p646 ft6">This matches <span class="ft7">x </span>but does not capture</p></td>
+	<td class="tr3 td60"><p class="p645 ft6"><span class="ft7">/(?:foo)/ </span>matches, but does not</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">it. In other words, no numbered</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">remember "foo" in "foo bar".</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">references are created for the items</p></td>
+	<td class="tr6 td60"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td58"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td59"><p class="p646 ft43">within the parenthesis. These are</p></td>
+	<td class="tr8 td60"><p class="p58 ft91">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td61"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td62"><p class="p646 ft6">called <nobr>non-capturing</nobr> parentheses.</p></td>
+	<td class="tr3 td63"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td58"><p class="p645 ft7">|</p></td>
+	<td class="tr3 td59"><p class="p646 ft6">Alternation combines clauses into</p></td>
+	<td class="tr3 td60"><p class="p645 ft7">/morning|night/ <span class="ft6">matches</span></p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">one regular expression, and then</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">"morning" in "good morning" and</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">matches any of the individual</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">matches "night" in "good night".</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft75">clauses. <span class="ft21">x|y </span>matches either <span class="ft21">x </span>or <span class="ft21">y</span>. It</p></td>
+	<td class="tr6 td60"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr4 td61"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td62"><p class="p646 ft6">is similar to the "OR" statement.</p></td>
+	<td class="tr4 td63"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td58"><p class="p645 ft7">()\n</p></td>
+	<td class="tr8 td59"><p class="p646 ft43">"<span class="ft7">\n</span>" (where n is a number from <nobr>1-9)</nobr></p></td>
+	<td class="tr8 td60"><p class="p645 ft43"><span class="ft7">/(no)\1/ </span>matches "nono" in "nono".</p></td>
+</tr>
+<tr>
+	<td class="tr8 td58"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td59"><p class="p646 ft43">when added to the end of a regular</p></td>
+	<td class="tr8 td60"><p class="p645 ft43">"<span class="ft7">\1</span>" is replaced with the value of the</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">expression pattern, allows you to</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">first subpattern within the pattern, or</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">back reference a subpattern within</p></td>
+	<td class="tr6 td60"><p class="p645 ft89">(no), to form the final pattern.</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">the pattern, so, the value of the</p></td>
+	<td class="tr6 td60"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td58"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td59"><p class="p646 ft89">subpattern is remembered and used</p></td>
+	<td class="tr6 td60"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr4 td61"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td62"><p class="p646 ft6">as part of the matching.</p></td>
+	<td class="tr4 td63"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+<div id="page_102">
+
+<div id="id_1">
+<p class="p647 ft33">Quantifiers</p>
+<p class="p652 ft5">In the following table, you can find the patterns for quantifiers, which specify how many instances of a character, group, or character class must be present in an input for a match to be found.</p>
+<table cellpadding="0" cellspacing="0" class="t10">
+<tbody><tr>
+	<td class="tr1 td18"></td>
+	<td class="tr1 td64"><p class="p649 ft39">Pattern</p></td>
+	<td class="tr1 td65"><p class="p646 ft39">Description</p></td>
+	<td class="tr1 td66"><p class="p645 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td67"><p class="p649 ft7">{n}</p></td>
+	<td class="tr8 td68"><p class="p646 ft22">This matches exactly <span class="ft21">n </span>occurrences of a</p></td>
+	<td class="tr8 td69"><p class="p645 ft43"><span class="ft7">/\d{5}/ </span>matches "12345" (five</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">regular expression.</p></td>
+	<td class="tr3 td69"><p class="p645 ft6">digits) in "1234567890".</p></td>
+</tr>
+<tr>
+	<td class="tr1 td18"></td>
+	<td class="tr1 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr1 td71"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr1 td72"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">{n,}</p></td>
+	<td class="tr3 td68"><p class="p646 ft22">This matches <span class="ft21">n </span>or more occurrences of a</p></td>
+	<td class="tr3 td69"><p class="p645 ft6"><span class="ft7">/\d{5,}/ </span>matches "1234567890"</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">regular expression.</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">(minimum of five digits) in</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td71"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td72"><p class="p645 ft6">"1234567890".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">{n,m}</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">This matches <span class="ft7">n </span>to <span class="ft7">m </span>number of</p></td>
+	<td class="tr3 td69"><p class="p645 ft6"><span class="ft7">/\d{5,7}/ </span>matches "1234567"</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">occurrences of a regular expression.</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">(minimum of five digits and a</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">maximum of seven digits) in</p></td>
+</tr>
+<tr>
+	<td class="tr4 td18"></td>
+	<td class="tr4 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td71"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td72"><p class="p645 ft6">"1234567890".</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td67"><p class="p649 ft7">*</p></td>
+	<td class="tr8 td68"><p class="p646 ft43">This matches zero or more occurrences</p></td>
+	<td class="tr8 td69"><p class="p645 ft43"><span class="ft7">/fo*/ </span>matches "foo" in "foo"</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">and is equivalent to <span class="ft82">{0,}</span>.</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">and matches "foooooooo" in</p></td>
+</tr>
+<tr>
+	<td class="tr4 td18"></td>
+	<td class="tr4 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td71"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td72"><p class="p645 ft6">"fooooooooled".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">+</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">This matches one or more occurrences</p></td>
+	<td class="tr3 td69"><p class="p645 ft6"><span class="ft7">/o+/ </span>matches "oo" in "foo".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td71"><p class="p646 ft6">and is equivalent to <span class="ft7">{1,}</span>.</p></td>
+	<td class="tr3 td72"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">?</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">This matches zero or one occurrences</p></td>
+	<td class="tr3 td69"><p class="p645 ft6"><span class="ft7">/fo?/ </span>matches "fo" in "foo" and</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td71"><p class="p646 ft6">and is equivalent to <span class="ft7">{0,1}</span>.</p></td>
+	<td class="tr3 td72"><p class="p645 ft6">matches "f" in "fairy".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">+?</p></td>
+	<td class="tr3 td68"><p class="p646 ft6"><span class="ft7">"?" </span>can also be used following one of</p></td>
+	<td class="tr3 td69"><p class="p645 ft6"><span class="ft7">/\d{2,4}?/ </span>matches "12" in</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td rowspan="2" class="tr7 td67"><p class="p649 ft7">*?</p></td>
+	<td class="tr6 td68"><p class="p646 ft75">the <span class="ft21">*</span>, <span class="ft21">+</span>, <span class="ft21">?</span>, or <span class="ft21">{} </span>quantifiers to make the</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">the "12345" string, instead of</p></td>
+</tr>
+<tr>
+	<td class="tr19 td18"></td>
+	<td rowspan="2" class="tr5 td68"><p class="p646 ft86">later match nongreedy, or the minimum</p></td>
+	<td rowspan="2" class="tr5 td69"><p class="p645 ft86">"1234" due to "<span class="ft92">?</span>" at the end of the</p></td>
+</tr>
+<tr>
+	<td class="tr13 td18"></td>
+	<td class="tr13 td67"><p class="p58 ft83">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td67"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr8 td68"><p class="p646 ft43">number of times versus the default</p></td>
+	<td class="tr8 td69"><p class="p645 ft43">quantifier nongreedy.</p></td>
+</tr>
+<tr>
+	<td class="tr4 td18"></td>
+	<td class="tr4 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td71"><p class="p646 ft6">maximum.</p></td>
+	<td class="tr4 td72"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td67"><p class="p649 ft7">x(?=y)</p></td>
+	<td class="tr8 td68"><p class="p646 ft43">Positive lookahead: It matches <span class="ft7">x </span>only</p></td>
+	<td class="tr8 td69"><p class="p645 ft7">/Java(?=Script|Hut)/</p></td>
+</tr>
+<tr>
+	<td class="tr8 td18"></td>
+	<td class="tr8 td67"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr8 td68"><p class="p646 ft43">if it's followed by <span class="ft7">y</span>. Note that <span class="ft7">y </span>is not</p></td>
+	<td class="tr8 td69"><p class="p645 ft43">matches "Java" in "JavaScript" or</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">included as part of the match, acting</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">"JavaHut", but not "JavaLand".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td70"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td71"><p class="p646 ft6">only as a required condition.</p></td>
+	<td class="tr3 td72"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p649 ft7">x(?!y)</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">Negative lookahead: It matches <span class="ft7">x </span>only</p></td>
+	<td class="tr3 td69"><p class="p645 ft7">/^\d+(?! years)/ <span class="ft6">matches "5"</span></p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">if it's not followed by <span class="ft82">y</span>. Note that <span class="ft82">y</span></p></td>
+	<td class="tr6 td69"><p class="p645 ft89">in "5 days" or "5 books", but not "5</p></td>
+</tr>
+<tr>
+	<td class="tr6 td18"></td>
+	<td class="tr6 td67"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td68"><p class="p646 ft89">is not included as part of the match,</p></td>
+	<td class="tr6 td69"><p class="p645 ft89">years".</p></td>
+</tr>
+<tr>
+	<td class="tr3 td18"></td>
+	<td class="tr3 td67"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td68"><p class="p646 ft6">acting only as a required condition.</p></td>
+	<td class="tr3 td69"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr11 td18"></td>
+	<td class="tr11 td70"><p class="p58 ft93">&nbsp;</p></td>
+	<td class="tr11 td71"><p class="p58 ft93">&nbsp;</p></td>
+	<td class="tr11 td72"><p class="p58 ft93">&nbsp;</p></td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+<div id="page_103">
+
+
+
+<div id="id_1">
+
+<p class="p287 ft33">JavaScript regular expressions methods</p>
+<p class="p653 ft5">In the following table, you can find the methods used to match or test a regular expression. The main JavaScript objects used in regular expressions are <span class="ft7">String </span>and <span class="ft7">RegExp</span>, which represent a pattern (such as <span class="ft7">regular expression</span>).</p>
+<table cellpadding="0" cellspacing="0" class="t11">
+<tbody><tr>
+	<td class="tr1 td73"><p class="p645 ft39">Method</p></td>
+	<td class="tr1 td74"><p class="p645 ft39">Description</p></td>
+	<td colspan="2" class="tr1 td75"><p class="p646 ft39">Example</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p645 ft7">String.match(regular</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">This executes a</p></td>
+	<td colspan="2" class="tr8 td78"><p class="p646 ft7">var myString = "today is</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p645 ft7">expression)</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">search for a match</p></td>
+	<td colspan="2" class="tr8 td78"><p class="p646 ft7"><nobr>12-12-2000";</nobr></p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">within a string,</p></td>
+	<td colspan="2" rowspan="2" class="tr2 td78"><p class="p646 ft7">var matches = myString.</p></td>
+</tr>
+<tr>
+	<td class="tr20 td76"><p class="p58 ft95">&nbsp;</p></td>
+	<td rowspan="2" class="tr5 td77"><p class="p645 ft86">based on a regular</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr8 td78"><p class="p646 ft7">match(/\d{4}/);</p></td>
+</tr>
+<tr>
+	<td class="tr21 td76"><p class="p58 ft97">&nbsp;</p></td>
+	<td rowspan="2" class="tr3 td77"><p class="p645 ft6">expression.</p></td>
+</tr>
+<tr>
+	<td class="tr17 td76"><p class="p58 ft98">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr16 td78"><p class="p646 ft7">//returns array ["2000"]</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td class="tr15 td77"><p class="p58 ft96">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td79"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td80"><p class="p58 ft99">&nbsp;</p></td>
+	<td colspan="2" class="tr18 td81"><p class="p58 ft99">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p645 ft7">RegExp.exec(string)</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">This executes</p></td>
+	<td colspan="2" class="tr8 td78"><p class="p646 ft7">var pattern = /\d{4}/;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">a search for a</p></td>
+	<td colspan="2" rowspan="2" class="tr16 td78"><p class="p646 ft7">pattern.exec("today is</p></td>
+</tr>
+<tr>
+	<td class="tr19 td76"><p class="p58 ft101">&nbsp;</p></td>
+	<td rowspan="2" class="tr5 td77"><p class="p645 ft86">match in its string</p></td>
+</tr>
+<tr>
+	<td class="tr13 td76"><p class="p58 ft102">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr8 td78"><p class="p646 ft7"><nobr>12-12-2000");</nobr></p></td>
+</tr>
+<tr>
+	<td class="tr11 td76"><p class="p58 ft103">&nbsp;</p></td>
+	<td rowspan="2" class="tr6 td77"><p class="p645 ft89">parameter. Unlike</p></td>
+</tr>
+<tr>
+	<td class="tr12 td76"><p class="p58 ft104">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr14 td78"><p class="p646 ft7">//returns array ["2000"]</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr8 td77"><p class="p645 ft7">String.match<span class="ft43">,</span></p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">the parameter</p></td>
+	<td class="tr6 td82"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td83"><p class="p58 ft94">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">entered should be a</p></td>
+	<td class="tr8 td82"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr8 td83"><p class="p58 ft100">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">string, not a regular</p></td>
+	<td class="tr6 td82"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td83"><p class="p58 ft94">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td79"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr3 td80"><p class="p645 ft6">expression pattern.</p></td>
+	<td class="tr3 td84"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr3 td85"><p class="p58 ft100">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td76"><p class="p645 ft7">String.replace(regular</p></td>
+	<td class="tr3 td77"><p class="p645 ft6">This searches and</p></td>
+	<td colspan="2" class="tr3 td78"><p class="p646 ft7">var phone = "(201) 123-</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p645 ft82">expression,</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">replaces the regular</p></td>
+	<td colspan="2" class="tr6 td78"><p class="p646 ft82">4567";</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p645 ft82">replacement text)</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">expression portion</p></td>
+	<td colspan="2" rowspan="2" class="tr7 td78"><p class="p646 ft7">var phoneFormatted =</p></td>
+</tr>
+<tr>
+	<td class="tr19 td76"><p class="p58 ft101">&nbsp;</p></td>
+	<td rowspan="2" class="tr6 td77"><p class="p645 ft89">(match) with the</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr6 td78"><p class="p646 ft82">phone.replace(/[\(\)-</p></td>
+</tr>
+<tr>
+	<td class="tr19 td76"><p class="p58 ft101">&nbsp;</p></td>
+	<td rowspan="2" class="tr6 td77"><p class="p645 ft89">replaced text</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr6 td78"><p class="p646 ft82">\s]/g, "");</p></td>
+</tr>
+<tr>
+	<td class="tr19 td76"><p class="p58 ft101">&nbsp;</p></td>
+	<td rowspan="2" class="tr3 td77"><p class="p645 ft6">instead.</p></td>
+</tr>
+<tr>
+	<td class="tr22 td76"><p class="p58 ft105">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr16 td78"><p class="p646 ft7">//returns 2011234567</p></td>
+</tr>
+<tr>
+	<td class="tr13 td76"><p class="p58 ft102">&nbsp;</p></td>
+	<td class="tr13 td77"><p class="p58 ft102">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p58 ft94">&nbsp;</p></td>
+	<td colspan="2" class="tr6 td78"><p class="p646 ft82">(removed ( ) - and blank</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p58 ft100">&nbsp;</p></td>
+	<td class="tr8 td77"><p class="p58 ft100">&nbsp;</p></td>
+	<td colspan="2" class="tr8 td78"><p class="p646 ft7">space)</p></td>
+</tr>
+<tr>
+	<td class="tr18 td79"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td80"><p class="p58 ft99">&nbsp;</p></td>
+	<td colspan="2" class="tr18 td81"><p class="p58 ft99">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p645 ft7">String.split (string</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">This breaks up</p></td>
+	<td colspan="2" class="tr8 td78"><p class="p646 ft7">var oldstring = "1,2, 3,</p></td>
+</tr>
+<tr>
+	<td class="tr8 td76"><p class="p645 ft7">literal or regular</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">a string into an</p></td>
+	<td class="tr8 td82"><p class="p646 ft7">4,</p></td>
+	<td class="tr8 td83"><p class="p654 ft7">5";</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p645 ft82">expression)</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">array of substrings,</p></td>
+	<td colspan="2" rowspan="2" class="tr2 td78"><p class="p646 ft7">var newstring =</p></td>
+</tr>
+<tr>
+	<td class="tr20 td76"><p class="p58 ft95">&nbsp;</p></td>
+	<td rowspan="2" class="tr5 td77"><p class="p645 ft86">based on a regular</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr8 td78"><p class="p646 ft7">oldstring.split(/\</p></td>
+</tr>
+<tr>
+	<td class="tr21 td76"><p class="p58 ft97">&nbsp;</p></td>
+	<td rowspan="2" class="tr6 td77"><p class="p645 ft89">expression or fixed</p></td>
+</tr>
+<tr>
+	<td class="tr13 td76"><p class="p58 ft102">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr6 td78"><p class="p646 ft82">s*,\s*/);</p></td>
+</tr>
+<tr>
+	<td class="tr21 td76"><p class="p58 ft97">&nbsp;</p></td>
+	<td rowspan="2" class="tr3 td77"><p class="p645 ft6">string.</p></td>
+</tr>
+<tr>
+	<td class="tr17 td76"><p class="p58 ft98">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr16 td78"><p class="p646 ft7">//returns the array</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td class="tr15 td77"><p class="p58 ft96">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p58 ft94">&nbsp;</p></td>
+	<td colspan="2" class="tr6 td78"><p class="p646 ft82">["1","2","3","4","5"]</p></td>
+</tr>
+<tr>
+	<td class="tr18 td79"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td80"><p class="p58 ft99">&nbsp;</p></td>
+	<td colspan="2" class="tr18 td81"><p class="p58 ft99">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td76"><p class="p645 ft7">String.search(regular</p></td>
+	<td class="tr3 td77"><p class="p645 ft6">This tests for a</p></td>
+	<td colspan="2" class="tr3 td78"><p class="p646 ft7">var myString = "today is</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p645 ft82">expression)</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">match in a string. It</p></td>
+	<td colspan="2" class="tr6 td78"><p class="p646 ft82"><nobr>12-12-2000";</nobr></p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">returns the index of</p></td>
+	<td colspan="2" rowspan="2" class="tr7 td78"><p class="p646 ft7">myString.</p></td>
+</tr>
+<tr>
+	<td class="tr19 td76"><p class="p58 ft101">&nbsp;</p></td>
+	<td rowspan="2" class="tr5 td77"><p class="p645 ft86">the match, or <nobr><span class="ft92">-1</span>,</nobr> if</p></td>
+</tr>
+<tr>
+	<td class="tr13 td76"><p class="p58 ft102">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr6 td78"><p class="p646 ft82">search(/\d{4}/);</p></td>
+</tr>
+<tr>
+	<td class="tr21 td76"><p class="p58 ft97">&nbsp;</p></td>
+	<td rowspan="2" class="tr3 td77"><p class="p645 ft6">it's not found.</p></td>
+</tr>
+<tr>
+	<td class="tr17 td76"><p class="p58 ft98">&nbsp;</p></td>
+	<td colspan="2" rowspan="2" class="tr16 td78"><p class="p646 ft7">//returns 15 - index of</p></td>
+</tr>
+<tr>
+	<td class="tr15 td76"><p class="p58 ft96">&nbsp;</p></td>
+	<td class="tr15 td77"><p class="p58 ft96">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td76"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p58 ft94">&nbsp;</p></td>
+	<td class="tr6 td82"><p class="p646 ft21">2000</p></td>
+	<td class="tr6 td83"><p class="p58 ft94">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr18 td79"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td80"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td84"><p class="p58 ft99">&nbsp;</p></td>
+	<td class="tr18 td85"><p class="p58 ft99">&nbsp;</p></td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+<div id="page_104">
+
+
+
+<div id="id_1">
+<table cellpadding="0" cellspacing="0" class="t12">
+<tbody><tr>
+	<td class="tr2 td86"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr2 td87"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr2 td88"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr23 td90"><p class="p58 ft106">&nbsp;</p></td>
+	<td class="tr23 td91"><p class="p58 ft106">&nbsp;</p></td>
+	<td class="tr23 td92"><p class="p58 ft106">&nbsp;</p></td>
+	<td class="tr23 td93"><p class="p58 ft106">&nbsp;</p></td>
+	<td class="tr23 td90"><p class="p58 ft106">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr16 td94"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr2 td48"><p class="p646 ft39">Method</p></td>
+	<td class="tr2 td74"><p class="p645 ft39">Description</p></td>
+	<td class="tr2 td75"><p class="p646 ft39">Example</p></td>
+	<td class="tr16 td90"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr3 td94"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td51"><p class="p646 ft7">RegExp.test(string)</p></td>
+	<td class="tr3 td77"><p class="p645 ft6">This tests whether</p></td>
+	<td class="tr3 td78"><p class="p646 ft7">var pattern = /\d{4}/;</p></td>
+	<td class="tr3 td90"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td94"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td51"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">the given string</p></td>
+	<td rowspan="2" class="tr16 td78"><p class="p646 ft7">pattern.test("today is</p></td>
+	<td class="tr6 td90"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr21 td94"><p class="p58 ft107">&nbsp;</p></td>
+	<td class="tr21 td51"><p class="p58 ft107">&nbsp;</p></td>
+	<td rowspan="2" class="tr6 td77"><p class="p645 ft89">matches the</p></td>
+	<td class="tr21 td90"><p class="p58 ft107">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr13 td94"><p class="p58 ft83">&nbsp;</p></td>
+	<td class="tr13 td51"><p class="p58 ft83">&nbsp;</p></td>
+	<td rowspan="2" class="tr14 td78"><p class="p646 ft7"><nobr>12-12-2000");</nobr></p></td>
+	<td class="tr13 td90"><p class="p58 ft83">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr6 td94"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td51"><p class="p58 ft88">&nbsp;</p></td>
+	<td class="tr6 td77"><p class="p645 ft89">Regexp, and returns</p></td>
+	<td class="tr6 td90"><p class="p58 ft88">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr8 td94"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td51"><p class="p58 ft91">&nbsp;</p></td>
+	<td class="tr8 td77"><p class="p645 ft43">true if it's matching,</p></td>
+	<td class="tr8 td78"><p class="p646 ft7">//returns true</p></td>
+	<td class="tr8 td90"><p class="p58 ft91">&nbsp;</p></td>
+</tr>
+<tr>
+	<td class="tr4 td94"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td54"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr3 td80"><p class="p645 ft6">and false, if not.</p></td>
+	<td class="tr3 td81"><p class="p58 ft81">&nbsp;</p></td>
+	<td class="tr4 td90"><p class="p58 ft81">&nbsp;</p></td>
+</tr>
+</tbody></table>
+<p class="p656 ft5">In this appendix, we very briefly covered the patterns learned throughout this book in a format that is easy to consult on a <nobr>day-to-day</nobr> basis.</p>
+</div>
+
+</div>
+
+</body>
+</html>
