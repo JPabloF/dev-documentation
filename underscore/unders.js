@@ -72,11 +72,22 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 		});
 }());
 
+//Array of objects
+(function(){
+
+	var beatles = [{name: "Paul Mcartney", age:70, instrument:"bass"}, {name: "John Lennon", age:75, instrument:"guitar"}];
+
+	_.each(beatles, function(beatle) {
+	  console.log(beatle.name); 
+	 }); 
+}());
+
+
 //Each en objeto literal
 (function(){
-	var paul = {name: "Paul", age:70, instrument:"bass"};
+	var beatle = {name: "Paul Mcartney", age:70, instrument:"bass"};
 								//name o value, index o key	
-		_.each(paul, function(value, key){
+		_.each(beatle, function(value, key){
 			console.log( key + ":" + value); //<-- Lista los keys y valores de un objeto
 		});
 }());
@@ -84,6 +95,8 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 
 
 //MAP en array
+
+/* 	El map recorre un array y devuelve uno nuevo hacia una var, el each no devuelve nada*/
 (function(){
 	var numeros = [1, 2, 3];						  //value, index, array
 	var numerosMultiplicados = _.map(numeros, function(value, index, items){
@@ -359,28 +372,11 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 //indexBy
 (function(){
 
-	var cars = ["toyota", "subaru", "Mitsubichi"];
-
-	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
-	var grouped = _.groupBy(cars, "length");//<-- Si paso una funcion como parametro, puedo obtener el length
-	console.log(grouped);//<--  Object {6: Array[2], 10: Array[1]}
-						 //<-- 	grouped[6] ["toyota", "subaru"], grouped[10] ["Mitsubishi"], 
-
-
-	//Devuelve 2 objetos con arrays, usando la propiedad de grupo
-	var carStats = [
-		{name: "Toyota",  speed: 140},
-		{name: "Subaru", speed: 180},
-		{name: "Ford", speed: 140}
-	];
-
-	var speedSorted = _.groupBy(carStats, 'speed');
-	console.log(speedSorted); //<-- Devuelve Object {140: Array[2], 180: Array[1]}
-
+var players = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+	
+	console.log(_.indexBy(players, 'age'));
 
 }());
-
-
 
 //countBy
 (function(){
@@ -470,7 +466,7 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 
 
 
-//First
+//Initial
 (function(){
 
 	var numbers = [1,2,3,4,5];
