@@ -8,9 +8,6 @@ _.each:  	Lista cada key y value en un objeto
 _.map :  	Cuando queremos transformar el array. ( Tambiém itera por valor, index e items en conjunto).
 
 
-
-
-
 _.filter: 	Busca todas las coincidencias de elementos
 _.where: 	Devuelve todos los objetos con el parametro indicado
 

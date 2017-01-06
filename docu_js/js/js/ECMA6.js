@@ -261,3 +261,7 @@ let newIndent = indent.repeat(++indentLevel);
 
 
 
+//TIP Ecma 6 contiene un metodo clip
+
+beatles.map(beatles => beatles.name)
+["John", "Paul", "George", "Ringo"]
