@@ -212,11 +212,26 @@ _.uniq:       Separa el valor unico conservando el primer unico encontrado
 	];
 
 	//var found = _.findWhere(people, {age:21}); //<-- findWhere: Solo devuelve el primero
+	
+	var found = _.filter(people, {age:21});
 	var found = _.where(people, {age:21});	     //<-- where:	Devuelve todos los objetos
 	console.log(found);
 
 }());
 
+//FIND
+(function(){
+
+var users = [
+  { 'user': 'barney',  'age': 36, 'active': true },
+  { 'user': 'fred',    'age': 40, 'active': false },
+  { 'user': 'pebbles', 'age': 1,  'active': true }
+];
+
+_.find(users, { 'age': 1, 'active': true });
+// => object for 'pebbles'
+
+}());
 
 
 //REJECT
