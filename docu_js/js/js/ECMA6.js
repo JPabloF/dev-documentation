@@ -265,3 +265,91 @@ let newIndent = indent.repeat(++indentLevel);
 
 beatles.map(beatles => beatles.name)
 ["John", "Paul", "George", "Ringo"]
+
+
+/*
+FUNCTIONS
+-------------------------
+
+
+
+Default parameters in FUNCTIONS DE ECMA 6*/
+
+
+function makeRequest(url, timeout=2000,  callback = function(){}){
+
+	//el resto de la funcion
+}
+
+/*	Esta funcion solo espera un parametro pasado. Las otras 2 almacenan un valor default para actuar.
+
+Cuando la función es llamada, con 3 parametros, los valores default no se usan: eJ*/
+
+
+makeRequest("/foo");	//-> Utiliza el valor default de timeout y callback
+
+
+
+makeRequest("/foo", 500); //-> Utiliza el valor callback por default, porque solo completa pasando los 2 primeros
+
+
+
+makeRequest("/foo", 500, function(body){doSomething(body);}); //-> No usa ningun valor default. (Porque los 3 valores fueron explicitamente pasados).
+
+
+
+//EJ: Es posible
+
+//En este caso, el valor default de timeout (200), solo se usara si es que no hay segundo argumento pasado o si el segundo argumento es explicitamente "undefined"
+
+function makeRequiest(url, timeout=200, default){
+	//...				
+}
+
+
+// Esta usa default timeout (200), porque pasar "undefined" equivale a no pasar segundo argumento, es como decir "no estoy pasando, usa el default (200)"
+
+makeRequest("/foo", undefined, function(body){doSomething(body);});
+
+
+//Aqui usara el timeout default (200). Porque no pasé segundo argumento
+makeRequest("/foo");
+
+
+
+//Aqui NO usara el timeout default (200). Porque pase un segundo argumento explicitamente nulo. Lo cual es distinto a pasar undefined. Null es considerado valido.
+makeRequest("/foo", null, function(body){doSomething(body);});
+
+
+
+//Como default parameter afectan el argument Object (Argument es un componente de todos los objetos, que almacena los parametros pasados.. el los gestiona, asi se le puede medir y preguntar)
+
+//-------------------------------------------------------
+
+
+
+function mixArgs(first, second = "b") {
+console.log(arguments.length);			1 //-> Es 1, porque me está mostrando la cantidad de argumentos que pasé al objeto "Arguments". Y este objeto arguments, recibío 1 solo argumento, que se posiciona en el array de arguments de memoria como "index0"
+console.log(first === arguments[0]);	true //-> First aquí es "a", y eso es igual al argumento de posicion index 0 (en este caso "a".... entonces es true
+console.log(second === arguments[1]);	false//-> El segundo argumento es undefined. Entonces no es 1. El segundo argumento es el index 1 seguno 0based index
+first = "c";
+second = "d"
+console.log(first === arguments[0]);	false //-> Una vez actualizada la variable first a "c" dentro de la variable, no es igual al argumento pasado del indexof 0, entonces es false. ¿Es igual? no.. es false..
+console.log(second === arguments[1]);	false //-> En el caso final. second ahora es igual a "d" porque se actualizó en la cascada., y el arguments del index1 es "b", porque dice que si no hay segundo argumento, use el default, en este caso "b"
+}
+
+//Llamo a la funcion con 1 argumento, posicionada como arguments[0] ( O sea, el primero en "index based0")
+ mixArgs("a");
+
+
+
+
+//Este ejemplo explica que el default value no necesita ser un primitivo, puede ser una funcion con variables
+function getValue() {
+	return 5;
+}
+function add(first, second = getValue()	) {
+	return first + second;
+}
+console.log(add(1, 1)); //-> 2  En la primera instancia. first vale 1, y second, también pasado vale uno, pues no se dispara "getValue" valorizado como una funcion. second vale lo que vale nomas, lo que está dentro, en este caso 2, el valor pasado.
+console.log(add(1));	//-> 6  Aqui, first vale 1., pero second ahora vale "getValue", que a su vez vale 5, y ahora "second" pasa a valer esos 5, por ser el valor default asignado... Entonces 1+5 es igual a 6
