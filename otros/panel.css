@@ -1,0 +1,45 @@
+.mx-panel-container{
+
+  width: 100%;
+  height: 100%;
+  display: table;
+  font-size: 200%;
+}
+
+.mx-panel{
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  padding: 0 8%;
+}
+
+.mx-panel ul li{
+	list-style-type: none;
+	}
+
+.mx-panel ul li .panel-title{
+	text-transform: uppercase;
+	font-size: 100%;
+  color:red;
+}	
+
+.mx-panel ul li .panel-name{
+	font-weight: bold;
+	font-size: 100%;
+}	
+
+.mx-panel ul li .panel-position{
+  font-size: 120%;
+} 
+
+.mx-panel ul li .panel-detail{
+	text-transform: uppercase;
+  font-weight: bold;
+  font-size: 75%;
+  color:orange;
+
+}	
+
+
+
