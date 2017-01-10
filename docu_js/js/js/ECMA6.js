@@ -353,3 +353,40 @@ function add(first, second = getValue()	) {
 }
 console.log(add(1, 1)); //-> 2  En la primera instancia. first vale 1, y second, también pasado vale uno, pues no se dispara "getValue" valorizado como una funcion. second vale lo que vale nomas, lo que está dentro, en este caso 2, el valor pasado.
 console.log(add(1));	//-> 6  Aqui, first vale 1., pero second ahora vale "getValue", que a su vez vale 5, y ahora "second" pasa a valer esos 5, por ser el valor default asignado... Entonces 1+5 es igual a 6
+
+
+
+/*******************
+TEMPLATE STRINGS
+********************	
+
+- Elimina el concepto de + concatenador
+- Usa comillas de acento y $
+
+*/
+
+function createEmail (firstName, price){
+	var shipping = 5.95;
+	console.log( 
+		`Hello ${firstName}, thanks for buying!
+			Total: $${price}
+			Shipping: $${shipping}
+			Grand total: $${price + shipping};
+		`
+		);
+}
+
+createEmail("John", 55);
+
+
+/*Spread operators
+-------------------
+
+- Nos ayuda a concatenar arrays, de manera que los 3 puntos se suman al nuevo arreglo de manera "suelta"
+*/
+
+var cats =["Cuchito", "Samuel", "Gary"];
+var dogs = ["Ricky", "Guardian"]
+var animals = ["Perros", ...dogs, "Gatos", ...cats, "Tortugas"];
+
+console.log (animals);
