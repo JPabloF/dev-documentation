@@ -267,23 +267,43 @@ beatles.map(beatles => beatles.name)
 ["John", "Paul", "George", "Ringo"]
 
 
-/*
+/***********************
 FUNCTIONS
 -------------------------
 
 
 
-Default parameters in FUNCTIONS DE ECMA 6*/
+Default parameters in FUNCTIONS DE ECMA 6
+
+- Podemos asignar parametros por defecto en caso de no pasar parametros.
+
+*/
+
+//EJ:
 
 
-function makeRequest(url, timeout=2000,  callback = function(){}){
+function getValues (x=5, y=7){
+	return x+y;
+}
+
+getValues(); //> 12, porque se asignan valores por defecto.
+getValues(3,3) //> 6, porque pasé valores
+
+
+
+function makeRequest(url, timeout=2000,  callback = function(){//...callback
+	}){
 
 	//el resto de la funcion
 }
 
 /*	Esta funcion solo espera un parametro pasado. Las otras 2 almacenan un valor default para actuar.
 
-Cuando la función es llamada, con 3 parametros, los valores default no se usan: eJ*/
+Cuando la función es llamada, con 3 parametros, los valores default no se usan.*/
+
+
+
+//EJ 2
 
 
 makeRequest("/foo");	//-> Utiliza el valor default de timeout y callback
@@ -322,9 +342,11 @@ makeRequest("/foo", null, function(body){doSomething(body);});
 
 
 
-//Como default parameter afectan el argument Object (Argument es un componente de todos los objetos, que almacena los parametros pasados.. el los gestiona, asi se le puede medir y preguntar)
+//Default parameter y  Argument Object 
+-------------------------------------
 
-//-------------------------------------------------------
+//(Argument es un componente de todos los objetos, que almacena los parametros pasados.. el los gestiona, asi se le puede medir y preguntar)
+
 
 
 
@@ -390,3 +412,42 @@ var dogs = ["Ricky", "Guardian"]
 var animals = ["Perros", ...dogs, "Gatos", ...cats, "Tortugas"];
 
 console.log (animals);
+
+
+
+
+/* OBJECT LITERAL ENHACEMENT
+-----------------------------
+
+- Podemos suprimir la palabra "function" y los 2 puntos para crear metodos en los objetos
+- Podemos utilizar el metodo "repeat" para generar repeticiones */
+
+var soccer = {
+
+	goal(times){
+		console.log("goal ".repeat(times));
+	}
+}
+
+soccer.goal(4);
+
+
+// Arrow function
+---------------------
+
+
+
+//Estilo original
+var styleFunc = function(foo){
+	console.log(foo);
+}
+
+//Se remueve "function" y los parentesis
+var styleFunc = (foo) => console.log(foo);
+
+// Si tiene un valor, se puede remover el mismo parentesis
+var styleFunc = foo => console.log(foo);
+
+
+
+styleFunc(["one", "two", "three"]);
