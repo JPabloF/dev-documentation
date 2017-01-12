@@ -475,3 +475,120 @@ var person = {
 };
 
 person.printActions();
+
+
+
+
+//Desestructurando
+------------------
+
+//En array
+
+var [first] = ["John", "Paul", "George", "Ringo"];
+
+console.log(first) //-> John.  Aun cuando la variable fuese "Last", siempre muestra John. Solo significa el primer elemento.
+
+
+var [first,,] = ["John", "Paul", "George", "Ringo"];
+
+
+var [first,,thirth] = ["John", "Paul", "George", "Ringo"];
+
+console.log(thirth) //-> George, porque las comas representan los elementos incognitos intercalados.
+
+
+
+
+//En object
+-------------
+
+var {title, price} = {
+	title: "Ecmascript 6",
+	price: 20 + " USD"
+}
+
+console.log (title); //-> Ecmascript 6. Es equivalente a llamar   nombreObjeto.title
+console.log (price); //-> 20 USD. Es equivalente a llamar   nombreObjeto.price
+
+console.log({title, price}); //-> Object {"price": "20 USD","title": "Ecmascript 6"}
+
+
+
+//Objeto con variable tradicional y function
+--------------------------------------------
+
+var product = {
+	title: "Ecmascript 6",
+	price: 20 + " USD"
+};
+
+					  //Aquí paso los parametros de llave, utilizando una function
+function productSale ({title, price}){
+	return  `The price of the title ${title} is ${price} `
+}
+
+console.log(productSale(product)); //-> "The price of the title Ecmascript 6 is 20 USD ".
+								   //    Si llamo a la funcion y le paso el objeto, obtengo el mismo resultado
+
+
+
+/******************
+Function Generators
+---------------------
+
+- Sirven para la comunicación asíncrona.
+- Se declaran utilizando asterisco.
+- Nos permiten pasar por cada "yield" mediante el uso de un método "next()"
+- Nos permite detectar el fin de un ciclo utilizando "done"
+
+*/
+
+
+
+function* director(){
+  yield "Threee";
+  yield "Two";
+  yield "One";
+  yield "Action!";
+};
+
+var action = director();
+
+console.log(action.next()); 		//-> Object {value: "Threee", done: false}
+console.log(action.next()); 		//-> Object {value: "Threee", done: false}
+console.log(action.next().value);	//-> "One". Porque puse value para obtener el valor
+console.log(action.next().value); 	//-> "Action!"
+
+
+
+
+
+
+function* eachItem(arr){
+  for (var i=0; i<arr.length; i++){
+      yield arr[i];
+  }
+};
+
+ var letters = eachItem(["a", "b", "c"]);
+ 
+ var abcs = setInterval (function(){
+   var letter = letters.next();
+   if(letter.done){
+     clearInterval(abcs);
+     console.log("Im done");
+   }else{
+     console.log(letter.value);
+   }
+
+ }, 500);  //->  "a"....."b".... "c"....Im done
+
+ /*	Explicación:
+
+-	"abcs" almacena una funcion con intervalo, que se ejecuta cada 500 milisegundos.
+-	"letter"  almacena  un método next(); que se mueve a través de cada yield de letters
+-   "letters" almacena una función generator con un array
+-	Aquella function generator itera por cada elemento del array
+- 	Al terminar cada iteracion "next" por cada yield, se cumple el condicional letter.done,
+- 	De otro modo sigue logueando el valor de cada yield hasta terminar
+
