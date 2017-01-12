@@ -446,8 +446,32 @@ var styleFunc = function(foo){
 var styleFunc = (foo) => console.log(foo);
 
 // Si tiene un valor, se puede remover el mismo parentesis
-var styleFunc = foo => console.log(foo);
+var styleFunc = foo => console.log(foo); 
 
 
 
 styleFunc(["one", "two", "three"]);
+
+
+//Arrow functions and "This"
+------------------------------
+
+
+var person = {
+	first: "John",
+
+	actions: ["bike", "hike", "surf"],
+
+	printActions(){ //->Se quita la palabra function, y se declara la funcion directamente.
+		
+		this.actions.forEach(action=>{ //-> Se quita "function" y se mantienen los parentesis por la multilinea
+		
+			var str = this.first + " Likes to " + action; //-> Es solo "action" por ser el singular (each) de actions. This apunta a John directamente
+			
+			console.log(str);
+		});
+	}
+
+};
+
+person.printActions();
