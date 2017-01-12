@@ -592,3 +592,11 @@ function* eachItem(arr){
 - 	Al terminar cada iteracion "next" por cada yield, se cumple el condicional letter.done,
 - 	De otro modo sigue logueando el valor de cada yield hasta terminar
 
+
+
+
+/************************
+CLASES
+*************************
+
+
