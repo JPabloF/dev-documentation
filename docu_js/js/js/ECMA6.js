@@ -29,7 +29,7 @@ function getValue(condition) {
  Block levels declarations
 ------------------------------
 
-LET y CONS son declaraciones de bloque, eso significa que no son accesibles cuando el flujo sale del bloque, y tampoco se hizan.
+LET y CONST son declaraciones de bloque, eso significa que no son accesibles cuando el flujo sale del bloque, y tampoco se hizan.
 
 Declaran variables que son innaccesibles desde afuera de un scope. Los scopes de bloques o léxicos se forman en:
 
@@ -64,9 +64,58 @@ LET Y CONST
 LET DECLARATION
 ------------------
 
-Es una declaracion de variable limitada al scope. No se hiza al tope. De manera que no se inicializa afuera del bloque.
+- Es una declaracion de variable limitada al scope. No se hiza al tope. De manera que no se inicializa afuera del bloque.
 
-** No debe estar en el mismo bloque junto a otra con el mismo nombre */
+-  No debe estar en el mismo bloque junto a otra con el mismo nombre */
+
+
+
+var message ="Hi";
+{
+	var message ="Bye"
+}
+
+console.log(message); //-> Bye, porque la variable se sobreescribe, se reasigna
+
+
+
+var message ="Hi";
+
+function greet(){
+	var message ="Bye"
+}
+
+console.log(message); //-> Hi, porque la variable interna ahora tiene block scope
+
+
+
+let message ="Hi";
+{
+	let message ="Bye"
+}
+console.log(message); //-> Hi, porque let encierra el impacto de bloque de las variables
+
+
+
+
+
+//Caso de uso en for loop.
+
+var someArr = [];
+
+for (let i=0; i<10; i++){
+	someArr.push(function(){
+		console.log(i);
+	})
+}
+
+//Aqui recorro el array al que le pushié la función de log
+someArr.forEach(function(f){
+	f();
+}) //-> Ejecuta la lista numeral de 0 a 9. En cambio utilizando "var" repite el 10 pues la variable se sobreescribe.
+//	Utilizando "let", creamos una nueva "i" en cada vuelta del loop
+
+
 
 
 function getValue(condition) {
@@ -86,28 +135,30 @@ function getValue(condition) {
 CONST DECLARATION
 ------------------
 
-Las variables CONST deben ser declaradas e inicializadas al instante, y SOLO se puede cambiar su valor, no su "binding"
+- Es una "read only var". No puede ser reasignada y no se puede cambiar la referencia
 
-El valor de una CONST puede ser modificada en un objeto, pero no su clave
+- Las variables CONST deben ser declaradas e inicializadas al instante, y SOLO se puede cambiar su valor, no su "binding"
+
+- El valor de una CONST puede ser modificada en un objeto, pero no su clave
 
 EJ:*/
 
 
 const color = "red"; 
-const color = "blue"; //<-- Si cambio su valor como variable, arroja un error.
+const color = "blue"; // Error -> Si cambio su valor como variable, arroja un error.
 
 
-//EJ en objeto
+//EJ comportamiento en objeto
 const person = {
 	name: "Nicholas"
 };
 
 
-person.name = "Greg";    // Funciona, porque estoy vinculando un nuevo valor a una propiedad existente
+person.name = "Greg";    // Funciona, porque estoy vinculando un nuevo valor a una propiedad existente. "Name" ya existe
 
 person.age = 30;	     // Funciona, porque estoy agregando una propiedad, sin modificar una existente
 
-person = {name: "Greg"}; // Error, porque estoy intentando redefinir  en la clave la variable "name"
+person = {name: "Greg"}; // Error, porque estoy intentando cambiar la referencia. No estoy trabajando sobre el objeto inicial, estoy cambiandolo por otro.
 
 
 
@@ -169,9 +220,10 @@ arrayLetras.forEach(function(func) {
 
 
 
-
+-------------------
 /* CONST en loops
 --------------------
+
 
 - En el caso del ciclo for, arroja un error, porque trata de modificar una constante 
 - En el ciclo "for-in", o en "for-of" operan similar a LET y no arroja error
@@ -404,8 +456,44 @@ createEmail("John", 55);
 /*Spread operators
 -------------------
 
-- Nos ayuda a concatenar arrays, de manera que los 3 puntos se suman al nuevo arreglo de manera "suelta"
-*/
+- Nos ayuda a separar arrays de sus corchetes, 
+
+- Con los 3 puntos se suman al nuevo arreglo de manera "suelta" */
+
+
+console.log([1,2,3]); //-> [1,2,3]
+
+console.log(...[1,2,3]); //-> 1 2 3
+
+
+let first = [1,2,3];
+let second = [3,4,5];
+
+first.push(second);
+
+console.log(first); //-> [1,2,3, [4,5,6]]
+
+
+let first = [1,2,3];
+let second = [3,4,5];
+
+first.push(...second);
+
+console.log(first); //-> [1,2,3,4,5,6] //-> separa el array con 3 puntos.
+
+
+
+function addThreeThings(a,b,c){
+	let result = a+b+c;
+	console.log(result);
+}
+
+addThreeThings(...first); //-> 5. Porque 1+2+3
+
+
+
+
+
 
 var cats =["Cuchito", "Samuel", "Gary"];
 var dogs = ["Ricky", "Guardian"]
@@ -415,7 +503,7 @@ console.log (animals);
 
 
 
-
+----------------------------
 /* OBJECT LITERAL ENHACEMENT
 -----------------------------
 
@@ -424,6 +512,7 @@ console.log (animals);
 
 var soccer = {
 
+	//Para declarar esta funcion dentro de un objeto, ya no necesito escribir function ni usar ":"
 	goal(times){
 		console.log("goal ".repeat(times));
 	}
@@ -432,14 +521,44 @@ var soccer = {
 soccer.goal(4);
 
 
+
+var color = "red";
+var speed = 100;
+var drive = "go";
+function gone(){ console.log("runnn");}
+
+
+var car = { 
+	color, 
+	speed, 
+	gone, //-> Aqui llamo a la funcion expresada arriba
+	[drive]: function(){console.log("vrummm");} //-> Es una computed property, como escribir ["go"] pero referenciado arriba en "drive"
+
+}  //-> El metodo antiguo requeria definir las variables dentro del objeto
+
+console.log(car.color); //-> red
+console.log(car.speed); //-> 100
+
+car.gone(); //-> runnn
+car.go(); //-> vrummm
+
+
+
+
+
+
+
+
+----------------------
 // Arrow function
 ---------------------
 
 
 
 //Estilo original
+
 var styleFunc = function(foo){
-	console.log(foo);
+	return console.log(foo);
 }
 
 //Se remueve "function" y los parentesis
@@ -449,10 +568,30 @@ var styleFunc = (foo) => console.log(foo);
 var styleFunc = foo => console.log(foo); 
 
 
+styleFunc("Hello!");
 
-styleFunc(["one", "two", "three"]);
 
 
+
+//Estilo original sin "var"
+
+function styleFunc(foo){
+	return console.log(foo);
+}
+
+styleFunc("Hello");
+
+
+
+styleFunc = foo => console.log(foo) ;
+
+styleFunc("Bye");
+
+
+
+
+
+-----------------------------
 //Arrow functions and "This"
 ------------------------------
 
@@ -478,7 +617,7 @@ person.printActions();
 
 
 
-
+------------------
 //Desestructurando
 ------------------
 
@@ -529,6 +668,38 @@ function productSale ({title, price}){
 
 console.log(productSale(product)); //-> "The price of the title Ecmascript 6 is 20 USD ".
 								   //    Si llamo a la funcion y le paso el objeto, obtengo el mismo resultado
+
+
+/* Destructuring "inverso"
+--------------------------
+
+- Si destructuring nos permite sacar propiedades facilmente de un objeto, esto nos permite ponerlas
+
+- Nos permite pushear propiedades fácilmente con la sintaxis.
+
+EJ:*/
+
+
+let firstName ="John";
+let lastName = "Who";
+
+let actor = {firstName, lastName} //-> Aquí estoy creando un objeto con propiedades
+
+console.log (actor); //-> {firstName: 'John', lastName: 'Who'}    Creo un objeto fácilmante usando las propiedades de la variable
+
+
+let actress ="Keyra";
+
+let couple = {actor, actress} //-> Aquí mezclo un objeto creado con una propiedad
+
+console.log(couple); //-> Object {"actor": Object {"firstName": "John","lastName": "Who"},"actress": "Keyra"}
+					 //   Se ha creado un objeto que contiene otro objeto (actor ) y una propiedad (actress).
+
+
+
+
+
+
 
 
 
@@ -599,4 +770,49 @@ function* eachItem(arr){
 CLASES
 *************************
 
+Class sintax*/
+
+
+
+class Player{
+  constructor(position, age){
+    this.position = position;
+    this.age = age;
+  }
+  
+  describeYourself(){
+    console.log(`I play as ${this.position}, and my age is ${this.age}` );
+  }
+}
+
+var ibra = new Player ("Striker", 35); //-> Con esto creo cuantos players necesite.
+
+ibra.describeYourself(); //-> I play as Striker, and my age is 35
+
+
+/*Explicacion
+---------------
+
+-	Tengo una clase con un constructor, que maneja 2 parametros.
+-	La clase posee además un método o function (dentro de la clase, y junto al constructor)
+-	Luego puedo crear cuantos objetos quiera utilizando la function constructora "new Player"
+-	ibra object puede llamar al método incluido en el constructor
+
+-   typeof ibra   	-> object
+-   typeof Player   -> function
+
+
+Para extender la clase*/
+-----------------------
+
+
+class Cadets extends Player{
+  constructor(){
+    super("defender", 17) //-> super refiere a la clase player, por tanto a sus propiedades.
+  }
+}
+
+var hunter = new Cadets(); //-> instancio a un nuevo cadete. Una suerte de subclase de player.
+
+hunter.describeYourself(); //-> "I play as defender, and my age is 17"
 
