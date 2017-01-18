@@ -547,45 +547,113 @@ console.log (animals);
 
 
 
-----------------------------
-/* OBJECT LITERAL ENHACEMENT
------------------------------
+*****************************
+/* MEJORAS EN OBJECT
+*****************************
 
 - Podemos suprimir la palabra "function" y los 2 puntos para crear metodos en los objetos
 - Podemos utilizar el metodo "repeat" para generar repeticiones */
 
+
+// Métodos concisos
+--------------------
+
 var soccer = {
 
-	//Para declarar esta funcion dentro de un objeto, ya no necesito escribir function ni usar ":"
 	goal(times){
 		console.log("goal ".repeat(times));
 	}
-}
+	/*goal: function(){
+		console.log("goal ".repeat(times));
+	}*/
 
+}
 soccer.goal(4);
 
 
 
+//Computed property names:
+--------------------------
+/*
+- Son las propiedades seteadas con [] en lugar de puntos .
+- Permiten poner nombres de propiedades con variables o carácteres especiales.*/
+
+
+let lastName = "last name";
+
+let person = {
+
+	"first name": "Nick",
+	[lastName]: "Cave"
+}
+
+person["date birth"] = 1980;
+
+console.log(person["first name"]); //-> Nick
+console.log(person[lastName]); //-> Cave
+
+
+//Podemos incluir expresiones en los corchetes
+var suffix = " name";
+
+var person = {
+    ["first" + suffix]: "Nicholas",
+    ["last" + suffix]: "Zakas"
+};
+console.log(person["first name"]);// "Nicholas"
+console.log(person["last name"]);// "Zakas"
+
+
+//Metodos concisos
+-------------------
 var color = "red";
 var speed = 100;
-var drive = "go";
 function gone(){ console.log("runnn");}
+var drive = "go";
+
 
 
 var car = { 
 	color, 
 	speed, 
-	gone, //-> Aqui llamo a la funcion expresada arriba
+	gone, 
 	[drive]: function(){console.log("vrummm");} //-> Es una computed property, como escribir ["go"] pero referenciado arriba en "drive"
 
 }  //-> El metodo antiguo requeria definir las variables dentro del objeto
 
-console.log(car.color); //-> red
-console.log(car.speed); //-> 100
-
+car.color; //-> red
+car.speed; //-> 100
 car.gone(); //-> runnn
 car.go(); //-> vrummm
 
+car.drive(); //-> Is not a function!
+
+
+
+
+// Podemos obviar la duplicación de valores
+function createPerson(name, age) {
+    return {
+		name,
+		age 
+	};
+}
+
+//Es equivalente a
+	function createPerson(name, age) {
+	    return {
+			name: name,
+			age: age 
+		};
+	}
+
+
+//Metodo Object.is();	
+---------------------
+//Funciona como ====
+
+console.log(Object.is(5, 5)); // True
+console.log(Object.is(5, "5")); //False
 
 
 
@@ -731,11 +799,14 @@ person.printActions(); //-> John likes to bike...   hike... surf...
 
 
 
-------------------
-//Desestructurando
-------------------
+******************
+
+Desestructurando
+
+******************
 
 //En ARRAY
+------------
 
 var [first] = ["John", "Paul", "George", "Ringo"];
 
@@ -751,11 +822,21 @@ console.log(thirth) //-> George, porque las comas representan los elementos inco
 
 
 
+let colors = [ "red", "green", "blue" ];
 
-//En OBJECT creado
--------------
+let [ firstColor, secondColor ] = colors;
 
-	//Soporta multiples parametros
+console.log(firstColor);        // "red"
+console.log(secondColor);       // "green"
+
+
+
+//En OBJECT 
+------------------
+
+// - Utiliza un objeto literal a la izquierda del asignador "="
+
+
 var {title, price} = {
 	title: "Ecmascript 6",
 	price: 20 + " USD"
@@ -767,12 +848,22 @@ console.log (price); //-> 20 USD. Es equivalente a llamar   nombreObjeto.price
 console.log({title, price}); //-> Object {"price": "20 USD","title": "Ecmascript 6"}
 
 
+//Desde un objeto almacenado
+var book = {
+	title: "Ecmascript 6",
+	price: 20 + " USD"
+}
 
-//En OBJECT externo (Sin editar)
---------------------------------------------
+var {title, price} = book;
+
+console.log (title); //-> Es equivalente a llamar   book.title
+console.log (price); //-> Es equivalente a llamar   book.price
+
+console.log({title, price}); //-> Object {"price": "20 USD","title": "Ecmascript 6"}
 
 
-//EJ 1:
+
+//EJ 2:
 var product = {
 	title: "Ecmascript 6",
 	price: 20 + " USD"
@@ -788,7 +879,7 @@ console.log(productSale(product)); //-> "The price of the title Ecmascript 6 is 
 
 
 
-//EJ 2:
+//EJ 3:
 function productSale (){
 	return  {
 	  name: "Book one",
@@ -796,14 +887,37 @@ function productSale (){
 	  price: "40USD"
   }
 }
-	//Puedo almacenar en una variable los keys y la function. Y renombrarlos
+	//Puedo asignar un nombre de variale distinto. O un default value con:  name="Book two"
 var {name:nombre, price} = productSale();
 
 console.log(nombre, price); //-> "Book one" "40USD"
 
 
 
-//ARRAY of objects
+//Objeto nested
+
+let foo = {
+    type: "Identifier",
+    name: "foo",
+    loc: {
+        start: {
+            line: 1,
+			column: 1 
+		},
+        end: {
+            line: 1,
+			column: 4 }
+	} 
+};
+// extrayendo foo.loc.start. Entonces 'start' pasa a ser 'localStart'
+let { loc: { start: localStart } } = foo;
+console.log(localStart.line);   // 1
+console.log(localStart.column); // 1
+
+
+
+
+//ARRAY de objetos
 ------------------
 
 var beatles = [
@@ -820,17 +934,17 @@ beatles.forEach( ({name})=>console.log(name) );
 /*-> "John"
 	 "Paul"
 	 "George"
-	 "Ringo"
+	 "Ringo"*/
 
 
 //Es equivalente a este estilo tradicional:
--------------------
+-----------------------------------------
 
-beatles.forEach(function (beatle) {
-		var name = beatle.name;
-		return console.log(name);
-});	 
-*/
+	beatles.forEach(function (beatle) {
+			var name = beatle.name;
+			return console.log(name);
+	});	 
+
 
 //EJ iteración 2. 
 
@@ -847,15 +961,73 @@ getInstrument(Paul) //-> "Bass"
 
 
 
-//COMPRESION DE ARRAY
-----------------------
+//Asignaciones destructuring
+----------------------------
 
-???
+// Cambiando variables
+let a = 1,
+	b = 2;
+
+[ a, b ] = [ b, a ]; // Acá tenemos un destructuring pattern. La derecha  es un array literal temporal
+
+console.log(a);     // 2
+console.log(b);     // 1
 
 
-/* Destructuring "inverso"
+
+//Valores default
+------------------
+
+let colors = [ "red" ];
+
+let [ firstColor, secondColor = "green" ] = colors;
+
+console.log(firstColor);        // "red"
+console.log(secondColor);       // "green"
+
+
+//Nested array
+---------------
+
+let colors = [ "red", [ "green", "lightgreen" ], "blue" ];
+
+// later
+let [ firstColor, [ secondColor ] ] = colors;
+console.log(firstColor);        // "red"
+console.log(secondColor);       // "green"
+
+
+
+//Rest items (en array desestructuring)
+---------------------------------------
+
+//Los 3 puntos asignan los items restantes de un arreglo
+
+let colors = [ "red", "green", "blue" ];
+
+let [ firstColor, ...restColors ] = colors;
+
+console.log(firstColor);        // "red"
+console.log(restColors.length); // 2 (green an blue)
+console.log(restColors[0]);     // "green"
+console.log(restColors[1]);     // "blue"
+
+
+//Rest items para clonar
+------------------------
+// cloning an array in ECMAScript 6
+
+let colors = [ "red", "green", "blue" ];
+let [ ...clonedColors ] = colors;
+console.log(clonedColors);      // "[red,green,blue]"
+
+
+
+
+// Destructuring "inverso"
 --------------------------
 
+/*
 - Si destructuring nos permite sacar propiedades facilmente de un objeto, esto nos permite ponerlas
 
 - Nos permite pushear propiedades fácilmente con la sintaxis.
@@ -1009,7 +1181,6 @@ hunter.describeYourself(); //-> "I play as defender, and my age is 17"
 
 
 
-//MIRAR MODULES//
+//New methods objects!
 
 
-//Expanded object functionality
