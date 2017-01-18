@@ -319,6 +319,9 @@ beatles.map(beatles => beatles.name)
 ["John", "Paul", "George", "Ringo"]
 
 
+
+
+
 /***********************
 FUNCTIONS
 -------------------------
@@ -435,10 +438,11 @@ TEMPLATE STRINGS
 ********************	
 
 - Elimina el concepto de + concatenador
-- Usa comillas de acento y $
+- Usa comillas de acento y ${}
+- Respeta espacios y lineas multiples*/
 
-*/
 
+//Ej. Con valores de variable de reemplazo
 function createEmail (firstName, price){
 	var shipping = 5.95;
 	console.log( 
@@ -451,6 +455,24 @@ function createEmail (firstName, price){
 }
 
 createEmail("John", 55);
+
+
+//Ej: Extrayendo string de un elemento.
+
+			//Extraigo los strings y values de la function tag	
+function tag(strings, ...values){
+  
+console.log(strings);
+console.log(values);
+}
+
+
+			//Creo la function "tag". No uso parentesis pero estoy pasando parametros.	
+var message = tag`Son las ${new Date().getHours()} y estoy trabajando `;
+
+console.log(message);
+
+
 
 
 /*Spread operators
@@ -621,7 +643,7 @@ person.printActions();
 //Desestructurando
 ------------------
 
-//En array
+//En ARRAY
 
 var [first] = ["John", "Paul", "George", "Ringo"];
 
@@ -638,9 +660,10 @@ console.log(thirth) //-> George, porque las comas representan los elementos inco
 
 
 
-//En object
+//En OBJECT creado
 -------------
 
+	//Soporta multiples parametros
 var {title, price} = {
 	title: "Ecmascript 6",
 	price: 20 + " USD"
@@ -653,9 +676,11 @@ console.log({title, price}); //-> Object {"price": "20 USD","title": "Ecmascript
 
 
 
-//Objeto con variable tradicional y function
+//En OBJECT externo (Sin editar)
 --------------------------------------------
 
+
+//EJ 1:
 var product = {
 	title: "Ecmascript 6",
 	price: 20 + " USD"
@@ -668,6 +693,71 @@ function productSale ({title, price}){
 
 console.log(productSale(product)); //-> "The price of the title Ecmascript 6 is 20 USD ".
 								   //    Si llamo a la funcion y le paso el objeto, obtengo el mismo resultado
+
+
+
+//EJ 2:
+function productSale (){
+	return  {
+	  name: "Book one",
+	  pages: 120,
+	  price: "40USD"
+  }
+}
+	//Puedo almacenar en una variable los keys y la function. Y renombrarlos
+var {name:nombre, price} = productSale();
+
+console.log(nombre, price); //-> "Book one" "40USD"
+
+
+
+//ARRAY of objects
+------------------
+
+var beatles = [
+		{name: "John", instrument: "Guitar", age: 42},
+		{name: "Paul", instrument: "Bass", age: 41},
+		{name: "George", instrument: "Guitar", age: 39},
+		{name: "Ringo", instrument: "Drums", age: 43}						
+]
+
+
+//EJ iteracion:
+
+beatles.forEach( ({name})=>console.log(name) );
+/*-> "John"
+	 "Paul"
+	 "George"
+	 "Ringo"
+
+
+//Es equivalente a este estilo tradicional:
+-------------------
+
+beatles.forEach(function (beatle) {
+		var name = beatle.name;
+		return console.log(name);
+});	 
+*/
+
+//EJ iteración 2. 
+
+
+	//Saltate el primero, toma el segundo y llamalo "Paul"
+var [, Paul] = beatles;
+
+function getInstrument({instrument}){
+	console.log(instrument)
+}
+
+getInstrument(Paul) //-> "Bass"
+
+
+
+
+//COMPRESION DE ARRAY
+
+???
 
 
 /* Destructuring "inverso"
@@ -725,6 +815,14 @@ function* director(){
 
 var action = director();
 
+//testing
+var next = action.next();
+
+
+console.log(action); 				//-> {} Es un objeto
+
+console.log(next);					//-> Object {"done": false,"value": "Threee"} Porque aún no lo ejecuto es "false". Su valor es "Threee" porque es el primer yield
+
 console.log(action.next()); 		//-> Object {value: "Threee", done: false}
 console.log(action.next()); 		//-> Object {value: "Threee", done: false}
 console.log(action.next().value);	//-> "One". Porque puse value para obtener el valor
@@ -733,7 +831,7 @@ console.log(action.next().value); 	//-> "Action!"
 
 
 
-
+//EJ 2:
 
 function* eachItem(arr){
   for (var i=0; i<arr.length; i++){
@@ -816,3 +914,6 @@ var hunter = new Cadets(); //-> instancio a un nuevo cadete. Una suerte de subcl
 
 hunter.describeYourself(); //-> "I play as defender, and my age is 17"
 
+
+
+//MIRAR MODULES//
