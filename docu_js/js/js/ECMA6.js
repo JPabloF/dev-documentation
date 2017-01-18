@@ -433,6 +433,28 @@ console.log(add(1));	//-> 6  Aqui, first vale 1., pero second ahora vale "getVal
 
 
 
+
+
+//Name Property
+------------------
+
+//- El nombre de la function tiene prevalescencia sobre la variable. EN caso de un objeto es interpretado desde el objeto literal.
+
+var doSomething = function(){
+	//...
+}
+
+console.log(doSomething.name); //-> doSomething . Porque la propiedad "name" almacena el nombre de la funcion o la variable asignada
+
+
+
+
+
+
+
+
+
+
 /*******************
 TEMPLATE STRINGS
 ********************	
@@ -575,6 +597,11 @@ car.go(); //-> vrummm
 // Arrow function
 ---------------------
 
+/*
+
+- No poseen un metodo construct ni prototype. No pueden ser usadas con "new"
+
+*/
 
 
 //Estilo original
@@ -597,18 +624,81 @@ styleFunc("Hello!");
 
 //Estilo original sin "var"
 
-function styleFunc(foo){
-	return console.log(foo);
+function styleFunc(foo, foo2){
+	return console.log(foo + " and " + foo2);
 }
 
-styleFunc("Hello");
+
+            //Utilizo parentesis cuando uso más argumentos
+styleFunc = (foo, foo2) => console.log(foo + " and " + foo2);
+
+styleFunc("Hello", "Bye");
 
 
 
-styleFunc = foo => console.log(foo) ;
+//EJ Sintaxis omitiendo return
+-------------------------------
 
-styleFunc("Bye");
+let reflect = value => value;
 
+
+// Equivale a :
+
+	let reflect = function(value) {
+	return value;
+	};
+
+
+
+// SIn argumentos
+------------------
+
+// Hay que incluir parentesis vacios si es que no se pasan argumentos.
+
+let getName = () => "Nicholas";
+
+
+// Equivale a:
+
+	let getName = function() {
+	return "Nicholas";
+	};
+
+
+
+// Retornar objeto literal fuera de la function
+------------------------------------------------
+
+//- Hay que incluir el objeto en parentesis {}
+
+let getTempItem = id => ({ id: id, name: "Temp" });
+
+
+// Equivale a:
+
+	let getTempItem = function(id) {
+		return {
+			id: id,
+			name: "Temp"
+		};
+	};
+
+
+
+
+// IIFE con Arrow
+------------------------
+
+let person = ( (name) => {
+	return {
+		getName: function() {
+			return name;
+		}
+
+	};
+} )("Nicholas"); // Inmediatamente invoco un parametro.
+
+console.log(person.getName());//-> "Nicholas"
 
 
 
@@ -618,24 +708,26 @@ styleFunc("Bye");
 ------------------------------
 
 
+//Los valores  de "this" son definidos por la funcion  contenedora no-flecha  más cercana
+
 var person = {
-	first: "John",
 
-	actions: ["bike", "hike", "surf"],
-
-	printActions(){ //->Se quita la palabra function, y se declara la funcion directamente.
+	firstName: "John",
+	hobbys: ["bike", "hike", "surf"],
+	printActions(){		
+		this.hobby.forEach(action=>{
 		
-		this.actions.forEach(action=>{ //-> Se quita "function" y se mantienen los parentesis por la multilinea
-		
-			var str = this.first + " Likes to " + action; //-> Es solo "action" por ser el singular (each) de actions. This apunta a John directamente
-			
+			var str = this.firstName + " likes to " + hobbys; //-> Es solo "hobby" por ser el singular (each) de actions. This apunta a John directamente
 			console.log(str);
 		});
 	}
 
+
 };
 
-person.printActions();
+
+
+person.printActions(); //-> John likes to bike...   hike... surf...
 
 
 
@@ -756,6 +848,7 @@ getInstrument(Paul) //-> "Bass"
 
 
 //COMPRESION DE ARRAY
+----------------------
 
 ???
 
@@ -917,3 +1010,6 @@ hunter.describeYourself(); //-> "I play as defender, and my age is 17"
 
 
 //MIRAR MODULES//
+
+
+//Expanded object functionality
