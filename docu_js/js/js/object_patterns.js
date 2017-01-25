@@ -26,7 +26,7 @@ Private and Privileged Members
 
 - Creando funciones privilegiadas, a traves de un closure, tendra acceso a la data privada, y la retornara o almacenara en un lugar accesible
 
-- El propósito es usar una "inmediatly-invoked function expression" (IIFE).
+- "inmediatly-invoked function expression" (IIFE).
 
 - Puede eliminar el uso de variables globales
 

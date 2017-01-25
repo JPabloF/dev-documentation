@@ -1062,69 +1062,7 @@ console.log(couple); //-> Object {"actor": Object {"firstName": "John","lastName
 Function Generators
 ---------------------
 
-- Sirven para la comunicación asíncrona.
-- Se declaran utilizando asterisco.
-- Nos permiten pasar por cada "yield" mediante el uso de un método "next()"
-- Nos permite detectar el fin de un ciclo utilizando "done"
 
-*/
-
-
-
-function* director(){
-  yield "Threee";
-  yield "Two";
-  yield "One";
-  yield "Action!";
-};
-
-var action = director();
-
-//testing
-var next = action.next();
-
-
-console.log(action); 				//-> {} Es un objeto
-
-console.log(next);					//-> Object {"done": false,"value": "Threee"} Porque aún no lo ejecuto es "false". Su valor es "Threee" porque es el primer yield
-
-console.log(action.next()); 		//-> Object {value: "Threee", done: false}
-console.log(action.next()); 		//-> Object {value: "Threee", done: false}
-console.log(action.next().value);	//-> "One". Porque puse value para obtener el valor
-console.log(action.next().value); 	//-> "Action!"
-
-
-
-
-//EJ 2:
-
-function* eachItem(arr){
-  for (var i=0; i<arr.length; i++){
-      yield arr[i];
-  }
-};
-
- var letters = eachItem(["a", "b", "c"]);
- 
- var abcs = setInterval (function(){
-   var letter = letters.next();
-   if(letter.done){
-     clearInterval(abcs);
-     console.log("Im done");
-   }else{
-     console.log(letter.value);
-   }
-
- }, 500);  //->  "a"....."b".... "c"....Im done
-
- /*	Explicación:
-
--	"abcs" almacena una funcion con intervalo, que se ejecuta cada 500 milisegundos.
--	"letter"  almacena  un método next(); que se mueve a través de cada yield de letters
--   "letters" almacena una función generator con un array
--	Aquella function generator itera por cada elemento del array
-- 	Al terminar cada iteracion "next" por cada yield, se cumple el condicional letter.done,
-- 	De otro modo sigue logueando el valor de cada yield hasta terminar
 
 
 
@@ -1184,3 +1122,136 @@ hunter.describeYourself(); //-> "I play as defender, and my age is 17"
 //New methods objects!
 
 
+
+
+
+************************
+Operators and generators
+*************************
+
+
+Iterators
+-----------
+
+- Son objetos con una interface especifica diseñada para la interaccion
+- Todos tienen un metodo next() que retorna un objeto.
+- EL resultado tiene 2 propiedades. value, que es el sgte valor, y "done", que es un booleano true cuando no quedan valores a devolver.
+- Undefined es el ultimo valor devuelvo si no queda mas data
+
+
+************
+Generators
+------------
+
+/*
+- Es una funcion que retorna un iterador.
+- Son marcadas con un asterisco dp de function y utilizan yield.*/
+
+
+// generator
+function *createIterator() {
+	yield 1;
+	yield 2;
+	yield 3;
+}
+
+
+// generators are called like regular functions but return an iterator
+
+let iterator = createIterator(); //--> Almaceno la function en una variable
+
+console.log(iterator.next().value); // 1
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+
+
+
+
+/*
+- Sirven para la comunicación asíncrona.
+- Nos permiten pasar por cada "yield" mediante el uso de un método "next()"
+- Nos permite detectar el fin de un ciclo utilizando "done" */
+
+
+
+function* director(){
+  yield "Threee";
+  yield "Two";
+  yield "One";
+  yield "Action!";
+};
+
+var action = director();//--> Almaceno la function en una variable
+
+
+/*testing:
+----------
+var next = action.next();
+
+console.log(next);		//-> Object {"done": false,"value": "Threee"} Porque aún no lo ejecuto es "false". Su valor es "Threee" porque es el primer yield*/
+
+
+console.log(action.next()); 		//-> Object {value: "Threee", done: false}
+console.log(action.next()); 		//-> Object {value: "Threee", done: false}
+console.log(action.next().value);	//-> "One". Porque puse value para obtener el valor
+console.log(action.next().value); 	//-> "Action!"
+
+
+
+
+Yield dentro de un loop forEach
+-------------------------------
+
+function *createIterator(items) {
+for (let i = 0; i < items.length; i++) {
+yield items[i];
+}
+}
+let iterator = createIterator([1, 2, 3]);
+
+console.log(iterator.next()); //  "{value:1, done: false }"
+console.log(iterator.next()); //  "{value:2, done: false }"
+console.log(iterator.next()); //  "{value:3, done: false }"
+console.log(iterator.next()); //  "{value:undefined, done: true }"
+
+
+// Todas las siguientes llamadas adicionales serán:
+console.log(iterator.next()); // "{ value: undefined, done: true }"
+
+
+
+
+
+//EJ con interval automatico:
+-----------------------------
+
+function* eachItem(items){
+  for (var i=0; i<arr.length; i++){
+      yield items[i];
+  }
+};
+
+ var letters = eachItem(["a", "b", "c"]);
+ 
+ var abcs = setInterval (function(){
+
+   var letter = letters.next();
+   
+   if(letter.done){
+     clearInterval(abcs);
+     console.log("Im done");
+   }else{
+     console.log(letter.value);
+   }
+
+ }, 500);  //->  "a"....."b".... "c"....Im done
+
+ /*	Explicación:
+-----------------
+
+-	"abcs" almacena una funcion con intervalo, que se ejecuta cada 500 milisegundos.
+-	"letter"  almacena  un método next(); que se mueve a través de cada yield de letters
+-   "letters" almacena una función generator con un array
+-	Aquella function generator itera por cada elemento del array
+- 	Al terminar cada iteracion "next" por cada yield, se cumple el condicional letter.done,
+- 	De otro modo sigue logueando el valor de cada yield hasta terminar
