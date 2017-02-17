@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Guía estilos BancoEstado</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/ahorro.css">
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/ahorro.css">
+
+<style>
+body{
+	padding: 0 0 50px;
+}
+section{
+	margin:50px 0;
+}
+
+.jumbotron{
+	background-color: #333;
+	color:white;
+}
+
+
+.phone{
+	width: 320px;
+	height: 568px;
+	border: 10px solid #333;
+	border-radius:15px;
+	background-color: #f1f1f1;
+	margin: 0 auto;
+}
+
+.phone .container-fluid{
+	margin: 15px 0;
+}
+
+.header-phone{
+	background-color: #666;
+	height: 50px;
+	padding: 0 10px;
+	color:white;
+	display: flex;
+}
+
+.header-phone i{
+	  align-self: center;
+}
+
+.title-phone{
+	background-color: white;
+	height: 40px;
+	display: flex;
+}
+
+.title-phone h3{
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+
+}
+
+figure{
+	margin-bottom:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<h1 style="font-weight:700; margin-bottom:20px;">Guia estilos "Ahorro virtual"</h1>
+
+				<div class="jumbotron">
+					<p>Versión 1.0 de estilos para app ahorro.</p>
+					<p style="font-size: 14px">Actualizado al 16 Febrero 2017</p>
+				</div>
+
+
+
+				<section>
+					<h3>1. Títulos</h3>
+					<p>código:</p>
+				<figure class="highlight"><pre><xmp>
+	<h1>Soy un título h1</h1>
+	<h2>Soy un título h2</h2>
+	<h3>Soy un título h3</h3>
+	<h4>Soy un título h4</h4>
+				</xmp></pre></figure>
+					
+					<p>visual:</p>
+					<h1>Soy un título h1</h1>
+					<h2>Soy un título h2</h2>
+					<h3>Soy un título h3</h3>
+					<h4>Soy un título h4</h4>
+				</section>
+
+				<hr>
+
+				<section>
+					<h3>2. Contenedores subtexto</h3>
+					<p>Código:</p>
+				<figure class="highlight"><pre><xmp>
+	<div class="subtext">
+		<h4>Texto explicativo subtexto</h4>
+	</div>
+				</xmp></pre></figure>
+
+
+					<p>visual:</p>
+					<div class="subtext">
+						<h4>Texto explicativo subtexto</h4>
+					</div>
+				</section>
+
+				<hr>
+
+				<h3>3. Estilos de lista check</h3>
+				<p>Código:</p>
+				<figure class="highlight"><pre><xmp>
+	<ul class="checklist">
+		<li><i class="fa fa-check fa-lg"></i>Elemento lista 1</li>
+		<li><i class="fa fa-check fa-lg"></i>Elemento lista 2</li>
+		<li><i class="fa fa-check fa-lg"></i>Elemento lista 3</li>
+	</ul>
+				</xmp></pre></figure>
+
+				<p>visual:</p>
+				<ul class="checklist">
+					<li><i class="fa fa-check fa-lg"></i>Elemento lista 1</li>
+					<li><i class="fa fa-check fa-lg"></i>Elemento lista 2</li>
+					<li><i class="fa fa-check fa-lg"></i>Elemento lista 3</li>
+				</ul>
+
+				<hr>
+
+				<section class="buttons">
+					<h3>4. Botones</h3>	
+
+				<p>Código:</p>
+				<figure class="highlight"><pre><xmp>
+	<button type="button" class="btn btn-lg btn-block btn-main">Aceptar</button>
+	<button type="button" class="btn btn-lg btn-block btn-secondary">Cancelar</button>
+				</xmp></pre></figure>
+				<p>visual:</p>
+					<div class="col-md-6">
+
+					<button type="button" class="btn btn-lg btn-block btn-main">Aceptar</button>
+					<button type="button" class="btn btn-lg btn-block btn-secondary">Cancelar</button>
+					</div>
+				</section>
+
+
+
+
+				<footer>
+
+				</footer>
+			</div>
+		
+		<div class="col-md-4">
+
+				<section style="position:fixed";>
+					<div class="phone">
+						<div class="header-phone">
+							<i class="fa fa-chevron-left fa-lg"></i>
+						</div>
+						<div class="title-phone"><h3>Título sección</h3></div>
+						<div class="container-fluid text-center">
+							<h2>Layout de prueba</h2>
+							<div class="container-fluid">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+							</div>
+
+							<div class="container-fluid">
+								<ul class="checklist">
+									<li><i class="fa fa-check fa-lg"></i>Check ticket</li>
+								</ul>
+							</div>
+						</div>
+						<div class="container-fluid">
+							<button type="button" class="btn btn-lg btn-block btn-main">Aceptar</button>
+							<button type="button" class="btn btn-lg btn-block btn-secondary">Cancelar</button>
+						</div>
+
+					</div>
+
+				</section>			
+
+		</div>
+	</div>
+</body>
+
+</html>
