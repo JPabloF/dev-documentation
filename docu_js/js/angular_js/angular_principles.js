@@ -14,7 +14,7 @@ EN HTML5 podemos usar "data-something" para modificar los atributos. Esto no afe
 
 
 
-Angular tiene atributos built-in llamados "ng-something"
+/(/Angular tiene atributos built-in llamados "ng-something"
 
       <h1 ng-foo="A string"> Hello </h1>
 
@@ -38,19 +38,7 @@ myObject.logPerson = function(){ //<--- "Steve":    Aqui estoy poniendo un metod
 
 
 
-// SET-UP
 
-// Solo tenemos un objeto en el globalnameSpace, que es el angular.module
-var myApp = angular.module('myApp', []);
-
-
-
-
-myApp.controller('mainController', function(){
-  
-  //... Lugar para poner la info asociada a este controlador
-
-});
 
 
 
@@ -104,3 +92,66 @@ User //<-- function (x){ this.userName = x }
 user1 = //<-- User {userName: "peter"}
 
 user1.name //<-- "peter" (name es una propiedad del objeto que fue creado con el constructor)
+
+
+
+//Angular Object
+                  //[dependency]
+  .module('myApp',[])
+
+             //nombre        
+  .controller('MyController', MyController)
+
+
+  .controller("addProduct", addProduct)
+
+                                    //dependency Inline Array Annotation. Pasamos un arreglo con: El nombre de la dependencia y la function
+  .controller('anotherController', ['$scope', function($scope) {
+    $scope.greeting = 'Hola!';
+  }])
+
+  //Metodo del servicio con nombre y function
+  .service('MyService', MyService)
+
+
+  .directive('helloSimpleDirective', MyDirective)
+
+
+//Funcion del controlador con 2 injections
+function MyController ($scope, MyService) {  
+
+                   //aqui ejecuto mi almacenamiento de datos
+  MyService.getData(function(response) {
+
+    $scope.productos = response.data
+  });
+}
+
+function addProduct($scope){
+      
+      //Puedo meter funciones en las variables del scope
+      $scope.adding=function(){
+
+        $scope.added = $scope.newData
+      }
+
+}
+
+
+//Funcion del servicio
+function MyService($http){
+  this.getData = function(callback){
+    $http.get('data/datos.json').then(callback)
+  }
+};
+
+
+function MyDirective(){
+  return {
+  scope: true, // inherits child scope from parent.
+  restrict: 'E', // An Element Directive.
+  replace: true,
+  template: '<h3>Hello Simple Directive</h3>'
+  };
+
+};
