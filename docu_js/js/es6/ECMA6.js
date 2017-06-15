@@ -1,44 +1,54 @@
-/* ECMA 6
+/* ECMASCRIPT 6
 
-**************
-Variables.
+------------------------------
 
-**************
+	Variables
 
-Si declaro una variable utilizando "var", es tratada como si estuviese inicializada al tope de la funcion o en el scope global
+------------------------------
 
-Si esa variable es accedida desde otro bloque, y no ha sido inicializada, simplemente queda undefined o null, si es que se ha intentado inicializar*/
+- Si declaro una variable utilizando "var", se hiza al tope o al scope global
 
+- Para inicializar una variable, se debe asignar un valor
+
+- Si la variable es accedida desde otro bloque, y no ha sido inicializada (con un valor asignado
+  responde "undefined o null", si es que se ha intentado inicializar
+
+*/
 
 
 function getValue(condition) {
 	
-	// var value; //<-- Si value se define dentro del bloque if, se hiza hasta el tope de la funcion, de forma independiente
+	var value; //<-- Si "value" es declarado dentro del bloque de if, se hiza hasta el tope de la function.
 	
 	if (condition) {
-		value = "blue"; //Equivalente a decir var = "blue". La inicialización se mantiene pero la declaración se alza
-
+		value = "blue"; //Equivalente a '   var = "blue"  ' 
 		return value;
 	} else {
 		return null;
 	}
 }
 
+getValue("color"); //<-- "blue". Porque captura la variable dentro de la function
+getValue(); //<-- null. Porque la condición "if" del parametro no se cumple, sino el "else"
 
-/*-----------------------------
- Block levels declarations
+
+
+
+/*----------------------------
+
+ Block Levels Declarations
+
 ------------------------------
 
-LET y CONST son declaraciones de bloque, eso significa que no son accesibles cuando el flujo sale del bloque, y tampoco se hizan.
 
-Declaran variables que son innaccesibles desde afuera de un scope. Los scopes de bloques o léxicos se forman en:
+- LET y CONST son declaraciones de bloque
+- No son accesibles cuando el flujo sale del bloque, y tampoco se hizan al tope (scope global).
+- Declaran variables que son innaccesibles desde afuera de un scope. Los scopes de bloques o léxicos se forman:
 
-	
-- Dentro de una funcion 
-- Dentro de un bloque  {...acá....}
+	Dentro de una function 
+	Dentro de un bloque  {... "como aquí" ...}
 
-Esto significa que ciertas variables solo pueden ser accedidas desde ciertos sectores.
-
+* Esto significa que ciertas variables solo pueden ser accedidas desde ciertos sectores.
 
 
 
@@ -49,13 +59,13 @@ LET Y CONST
 *********************
 
 
-- Let y const introducen el concepto de scope lexico a JS
+- LET y CONST introducen el concepto de scope léxico a JS
 - No son hizadas y solo existen en el bloque donde han sido declaradas. 
 - Sirve para declarar variables unicamente donde necesitan ser usadas.
 - No se puede acceder a ellas antes de ser declaradas.
-- Dentro de un  for-in y for-of loops, crean un nuevo binding en cada iteración.
+- Dentro de un  for-in y for-of loops, crean un nuevo binding (asignación) en cada iteración.
 
-- Una buena practica para block binding es usar siempre const, y solo usar "let" cuando un valor necesita cambiar.
+- Una buena práctica para block binding es usar siempre const, y solo usar "let" cuando un valor necesita cambiar.
 	... Esto ayuda a controlar ciertos errores de cambios no deseados.
 
 
@@ -99,21 +109,21 @@ console.log(message); //-> Hi, porque let encierra el impacto de bloque de las v
 
 
 
-//Caso de uso en for loop.
+			//Caso de uso en for loop.
 
-var someArr = [];
+			var someArr = [];
 
-for (let i=0; i<10; i++){
-	someArr.push(function(){
-		console.log(i);
-	})
-}
+			for (let i=0; i<10; i++){
+				someArr.push(function(){
+					console.log(i);
+				})
+			}
 
-//Aqui recorro el array al que le pushié la función de log
-someArr.forEach(function(f){
-	f();
-}) //-> Ejecuta la lista numeral de 0 a 9. En cambio utilizando "var" repite el 10 pues la variable se sobreescribe.
-//	Utilizando "let", creamos una nueva "i" en cada vuelta del loop
+			//Aqui recorro el array al que le pushié la función de log
+			someArr.forEach(function(f){
+				f();
+			}) //-> Ejecuta la lista numeral de 0 a 9. En cambio utilizando "var" repite el 10 pues la variable se sobreescribe.
+			//	Utilizando "let", creamos una nueva "i" en cada vuelta del loop
 
 
 
@@ -121,9 +131,7 @@ someArr.forEach(function(f){
 function getValue(condition) {
 	if (condition) {
 		let color = "blue";
-
 		return value;
-
 	} else {
 		// "color" doesn't exist here
 		return null;
