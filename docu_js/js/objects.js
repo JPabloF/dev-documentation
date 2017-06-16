@@ -33,6 +33,8 @@ Cuando un nuevo valor se asigna a una propiedad existente, se ejecuta un [[Set]]
 
 
 //Asignar el objeto a una variable
+
+//EJ:
 var object = new Object
 
 /* - No guardan directamente el objeto en la variable asignada
