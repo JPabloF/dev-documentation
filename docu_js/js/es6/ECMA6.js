@@ -1,3 +1,16 @@
+/*
+
+
+touse
+useit
+usable
+useful
+2use
+useful
+
+
+
+
 /* ECMASCRIPT 6
 
 ------------------------------
@@ -65,7 +78,7 @@ LET Y CONST
 - No se puede acceder a ellas antes de ser declaradas.
 - Dentro de un  for-in y for-of loops, crean un nuevo binding (asignación) en cada iteración.
 
-- Una buena práctica para block binding es usar siempre const, y solo usar "let" cuando un valor necesita cambiar.
+- Una buena práctica para block binding es usar siempre CONST, y solo usar LET cuando un valor necesita cambiar.
 	... Esto ayuda a controlar ciertos errores de cambios no deseados.
 
 
