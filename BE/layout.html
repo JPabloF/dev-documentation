@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Layout</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/ahorro.css">
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<style>
+body{
+	font-family: "Open Sans", sans-serif;
+	text-align: center;
+}
+
+
+.container{
+	background-color: #ccc;
+}
+
+
+.container-fluid{
+	background-color: #999;
+}
+
+.ibox{
+	margin: 20px 0;
+	border:1px solid red;
+}
+
+.ibox-example{
+	background-color: orange;
+
+}
+
+.ibox-example p{
+	margin: 0;
+	padding: 0;
+}
+
+.row{
+	border:1px solid green;
+}
+
+.row-fluid{
+	border: 1px solid blue;
+}
+
+.btn-container{
+	background-color: #dedede;
+}
+</style>
+
+  </head>
+  <body>
+  	<h1> Layout referencial</h1>
+  	<div class="container">
+  			<h2>class="container"</h2>
+  			<p>Genera espaciado lateral en el contenido. En resoluciones mayores tiene un ancho fijo en pixeles</p>
+		</div>
+
+  	<div class="container-fluid">
+  		<h2>class="container-fluid"</h2>
+  		<p>Genera espaciado lateral en el contenido.</p> <p> En resoluciones mayores NO tiene un ancho fijo en pixeles</p>
+		</div>
+
+		<div class="container-fluid ibox-example">
+
+			<h3>class="ibox"</h3>
+			<p>".ibox" se puede usar como un contenedor de otros elementos para separación.</p>
+			<div class="ibox">
+				<p>Permite espaciarlos verticalmente</p>
+			</div>
+			<div class="ibox">
+				<p>...como muestra el borde rojo...</p>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<h3>class="row"</h3>
+				<p>".row" sólo se utiliza como contenedor de elementos "col-".</p>
+				<p> Divide proporcionalmente el espacio hasta alcanzar 12 (Ej: "col-xs-6" + "col-xs-6")</p>
+
+			<div class="row">
+				<div class="col-xs-6"><h4>class="col-xs-6"</h4>
+						<p>Genera 2 columnas (portrait y landscape) en mobile</p>
+				</div>
+				<div class="col-xs-6"><h4>class="col-xs-6"</h4>
+					<p>Genera 2 columnas (portrait y landscape) en mobile</p>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-xs-4"><h4>class="col-xs-4"</h4>
+						<p>Genera 3 columnas (portrait y landscape) en mobile</p>
+				</div>
+				<div class="col-xs-4"><h4>class="col-xs-4"</h4>
+					<p>Genera 3 columnas (portrait y landscape) en mobile</p>
+				</div>
+
+				<div class="col-xs-4"><h4>class="col-xs-4"</h4>
+					<p>Genera 3 columnas (portrait y landscape) en mobile</p>
+				</div>
+
+			</div>			
+		</div>
+
+
+		<div class="container-fluid">
+		<h3 class="text-center">class="text-center"</h3>
+		<h3 class="pull-left">class="pull-left"</h3>
+		<h3 class="pull-right">class="pull-right"</h3>
+
+		</div>
+
+		<div class="container-fluid btn-container">
+		<div class="ibox">
+			<button class="btn btn-default">.btn .btn-default</button>
+		</div>
+
+		<div class="ibox">
+			<button class="btn btn-default btn-block">.btn .btn-default .btn-block</button>
+		</div>
+
+		</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  </body>
+</html>
