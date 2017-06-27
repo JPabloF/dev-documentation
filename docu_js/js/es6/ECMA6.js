@@ -1,12 +1,39 @@
 /*
 
 
-touse
-useit
+DOBLE:
+
+
+foqus *****
+focus ****
+foquslab
+
+focusmedia
+focus digital
+
+Angular
+
+ux
 usable
+simple
+solucion
+idea
+model
+plan
+metric
+persona
+foqus
+exp
+
+
+useit
+
+usable
+
 useful
-2use
-useful
+
+
+
 
 
 
