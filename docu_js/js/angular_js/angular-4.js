@@ -14,7 +14,5 @@ cd ng-animations
 ng serve
 
 
-
-
 /* NUEVO COMPONENTE*/
 ng generate component <name>  //  ng g c "name"
