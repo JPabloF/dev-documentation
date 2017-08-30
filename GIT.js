@@ -4,6 +4,11 @@ git branch -r
 
 
 
+
+***************************
+	Working tree 
+***************************
+
 //*********** LOCAL *****************************************/
 //+*************************************************************
 
@@ -24,7 +29,7 @@ git branch -r
 
 
 
-		//////////	STAGE  ( Zona de preparación y empaquetado)
+		//////////	STAGE/INDEX  ( Zona de preparación y empaquetado)
 			
 
 
@@ -41,7 +46,7 @@ git branch -r
 
 
 
-		//////////	HISTORY	 (Versionado de paquetes commiteados)
+		//////////	HEAD (Versionado de paquetes commiteados)
 
 
 			//	(+ --> REMOTE)
