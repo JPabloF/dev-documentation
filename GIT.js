@@ -5,15 +5,22 @@ git branch -r
 
 
 
-***************************
-	Working tree 
-***************************
-
-//*********** LOCAL *****************************************/
-//+*************************************************************
+******************************************************
+					Working tree 
+******************************************************
 
 
-		//////////	WORKING DIRECTORY ( Zona de de trabajo )
+
+
+
+
+********************** LOCAL ******************************
++**********************************************************
+
+
+
+
+		****** < WORKING DIRECTORY > ( Zona de de trabajo )
 
 			
 				
@@ -29,13 +36,13 @@ git branch -r
 
 
 
-		//////////	STAGE/INDEX  ( Zona de preparación y empaquetado)
+		****** < STAGE/INDEX >  ( Zona de preparación y empaquetado)
 			
 
 
-			//	(+  --> History)
+			//	(+  --> Head)
 
-				$ git commit -m "message" // > Mando los cambios al versionado
+				$ git commit -m "message" // > Commiteo los cambios al head
 				$ git commit --amend	  // > Incluye mejoras bajo el mismo commit desde stage
 
 
@@ -46,22 +53,23 @@ git branch -r
 
 
 
-		//////////	HEAD (Versionado de paquetes commiteados)
+		****** < HEAD >  ( Versionado de paquetes commiteados)
 
 
 			//	(+ --> REMOTE)
 
-				$ git push // > Manda el commit a remoto
+				$ git push // > Manda el commit al repo remoto
+				$ git push origin <rama>// > Manda el commit al repo remoto y rama específica
 
 
 
 			// ( - --> stagge)
-				$ git reset --soft HEAD~1	 //> Borra el commit y lo devuelve a stage	
+				$ git reset --soft HEAD~1	 //> Borra el commit último y lo devuelve a stage	
 
 
 
 			// (+ --> Working)
-				$ git reset HEAD~1	//> (mixed) Borra el commit pero mantiene los cambios de working	
+				$ git reset HEAD~1	//> (mixed) Borra el commit y el stage pero mantiene los cambios de working	
 
 
 
@@ -70,14 +78,20 @@ git branch -r
 
 
 
-//*********** REMOTE *****************************************/
-//+*************************************************************
+********************** REMOTE ******************************
++***********************************************************
+
+
+			ORIGIN / RAMA
 
 
 
-//***************************************************************
+//**********************************************************
 
 
+//Agregar y commitear
+
+git commit -a -m "MY MESSAGE HERE" //> -a significa all, y agrega archivos unstageados también
 
 
 
