@@ -14,26 +14,29 @@ git branch -r
 				
 			//	(+ --> Stage)	
 
-				git add <filename.ext> // > Pasar un archivo "preparado" a stage
+				$ git add <filename.ext> // > Pasar un archivo "preparado" a stage
 
 
-			//	(CTRL+Z -->  Working  <-- Stage)
+			//	(CTRL+Z -->  Working  <-- Stage  <-- History)
 
-				git checkout -- <filename.ext> // > Borro los cambios hechos en working, para recuperar la version stageada / commiteada
+				$ git checkout -- <filename.ext> // > Borro los cambios hechos en working, para recuperar la version stageada / commiteada
+
+
 
 
 		//////////	STAGE  ( Zona de preparación y empaquetado)
 			
 
+
 			//	(+  --> History)
 
-				git commit -m "message" // > Mando los cambios al versionado
-
+				$ git commit -m "message" // > Mando los cambios al versionado
+				$ git commit --amend	  // > Incluye mejoras bajo el mismo commit desde stage
 
 
 			//	(-  --> Stage) 
 
-				git reset HEAD <filename.ext>	// > Quito el archivo de stage		
+				$ git reset HEAD <filename.ext>	// > Quito el archivo de stage sin borrar el working 	
 
 
 
@@ -43,22 +46,22 @@ git branch -r
 
 			//	(+ --> REMOTE)
 
-				git push // > 
+				$ git push // > Manda el commit a remoto
 
 
 
 			// ( - --> stagge)
-				git reset --soft HEAD~1	 //> Borra el commit y lo devuelve a stage	
+				$ git reset --soft HEAD~1	 //> Borra el commit y lo devuelve a stage	
 
 
 
 			// (+ --> Working)
-				git reset HEAD~1	//> Borra el commit pero mantiene los cambios de working	
+				$ git reset HEAD~1	//> (mixed) Borra el commit pero mantiene los cambios de working	
 
 
 
 			// ( - --> WORKING)
-				git reset --hard HEAD~1  //> Borra todo este commit incluso los cambios del working
+				$ git reset --hard HEAD~1  //> Borra todo este commit incluso los cambios del working
 
 
 
@@ -67,40 +70,11 @@ git branch -r
 
 
 
-
-
-
-//***	AGREGAR ARCHIVOS
-
-
-
-//Staggear un archivo y marcarlo
-git add <filename.ext>
-
-//Como quitar un archivo de stagge y desmarcarlo
-git reset <filename.ext>
-
-//Quitar un archivo staggeado
-git reset HEAD <filename.ext>
-
-
-//Quitar los cambios locales de un archivo NO staggeado
-git checkout -- <filename.ext>
+//***************************************************************
 
 
 
 
 
-// DESHACER
-
-git reset [<mode>] [<commit>]
-
-
-
-
-//COMMIT
-
-
-$ git commit -m 'initial commit'
-$ git add forgotten_file
-$ git commit --amend
+ORIGIN --> ES el repositorio remoto
+MASTER --> Es el nombre de la rama
