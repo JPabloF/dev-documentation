@@ -18,7 +18,11 @@ git branch -r
 
 
 			//	(CTRL+Z -->  Working  <-- Stage)
+<<<<<<< HEAD
 				git checkout -- <filename.ext> // > Borro los cambios hechos en working, para recuperar la version stageada / commiteada
+=======
+				git checkout -- <filename.ext> // > Borro los cambios hechos en working, para recuperar la version stageada
+>>>>>>> a1a2f278deac4fc515efdcb805137202c4a0ba7b
 
 
 
