@@ -97,3 +97,13 @@ git commit -a -m "MY MESSAGE HERE" //> -a significa all, y agrega archivos unsta
 
 ORIGIN --> ES el repositorio remoto
 MASTER --> Es el nombre de la rama
+
+
+
+//Guardar en stash
+$ git stash //> Me guarda los archivos y limpia el working 
+git stash pop //> Me devuelve las cosas a working
+
+
+
+git log origin/master..HEAD  //Me muestra mi ultimo commit local
