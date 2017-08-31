@@ -1,1 +1,165 @@
-Nada por ahora
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Producto</title>
+    <script src="../js/header.txt"></script>
+<!--     <script src="../js/cargando.txt"></script>
+ -->    <script>
+        function numeros(caracter, coordx) 
+        { 
+            var aux = window.Event ? true : false; 
+            var key = aux ? caracter.which : caracter.keyCode; 
+
+            if (coordx.value.length >= 14)
+                return false
+            if ((key<48 || key>57 ) && key != 8 && key != 0 && key != 22 && key != 13){ 
+                return false; 
+            } 
+        } 
+        function formatNumber(objeto){
+            if (objeto.value === "") {
+                return false;
+            }
+
+            var nNmb = objeto.value.replace(/\./g, "");
+            var sRes = "";
+            nNmb = parseInt(nNmb,10) + "";
+
+            for (var j, i = nNmb.length - 1, j = 0; i >= 0; i--, j++) {
+                sRes = nNmb.charAt(i) + ((j > 0) && (j % 3 == 0)? ".": "") + sRes;
+            }
+
+            document.getElementById("montoAPA").value = sRes;
+        }
+    </script>
+
+</head>
+<body ng-app="MyModuleA">
+    <div class="se-pre-con"></div>
+    <div ng-controller="controllerAPA">
+        <div class="row-fluid">
+            <img src="../img/step1.jpg" class="img-responsive" alt="step-1">
+        </div>    
+        <section class="step1">
+            <div class="container">
+
+                <div class="ibox">
+                    <h3 class="inline">¿Quieres programar un ahorro mensual para tu nueva cuenta?</h3> 
+                    <a tabindex="0"  class="help" role="button" data-toggle="popover" data-trigger="focus" title="¿Qué es un ahorro programado?" data-placement="bottom" data-content="Te permite ahorrar de forma automática un monto fijo mensual. Sólo debes programar tu ahorro seleccionando la cuenta desde la cual quieres que te descuenten el dinero (CuentaRUT, Chequera Electrónica o Cuenta Corriente), el monto a ahorrar y el día de cargo.">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </a>
+                </div>    
+
+                <div class="box">
+                    
+                    <section>
+                        <input type="radio" name="sinoAPA" id="APASI" ng-click="cambio(true)" class="radio"> 
+                        <label for="APASI">Sí, quiero programar un ahorro ahora</label>
+                    </section>    
+
+                    <section>
+                        <input type="radio" name="sinoAPA" id="APANO" ng-click="cambio(false)" class="radio"> 
+                        <label for="APANO">No, prefiero no hacerlo</label>
+                    </section>
+                </div>
+
+                </div>
+            </section>
+
+            <section class="step2 ibox" ng-show="mostrar">
+                <div class="container">
+                    <h3 class="inline">Selecciona Cuenta de Cargo</h3>
+                    <a tabindex="0"  class="help" role="button" data-toggle="popover" data-trigger="focus" title="¿Qué es una cuenta de cargo?" data-placement="bottom" data-content="Es la cuenta desde la cual se descontará un monto fijo para tu ahorro mensual.">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </a>
+                </div>    
+
+                <ul class="list-group" id="lista_cuentas"></ul>
+
+                <div class="container">
+                    <div class="ibox">
+                        <h3 class="inline-block">Día de Cargo</h3>
+                        <a tabindex="0"  class="help" role="button" data-toggle="popover" data-trigger="focus" title="¿Cuál es el día de cargo?" data-placement="bottom" data-content="Es el día de cada mes que se descontará el monto fijo para tu ahorro."><i class="fa fa-question-circle" aria-hidden="true"></i>
+                        </a>
+                        <select name="repeatSelect" id="repeatSelect" class="form-control" ng-model="diaCargo" ng-disabled="lectura" ng-change="cambioDia()">
+                            <option value="" selected disabled hidden class="pre-select">Selecciona día</option>
+                            <option ng-repeat="option in dias" value="{{option.id}}">{{option.name}}</option>
+                        </select>
+                    </div>
+
+                    <h3>Monto</h3>
+                    <input type="text" class="form-control" ng-model="montoMensual" onkeypress="return numeros(event, this);" onkeyup="formatNumber(this);" ng-readonly="bloqMonto" placeholder="Monto (mínimo $1.000)" id="montoAPA" ng-change="cambioDia()">
+                </div>
+            </section>
+
+            <div class="step3">
+                <div class="container">
+                    <div class="ibox">
+                        <button id="confirmar" type="button" class="btn btn-lg btn-block btn-main" ng-click="confirmarApa()"><span>{{textoboton}}</span></button>
+                        <button type="button" class="btn btn-lg btn-block btn-secondary" ng-click="volver()">Volver</button>                 
+                    </div>                         
+                </div>
+            </div>
+        </div>
+    <script src="../js/footer.txt"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+            $(':not(.help)').on('click', function(e){ 
+                $('[data-toggle="popover"]').each(function(){ 
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) { 
+                        $(this).popover('hide'); 
+                    } 
+                }); 
+            });
+        }); 
+    </script>
+</body>
+</html>
+
+
+
+node_modules/
+
+public/css/styleAhorro.css
+public/css/styleAhorro.min.css
+public/js/appAhorro.js
+public/js/appAhorro.min.js
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

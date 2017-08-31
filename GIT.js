@@ -46,7 +46,7 @@ git branch -r
 				$ git commit --amend	  // > Incluye mejoras bajo el mismo commit desde stage
 
 
-			//	(-  --> Stage) 
+			//	(-  --> Stage --> working ) 
 
 				$ git reset HEAD <filename.ext>	// > Quito el archivo de stage sin borrar el working 	
 
@@ -86,12 +86,12 @@ git branch -r
 
 
 
-//**********************************************************
+**********************************************************
 
 
 //Agregar y commitear
 
-git commit -a -m "MY MESSAGE HERE" //> -a significa all, y agrega archivos unstageados también
+$ git commit -a -m "MY MESSAGE HERE" //> -a significa all, y agrega archivos unstageados también
 
 
 
@@ -106,4 +106,28 @@ git stash pop //> Me devuelve las cosas a working
 
 
 
-git log origin/master..HEAD  //Me muestra mi ultimo commit local
+$ git log origin/master..HEAD  //Me muestra mi ultimo commit local
+$ git diff origin/master..HEAD //ver diferencia
+
+
+
+//IGNORAR ARCHIVOS LOCAL
+touch .gitignore
+
+
+
+$ git clean -n //> Me muestra que va a borrar
+$ git clean -f //> Quita los archivos no trackeados locales
+
+
+$ git show <commit number>
+
+
+$ git log --follow filename 
+
+
+
+//AMMEND
+$ git commit --amend  //> Modifica el mensaje si no hay nada stageado
+$ git commit --amend -m "an updated commit message" //> Modificar el mensaje del update de commit
+$ git commit --amend --no-edit //> Me permite complementar un commit incompleto sin cambiar el mensaje
