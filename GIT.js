@@ -64,12 +64,12 @@ git branch -r
 
 
 			// ( - --> stagge)
-				$ git reset --soft HEAD~1	 //> Borra el commit último y lo devuelve a stage	
+				$ git reset --soft HEAD~1	 //> Borra el último "commit" y lo devuelve a stage	
 
 
 
 			// (+ --> Working)
-				$ git reset HEAD~1	//> (mixed) Borra el commit y el stage pero mantiene los cambios de working	
+				$ git reset HEAD~1	//> (mixed) Borra el último "commit + el stage" pero mantiene los cambios de working	
 
 
 
@@ -107,13 +107,13 @@ git stash pop //> Me devuelve las cosas a working
 
 
 $ git log origin/master..HEAD  //Me muestra mi ultimo commit local
+
 $ git diff origin/master..HEAD //ver diferencia
 
 
 
 //IGNORAR ARCHIVOS LOCAL
 touch .gitignore
-
 
 
 $ git clean -n //> Me muestra que va a borrar
@@ -131,3 +131,13 @@ $ git log --follow filename
 $ git commit --amend  //> Modifica el mensaje si no hay nada stageado
 $ git commit --amend -m "an updated commit message" //> Modificar el mensaje del update de commit
 $ git commit --amend --no-edit //> Me permite complementar un commit incompleto sin cambiar el mensaje
+
+
+// Rehacer un commit
+$ git rebase --interactive 'bbc643cd^'
+//In the default editor, modify pick to edit in the line whose commit you want to modify. Make your changes and then commit them with the same message you had before:
+
+$ git commit --all --amend --no-edit
+//to modify the commit, and after that
+
+$ git rebase --continue
