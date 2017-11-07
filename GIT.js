@@ -137,7 +137,10 @@ $ git stash clear //> Limpiar lo stasheado
 
 // VER COMMITS 
 ---------------
-$ git log origin/master..HEAD  //Me muestra mi ultimo commit local
+
+$ git log -1 // Muestra el ultimo o (n) ultimos commits
+
+$ git log --since=2.weeks // Ultimos commits
 
 $ git diff origin/master..HEAD //ver diferencia
 
